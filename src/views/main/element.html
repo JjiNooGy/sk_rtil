@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, inital-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+
+    <script src="../../js/include.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- headerWrap -->
+      <div class="header_wrap" w3-include-html="../include/header.html"></div>
+      <!-- headerWrap -->
+
+      <main style="min-height: 800px">
+        <aside w3-include-html="../include/aside.html"></aside>
+        <article>
+          <section>
+            <div class="check-radio">
+              <input type="checkbox" id="checkbox" />
+              <label for="checkbox">체크박스1</label>
+              <input type="checkbox" id="checkbox2" />
+              <label for="checkbox2">체크박스2</label>
+              <input type="checkbox" id="checkbox3" />
+              <label for="checkbox3">체크박스3</label>
+              <input type="checkbox" id="checkbox4" />
+              <label for="checkbox4">체크박스4</label>
+            </div>
+            <div class="check-radio">
+              <input type="radio" id="radio1" name="radio1" />
+              <label for="radio1">라디오1</label>
+              <input type="radio" id="radio2" name="radio1" />
+              <label for="radio2">라디오2</label>
+              <input type="radio" id="radio3" name="radio1" />
+              <label for="radio3">라디오3</label>
+              <input type="radio" id="radio4" name="radio1" />
+              <label for="radio4">라디오4</label>
+            </div>
+
+            <div class="check-radio col" w3-include-html="../components/checkbox.html"></div>
+            <div class="check-radio col" w3-include-html="../components/radio.html"></div>
+          </section>
+
+          <section>
+            <div class="wrap-textarea">
+              <div class="box-textarea md">
+                <textarea placeholder="textarea."></textarea>
+              </div>
+              <p class="txt-cnt"><span>0</span>/500</p>
+            </div>
+          </section>
+
+          <section class="product-list">
+            <div class="card-box" w3-include-html="../components/card1.html"></div>
+            <div class="card-box" w3-include-html="../components/card1.html"></div>
+            <div class="card-box" w3-include-html="../components/card1.html"></div>
+            <div class="card-box r-colm" w3-include-html="../components/card1.html"></div>
+            <div class="card-box r-colm" w3-include-html="../components/card1.html"></div>
+            <div class="card-box r-colm" w3-include-html="../components/card1.html"></div>
+            <div class="card-box" w3-include-html="../components/card1.html"></div>
+            <div class="card-box" w3-include-html="../components/card1.html"></div>
+            <div class="card-box" w3-include-html="../components/card1.html"></div>
+            <div class="card-box" w3-include-html="../components/card1.html"></div>
+            <div class="card-box" w3-include-html="../components/card1.html"></div>
+          </section>
+        </article>
+
+        <!-- quick -->
+        <article class="quick" w3-include-html="../include/quick.html"></article>
+        <!-- //quick -->
+      </main>
+
+      <!-- footer -->
+      <footer w3-include-html="../include/footer.html"></footer>
+      <!-- //footer -->
+    </div>
+  </body>
+
+  <script>
+    includeHTML();
+  </script>
+</html>
