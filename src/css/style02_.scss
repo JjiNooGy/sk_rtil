@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/***** 공통2 *****/
+/***** 공통 *****/
 .flex {
   display: flex;
 }
@@ -438,10 +438,10 @@ span.status-cancel:before {
 .checkbox-wrap span:last-child {
   margin-bottom: 0;
 }
-.checkbox-wrap span input[type=checkbox] {
+.checkbox-wrap span input[type="checkbox"] {
   display: none;
 }
-.checkbox-wrap span input[type=checkbox] + label::before {
+.checkbox-wrap span input[type="checkbox"] + label::before {
   position: relative;
   display: inline-block;
   top: 0;
@@ -454,7 +454,7 @@ span.status-cancel:before {
   background-position: center center;
   transition: all 0.2s linear 0s;
 }
-.checkbox-wrap span input[type=checkbox] + label::after {
+.checkbox-wrap span input[type="checkbox"] + label::after {
   position: absolute;
   display: inline-block;
   top: 0;
@@ -468,7 +468,7 @@ span.status-cancel:before {
   background-position: center center;
   transition: all 0.2s linear 0s;
 }
-.checkbox-wrap span input[type=checkbox]:checked + label::after {
+.checkbox-wrap span input[type="checkbox"]:checked + label::after {
   opacity: 1;
 }
 
@@ -554,6 +554,10 @@ span.status-cancel:before {
   background: #f7f7f9;
   padding: 22px 0 24px;
   justify-content: center;
+  width: 100vw;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .tab-wrap .tab-desc-wrap div:first-child {
   display: flex;
@@ -582,4 +586,4 @@ span.status-cancel:before {
 
 /* 공통 */
 /***** 탁송 *****/
-/***** 경매 *****//*# sourceMappingURL=style02.css.map */
+/***** 경매 *****/ /*# sourceMappingURL=style02.css.map */
