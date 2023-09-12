@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, inital-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+
+    <script src="../js/include.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- headerWrap -->
+      <div class="header_wrap" w3-include-html="../include/header.html"></div>
+      <!-- headerWrap -->
+
+      <main style="min-height: 800px">
+        <article>
+          <section>section</section>
+        </article>
+
+        <!-- quick -->
+        <article class="quick" w3-include-html="../include/quick.html"></article>
+        <!-- //quick -->
+      </main>
+
+      <!-- footer -->
+      <footer w3-include-html="../include/footer.html"></footer>
+      <!-- //footer -->
+    </div>
+  </body>
+  <!-- 회원탈퇴 -->
+  <div class="popup-wrap pop-members out-member" style="display: block">
+    <div class="pop-box">
+      <div class="pop-header">
+        <div class="box-header">
+          <h2>팝업타이틀</h2>
+          <h6>팝업 설명</h6>
+        </div>
+        <button class="pop-close" onclick="popClose();"><span class="hide-txt">팝업닫기</span></button>
+      </div>
+
+      <div class="pop-content">
+        <p class="title">회원탈퇴 안내</p>
+
+        <p class="summary">
+          고객님께서 회원탈퇴를 원하신다니 매우 아쉬운 마음입니다. 그동안 SK렌터카와 함께해 주셔서 감사합니다.<br /><br />혹시 불편하셨던 점이나 불만사항을 알려주시면, 적극 반영하여 고객님의 불편함을
+          해결할 수 있도록 노력하겠습니다.<br />회원탈퇴 후에는 추가계약 진행 및 계약내용 확인 시 매번 간편인증을 진행하셔야 하므로 번거로울 수 있습니다.
+        </p>
+
+        <div class="survey-out">
+          <p class="title">무엇이 불편하셨나요?</p>
+          <div class="check-radio col">
+            <input type="checkbox" id="checkbox21" />
+            <label for="checkbox21">원하는 차량이 없음</label>
+            <input type="checkbox" id="checkbox22" />
+            <label for="checkbox22">차량 이용 계획이 없음</label>
+            <input type="checkbox" id="checkbox23" />
+            <label for="checkbox23">차량 가격</label>
+            <input type="checkbox" id="checkbox24" />
+            <label for="checkbox24">방문 빈도가 낮음</label>
+            <input type="checkbox" id="checkbox25" />
+            <label for="checkbox25">서비스 이용이 어려움</label>
+          </div>
+
+          <div class="wrap-textarea">
+            <div class="box-textarea md">
+              <textarea placeholder="고객님의 소중한 의견을 담아 더 나은 SK 중고차를 만들오록 노력하겠습니다."></textarea>
+            </div>
+            <p class="txt-cnt"><span>0</span>/500</p>
+          </div>
+        </div>
+
+        <div class="btn-box"><button class="btn-gray">취소</button><button class="btn-primary">탈퇴</button></div>
+      </div>
+    </div>
+  </div>
+  <!-- //회원탈퇴 -->
+  <script>
+    includeHTML();
+  </script>
+</html>

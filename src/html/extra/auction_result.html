@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, inital-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../css/style_auction.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/extra/style02.css" />
+
+  <script src="../../js/include.js"></script>
+
+</head>
+
+<body>
+  <div class="wrap auction">
+    <!-- headerWrap -->
+    <div class="header_wrap" w3-include-html="../include2/header.html"></div>
+    <!-- headerWrap -->
+
+    <main style="min-height: 800px">
+      <article>
+        <section>
+          <div class="title-wrap">
+            <div class="title">경매결과</div>
+            <div class="title-desc">SK 렌터카의 경매관리 시스템입니다.</div>
+          </div>
+        </section>
+
+        <section>
+          <!-- search-wrap -->
+          <div class="search-wrap">
+            <div class="forms-wrap">
+              <ul class="forms-box">
+                <li>
+                  <div class="form">
+                    <div class="form-control">
+                      <div class="form-control-label">
+                        <span>경매일자</span>
+                        <span class="req">필수입력값</span>
+                      </div>
+                      <div class="form-control-container">
+                        <div class="form-control-content">
+                          <div class="form-control-input">
+                            <input type="search" placeholder="" />
+                            <button class="btnClear"></button>
+                          </div>
+                          <!-- <div class="calendar-wrap">
+                            <input class="cal" type="search" placeholder="2023.10.16">
+                          </div> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="form">
+                    <div class="form-control">
+                      <div class="form-control-label">
+                        <span>차량번호</span>
+                      </div>
+                      <div class="form-control-container">
+                        <div class="form-control-content">
+                          <div class="form-control-input">
+                            <input type="search" placeholder="" />
+                            <button class="btnClear"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="form">
+                    <div class="form-control">
+                      <div class="form-control-label">
+                        <span>출품자명</span>
+                      </div>
+                      <div class="form-control-container">
+                        <div class="form-control-content">
+                          <div class="form-control-input">
+                            <input class="w126" type="search" placeholder="" />
+                            <button class="btnClear"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="form">
+                    <div class="form-control">
+                      <div class="form-control-label">
+                        <span>출품자 ID</span>
+                      </div>
+                      <div class="form-control-container">
+                        <div class="form-control-content">
+                          <div class="form-control-input">
+                            <input type="search" placeholder="" />
+                            <button class="btnClear"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <ul class="button-wrap">
+              <li class="reset">
+                <p>초기화</p>
+              </li>
+              <li class="search">
+                <p>검색</p>
+              </li>
+            </ul>
+          </div>
+          <!-- //search-wrap -->
+        </section>
+
+        <section>
+          <div class="form bbs">
+
+            <!-- btn-wrap -->
+            <div class="btn-wrap">
+              <div class="btn-box left">
+                <span class="num">총 조회
+                  <strong class="stress">3</strong>건
+                </span>
+              </div>
+              <div class="btn-box right">
+                <button class="btn-default">출품상태 일괄선택</button>
+                <button class="btn-default excel-sample">엑셀 샘플 다운로드</button>
+                <button class="btn-default excel">엑셀 업로드</button>
+                <button class="btn-default excel">엑셀 다운로드</button>
+                <button class="btn-default save">저장</button>
+              </div>
+            </div>
+            <!-- //btn-wrap -->
+
+            <!-- bbs list -->
+            <div class="bbs-wrap">
+              <!-- table -->
+              <table class="table-default">
+                <caption>방문예약현황</caption>
+                <colgroup>
+                  <col width="20px">
+                  <col width="60px">
+                  <col width="40px">
+                  <col width="100px">
+                  <col width="170px">
+                  <col width="90px">
+                  <col width="60px">
+                  <col width="90px">
+                  <col width="120px">
+                  <col width="170px">
+                  <col width="100px">
+                  <col width="100px">
+                  <col width="*">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>
+                      <div class="checkbox-wrap">
+                        <span>
+                          <input type="checkbox" id="select-agree1" class="must" name="agreeBtn">
+                          <label class="label" for="select-agree1"></label>
+                        </span>
+                      </div>
+                    </th>
+                    <th>번호</th>
+                    <th>구분</th>
+                    <th>채널배정일</th>
+                    <th>차량정보</th>
+                    <th>차량번호</th>
+                    <th>년식</th>
+                    <th>출품번호</th>
+                    <th>출품자ID</th>
+                    <th>출품자명</th>
+                    <th>시작가</th>
+                    <th>희망가</th>
+                    <th>경매결과</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="checkbox-wrap">
+                        <span>
+                          <input type="checkbox" id="select-agree2" class="must" name="agreeBtn">
+                          <label class="label" for="select-agree2"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>10</td>
+                    <td>리스</td>
+                    <td>2023.10.22</td>
+                    <td>344가1235</td>
+                    <td>344가1235</td>
+                    <td>2021</td>
+                    <td>-</td>
+                    <td>23879679</td>
+                    <td>11890768789</td>
+                    <td>에스에이렌터카 주식회사</td>
+                    <td>THE NEW 아반떼AD 1.6(LPI)</td>
+                    <td>12,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="checkbox-wrap">
+                        <span>
+                          <input type="checkbox" id="select-agree3" class="must" name="agreeBtn">
+                          <label class="label" for="select-agree3"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>9</td>
+                    <td>리스</td>
+                    <td>2023.10.22</td>
+                    <td>344가1235</td>
+                    <td>344가1235</td>
+                    <td>2021</td>
+                    <td>-</td>
+                    <td>23879679</td>
+                    <td>11890768789</td>
+                    <td>에스에이렌터카 주식회사</td>
+                    <td>THE NEW 아반떼AD 1.6(LPI)</td>
+                    <td>12,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="checkbox-wrap">
+                        <span>
+                          <input type="checkbox" id="select-agree4" class="must" name="agreeBtn">
+                          <label class="label" for="select-agree4"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>8</td>
+                    <td>리스</td>
+                    <td>2023.10.22</td>
+                    <td>344가1235</td>
+                    <td>344가1235</td>
+                    <td>2021</td>
+                    <td>-</td>
+                    <td>23879679</td>
+                    <td>11890768789</td>
+                    <td>에스에이렌터카 주식회사</td>
+                    <td>THE NEW 아반떼AD 1.6(LPI)</td>
+                    <td>12,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="checkbox-wrap">
+                        <span>
+                          <input type="checkbox" id="select-agree7" class="must" name="agreeBtn">
+                          <label class="label" for="select-agree7"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>7</td>
+                    <td>리스</td>
+                    <td>2023.10.22</td>
+                    <td>344가1235</td>
+                    <td>344가1235</td>
+                    <td>2021</td>
+                    <td>-</td>
+                    <td>23879679</td>
+                    <td>11890768789</td>
+                    <td>에스에이렌터카 주식회사</td>
+                    <td>THE NEW 아반떼AD 1.6(LPI)</td>
+                    <td>12,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="checkbox-wrap">
+                        <span>
+                          <input type="checkbox" id="select-agree8" class="must" name="agreeBtn">
+                          <label class="label" for="select-agree8"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>6</td>
+                    <td>리스</td>
+                    <td>2023.10.22</td>
+                    <td>344가1235</td>
+                    <td>344가1235</td>
+                    <td>2021</td>
+                    <td>-</td>
+                    <td>23879679</td>
+                    <td>11890768789</td>
+                    <td>에스에이렌터카 주식회사</td>
+                    <td>THE NEW 아반떼AD 1.6(LPI)</td>
+                    <td>12,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="checkbox-wrap">
+                        <span>
+                          <input type="checkbox" id="select-agree9" class="must" name="agreeBtn">
+                          <label class="label" for="select-agree9"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>5</td>
+                    <td>리스</td>
+                    <td>2023.10.22</td>
+                    <td>344가1235</td>
+                    <td>344가1235</td>
+                    <td>2021</td>
+                    <td>-</td>
+                    <td>23879679</td>
+                    <td>11890768789</td>
+                    <td>에스에이렌터카 주식회사</td>
+                    <td>THE NEW 아반떼AD 1.6(LPI)</td>
+                    <td>12,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="checkbox-wrap">
+                        <span>
+                          <input type="checkbox" id="select-agree10" class="must" name="agreeBtn">
+                          <label class="label" for="select-agree10"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>4</td>
+                    <td>리스</td>
+                    <td>2023.10.22</td>
+                    <td>344가1235</td>
+                    <td>344가1235</td>
+                    <td>2021</td>
+                    <td>-</td>
+                    <td>23879679</td>
+                    <td>11890768789</td>
+                    <td>에스에이렌터카 주식회사</td>
+                    <td>THE NEW 아반떼AD 1.6(LPI)</td>
+                    <td>12,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="checkbox-wrap">
+                        <span>
+                          <input type="checkbox" id="select-agree1" class="must" name="agreeBtn">
+                          <label class="label" for="select-agree1"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>3</td>
+                    <td>리스</td>
+                    <td>2023.10.22</td>
+                    <td>344가1235</td>
+                    <td>344가1235</td>
+                    <td>2021</td>
+                    <td>-</td>
+                    <td>23879679</td>
+                    <td>11890768789</td>
+                    <td>에스에이렌터카 주식회사</td>
+                    <td>THE NEW 아반떼AD 1.6(LPI)</td>
+                    <td>12,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="checkbox-wrap">
+                        <span>
+                          <input type="checkbox" id="select-agree5" class="must" name="agreeBtn">
+                          <label class="label" for="select-agree5"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>2</td>
+                    <td>리스</td>
+                    <td>2023.10.22</td>
+                    <td>344가1235</td>
+                    <td>344가1235</td>
+                    <td>2021</td>
+                    <td>-</td>
+                    <td>23879679</td>
+                    <td>11890768789</td>
+                    <td>에스에이렌터카 주식회사</td>
+                    <td>THE NEW 아반떼AD 1.6(LPI)</td>
+                    <td>12,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="checkbox-wrap">
+                        <span>
+                          <input type="checkbox" id="select-agree6" class="must" name="agreeBtn">
+                          <label class="label" for="select-agree6"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>1</td>
+                    <td>리스</td>
+                    <td>2023.10.22</td>
+                    <td>344가1235</td>
+                    <td>344가1235</td>
+                    <td>2021</td>
+                    <td>-</td>
+                    <td>23879679</td>
+                    <td>11890768789</td>
+                    <td>에스에이렌터카 주식회사</td>
+                    <td>THE NEW 아반떼AD 1.6(LPI)</td>
+                    <td>12,000,000</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- //table -->
+            </div>
+            <!-- //bbs list -->
+          </div>
+        </section>
+      </article>
+
+      <!-- quick -->
+      <!-- <article class="quick" w3-include-html="../include2/quick.html"></article> -->
+      <!-- //quick -->
+    </main>
+
+    <!-- footer -->
+    <footer w3-include-html="../include2/footer.html"></footer>
+    <!-- //footer -->
+  </div>
+</body>
+
+<script>
+  includeHTML();
+</script>
+
+</html>

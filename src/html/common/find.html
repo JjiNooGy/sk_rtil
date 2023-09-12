@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+    <script src="../js/include.js"></script>
+
+  </head>
+  <body>
+    <div class="wrap login">
+      
+      <div class="login_wrap">
+        <div class="logo"></div>
+
+        <div class="form">
+
+          <div class="form-control">
+            <div class="form-control-label">
+                <span>아이디</span>
+            </div>
+            <div class="form-control-container">
+                <div class="form-control-content">
+                  <div class="form-control-input">
+                    <input type="search" placeholder="아이디를 입력해주세요.">
+                    <button class="btnClear"></button>
+                  </div>
+                </div>
+                <div class="error">에러 메세지</div>
+            </div>
+          </div>
+
+
+          <div class="form-control">
+            <div class="form-control-label">
+                <span>비밀번호</span>
+            </div>
+            <div class="form-control-container">
+                <div class="form-control-content">
+                  <div class="form-control-input">
+                    <input type="password" placeholder="비밀번호를 입력해주세요.">
+                    <button class="btnClear"></button>
+                  </div>
+                </div>
+                <div class="error on">에러 메세지</div>
+            </div>
+          </div>
+
+          <div class="form-control">
+           
+            <div class="form-control-container">
+                
+              <button class="btnLogin">로그인</button>
+             
+            </div>
+          </div>
+
+
+
+        </div>
+
+        <div class="login-more">
+          <a href="">회원가입</a>
+          <a href="">아이디찾기/비밀번호 재설정</a>
+        </div>
+
+        <div class="login-sns">
+          <p class=""><span>간편 로그인</span></p>
+          <div class="sns-box">
+            <a href="" class="kakao" title="카카오톡 연동 로그인"></a>
+            <a href="" class="naver" title="네이버 연동 로그인"></a>
+            <a href="" class="apple" title="애플 연동 로그인"></a>
+          </div>
+        </div>
+
+                                                                                                                                                                       
+        <div class="banner">
+          <div class="">
+            <img src="../../img/members/banner_sample.svg" />
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="copyright">Copyright  SKRUC. All Rights Reserved.</div>
+  </body>
+
+  <script>
+
+    //인풋박스 초기화버튼 커스터마이징
+    var btnClear = document.querySelectorAll('.btnClear');
+    btnClear.forEach(function(btn){
+        btn.addEventListener('click', function(){
+            btn.parentNode.querySelector('input').value = "";
+        })
+    })
+</script>
+</html>

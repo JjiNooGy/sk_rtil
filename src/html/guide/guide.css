@@ -1,0 +1,63 @@
+@charset "UTF-8";
+.ia_list {
+  width: 100%;
+}
+.ia_list .tabcontent-wrap {
+  padding-top: 40px;
+}
+.ia_list table {
+  width: 100%;
+  border-left: 1px solid #ddd;
+  border-top: 2px solid #f69894;
+}
+.ia_list table thead th {
+  padding: 13px 5px;
+  background: #f3b9a4;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  color: #fff;
+}
+.ia_list table tbody td {
+  padding: 6px 5px;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.813rem;
+}
+.ia_list table tbody td a {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+.ia_list table tbody td.cmd {
+  position: relative;
+}
+.ia_list table tbody td.cmd::before {
+  content: "작업완료";
+  display: inline-block;
+  padding: 3px 5px;
+  margin-right: 6px;
+  border-radius: 4px;
+  background: #a3bcb9;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+}
+.ia_list table tbody td.edit {
+  position: relative;
+}
+.ia_list table tbody td.edit::before {
+  content: "퍼블수정";
+  display: inline-block;
+  padding: 3px 5px;
+  margin-right: 6px;
+  border-radius: 4px;
+  background: #f64a2f;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+}
+.ia_list table tbody .path td {
+  color: #9d84c2;
+  font-size: 1.25rem;
+  border-top: 3px double #f69894;
+}/*# sourceMappingURL=guide.css.map */
