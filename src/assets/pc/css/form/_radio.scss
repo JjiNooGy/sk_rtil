@@ -1,0 +1,93 @@
+/**************************************************************************************************
+*** radio check
+**************************************************************************************************/
+.check-radio {
+  position: relative;
+  display: flex;
+  gap: 8px 20px;
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    display: none;
+    font-size: 15px;
+  }
+
+  input[type="checkbox"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  input[type="checkbox"] + label {
+    display: inline-block;
+    position: relative;
+    padding-left: 36px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    color: var(--txt-sub);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  input[type="checkbox"] + label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    background-position: 50% 50%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28' fill='none'%3E%3Cpath d='M19.4364 11.1605C19.7879 10.8091 19.7879 10.2392 19.4364 9.88775C19.0849 9.53628 18.5151 9.53628 18.1636 9.88775L11.9229 16.1285L9.90278 13.6033C9.59227 13.2152 9.02591 13.1522 8.63777 13.4627C8.24964 13.7733 8.18671 14.3396 8.49722 14.7278L11.1455 18.0381C11.3054 18.238 11.5429 18.3603 11.7985 18.3745C12.0541 18.3886 12.3037 18.2933 12.4847 18.1123L19.4364 11.1605Z' fill='%23B5B9C0'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M26 14C26 20.6274 20.6274 26 14 26C7.37258 26 2 20.6274 2 14C2 7.37258 7.37258 2 14 2C20.6274 2 26 7.37258 26 14ZM24.2 14C24.2 19.6333 19.6333 24.2 14 24.2C8.3667 24.2 3.8 19.6333 3.8 14C3.8 8.3667 8.3667 3.8 14 3.8C19.6333 3.8 24.2 8.3667 24.2 14Z' fill='%23B5B9C0'/%3E%3C/svg%3E");
+  }
+  input[type="checkbox"]:checked + label:before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28' fill='none'%3E%3Cpath d='M19.4364 11.1605C19.7879 10.8091 19.7879 10.2392 19.4364 9.88775C19.0849 9.53628 18.5151 9.53628 18.1636 9.88775L11.9229 16.1285L9.90278 13.6033C9.59227 13.2152 9.02591 13.1522 8.63777 13.4627C8.24964 13.7733 8.18671 14.3396 8.49722 14.7278L11.1455 18.0381C11.3054 18.238 11.5429 18.3603 11.7985 18.3745C12.0541 18.3887 12.3037 18.2933 12.4847 18.1123L19.4364 11.1605Z' fill='%2350555C'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M26 14C26 20.6274 20.6274 26 14 26C7.37258 26 2 20.6274 2 14C2 7.37258 7.37258 2 14 2C20.6274 2 26 7.37258 26 14Z' fill='%2350555C'/%3E%3Cpath d='M19.4372 11.1604C19.7887 10.8089 19.7887 10.2391 19.4372 9.88763C19.0857 9.53616 18.5159 9.53616 18.1644 9.88763L11.9237 16.1283L9.9036 13.6032C9.59309 13.215 9.02672 13.1521 8.63859 13.4626C8.25045 13.7731 8.18752 14.3395 8.49803 14.7276L11.1463 18.038C11.3062 18.2379 11.5437 18.3602 11.7993 18.3744C12.0549 18.3885 12.3045 18.2932 12.4855 18.1121L19.4372 11.1604Z' fill='%23F7F7F9'/%3E%3C/svg%3E");
+  }
+
+  input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  input[type="radio"] + label {
+    display: inline-block;
+    position: relative;
+    padding-left: 36px;
+    cursor: pointer;
+    color: var(--txt-sub);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  input[type="radio"] + label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    background-position: 50% 50%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28' fill='none'%3E%3Ccircle cx='14' cy='14' r='11.5' stroke='%23B5B9C0'/%3E%3Ccircle cx='14' cy='14' r='6' fill='%23B5B9C0'/%3E%3C/svg%3E");
+  }
+  input[type="radio"]:checked + label:before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28' fill='none'%3E%3Ccircle cx='14' cy='14' r='12' fill='%2350555C'/%3E%3Ccircle cx='14' cy='14' r='6' fill='white'/%3E%3C/svg%3E");
+  }
+}
+.check-radio.col {
+  flex-direction: column;
+}
+.check-radio + .check-radio {
+  margin-top: 20px;
+}

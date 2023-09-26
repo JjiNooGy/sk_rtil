@@ -1,0 +1,142 @@
+/**************************************************************************************************
+*** common
+**************************************************************************************************/
+
+/**************************************************************************************************
+*** tableasd
+**************************************************************************************************/
+
+.table-wrap {
+  width: 100%;
+
+  table {
+    width: 100%;
+    margin-top: 10px;
+    border-top: 1px solid #d0d0d0;
+    .text-c {
+      text-align: center;
+    }
+    th {
+      padding: 23px 30px;
+      background: #f5f5f5;
+      border-bottom: 1px solid #d0d0d0;
+      vertical-align: middle;
+      color: var(--txt-defult);
+      text-align: left;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+    th + th {
+      border-left: 1px solid #d0d0d0;
+    }
+    td {
+      background: #fff;
+      padding: 23px 20px;
+
+      border-bottom: 1px solid #d0d0d0;
+      border-left: 1px solid #d0d0d0;
+      vertical-align: middle;
+
+      color: var(--txt-defult);
+      text-align: left;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      word-break: keep-all;
+
+      span {
+        color: inherit;
+      }
+    }
+    td + td {
+      border-left: 1px solid #d0d0d0;
+    }
+
+    th:first-child,
+    td:first-child {
+      border-left: 0;
+    }
+
+    [rowspan]:first-child {
+      border-left: 0;
+    }
+    [rowspan]:last-child {
+      border-right: 0;
+    }
+    [rowspan] {
+      border-left: 1px solid #d0d0d0;
+      border-right: 1px solid #d0d0d0;
+    }
+    td .dot_list li {
+      font-size: 12px;
+      line-height: 18px;
+      color: #858b93;
+      margin-top: 6px;
+    }
+  }
+}
+
+/**************************************************************************************************
+  *** card
+  **************************************************************************************************/
+.cards {
+  .title {
+    a {
+      font-size: 30px;
+      color: #236d44;
+    }
+  }
+}
+
+/**************************************************************************************************
+  *** layout
+  **************************************************************************************************/
+
+/**************************************************************************************************
+  *** content
+  **************************************************************************************************/
+
+/* 게시판 검색 */
+.wrap-board-search {
+  width: 100%;
+  padding: 40px;
+  border-radius: 20px;
+  background: #f2f4f8;
+
+  display: flex;
+  justify-content: center;
+
+  .box-search {
+    width: 100%;
+    max-width: 605px;
+    display: flex;
+    gap: 0 10px;
+    input {
+      padding: 15px 15px 15px 52px;
+      border-radius: 8px;
+      border: 1px solid var(--gray-200-d-4-d-7-dc, #d4d7dc);
+      background: var(--sk-white-ffffff, #fff);
+
+      color: var(--gray-200-d-4-d-7-dc, var(--Gray04, #d4d7dc));
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: -0.4px;
+    }
+    .btn-search {
+      display: inline-flex;
+      height: 52px;
+      padding: 15px 33px;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      border-radius: 10px;
+      border: 1px solid #eceef0;
+      background: var(--grayscale-500, #50555c);
+      color: var(--Pramary_white, #fff);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 30px;
+    }
+  }
+}
