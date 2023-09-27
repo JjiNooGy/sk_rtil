@@ -1,0 +1,93 @@
+/**************************************************************************************************
+*** cards
+**************************************************************************************************/
+.card-box {
+  position: relative;
+
+  border: 1px solid red;
+
+  .card-bullet {
+    position: absolute;
+    left: 8px;
+    top: -18px;
+
+    width: 36px;
+    height: 36px;
+    border: 1px solid red;
+    background-color: #fff;
+    border-radius: 36px;
+  }
+  .card {
+    width: inherit;
+
+    .card-thum {
+      width: 100%;
+    }
+
+    .btn-box {
+      display: flex;
+      gap: 0 10px;
+      button {
+        background: #eceef0;
+        padding: 12px 16px;
+      }
+    }
+  }
+}
+
+.card-box.r-colm {
+  .cards {
+    display: flex;
+    flex-flow: column-reverse;
+  }
+}
+
+.product-list {
+  display: flex;
+  gap: 40px 32px;
+  flex-wrap: wrap;
+
+  .card-box {
+    width: calc(33.3% - 21.3px);
+  }
+}
+
+/**************************************************************************************************
+  *** review
+  **************************************************************************************************/
+.review-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 30px;
+}
+.review-box {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  border: 1px solid red;
+  column-count: 4;
+
+  .review-thum {
+  }
+
+  .review-contnet {
+    .writer-info {
+      display: flex;
+      gap: 0 8px;
+      .car {
+      }
+      .name {
+      }
+    }
+    .title {
+    }
+    .review {
+    }
+    .review-point {
+      .img-point {
+      }
+      .score {
+      }
+    }
+  }
+}

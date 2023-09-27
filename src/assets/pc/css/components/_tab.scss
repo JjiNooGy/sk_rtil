@@ -1,0 +1,117 @@
+/* tab */
+.tab-wrap {
+  position: relative;
+  margin-top: 88px;
+
+  .tab {
+    overflow: hidden;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+
+    button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 7px 0 20px;
+      transition: 0.3s;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 37px;
+      color: #d4d7dc;
+      border-bottom: 3px solid transparent;
+
+      &:hover {
+        background-color: transparent;
+      }
+
+      &.active {
+        box-sizing: border-box;
+        background-color: transparent;
+        font-weight: 700;
+        border-bottom: 3px solid #2e3033;
+        color: #2e3033;
+      }
+    }
+  }
+
+  .tab-button-wrap {
+    display: flex;
+    max-width: 1200px;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 0 40px;
+  }
+
+  .tabcontent-wrap {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    padding-top: 60px;
+  }
+
+  .tabcontent {
+    display: none;
+    padding: 0;
+    border: none;
+    border-top: none;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .tab-desc-wrap {
+    display: flex;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    background: #f7f7f9;
+    padding: 22px 0 24px;
+    justify-content: center;
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    top: 0;
+
+    div {
+      &:first-child {
+        display: flex;
+        justify-content: flex-start;
+        max-width: 1200px;
+        width: 100%;
+      }
+    }
+
+    strong {
+      color: #fa4e29;
+      padding-left: 5px;
+    }
+  }
+
+  .tab-desc-wrap strong {
+    color: red;
+  }
+
+  .tab-cont-wrap {
+    display: flex;
+    padding: 22px 0 24px;
+    justify-content: center;
+  }
+
+  .tab-cont-wrap div:first-child {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 1200px;
+    width: 100%;
+  }
+}

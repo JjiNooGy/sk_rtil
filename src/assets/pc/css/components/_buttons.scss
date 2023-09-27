@@ -1,0 +1,138 @@
+/**************************************************************************************************
+*** button
+**************************************************************************************************/
+.btn-box {
+  button,
+  a {
+    --color-text: #50555c;
+    --color-line: #50555c;
+    --color-bg: #50555c;
+
+    --color-primary-text: #50555c;
+    --color-primary--line: #50555c;
+    --color-primary--bg: #50555c;
+  }
+}
+
+.btn-primary {
+  background: linear-gradient(70deg, #ff7d00 -1%, #f35b5b 37%, #fe532d 116.61%);
+  color: #fff;
+}
+
+.btn-gray {
+  background-color: var(--bg-gray);
+  color: var(--color-text);
+}
+
+.btn-line {
+  background-color: #fff;
+  border: 1px solid #b5b9c0;
+  color: var(--color-text);
+}
+
+.btn-wrap {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 8px 8px;
+  margin-top: 40px;
+  .btn-box {
+    width: 400px;
+    display: flex;
+    gap: 0 8px;
+
+    button,
+    a {
+      width: inherit;
+      padding: 14px 15px;
+      border-radius: 12px;
+
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 28px;
+      cursor: pointer;
+
+      &:disabled {
+        background: #f7f7f9 !important;
+        color: #d4d7dc !important;
+        cursor: default;
+        border: transparent;
+      }
+
+      &.disabled {
+        background: #f7f7f9 !important;
+        color: #d4d7dc !important;
+        border: transparent;
+      }
+    }
+
+    .btn-primary {
+      background: linear-gradient(70deg, #ff7d00 -1%, #f35b5b 37%, #fe532d 116.61%);
+      // background: linear-gradient(91deg, #f35b5b 1.64%, rgba(254, 83, 45, 0.84) 116.61%);
+      color: #fff;
+
+      &:hover {
+        background: linear-gradient(70deg, #e56c02 -1%, #e45e1a 37%, #e55300 116.61%);
+      }
+    }
+    .btn-gray {
+      background-color: var(--bg-gray);
+
+      &:hover {
+        background: #d4d6d8;
+      }
+    }
+
+    .btn-line {
+      background-color: #fff;
+      border: 1px solid #b5b9c0;
+
+      &:hover {
+        background: #e6e6e6;
+      }
+    }
+  }
+}
+
+.btn-wrap.col1 {
+  .btn-box {
+    button,
+    a {
+      width: 66.6%;
+      &:first-child {
+        width: 33.3%;
+      }
+    }
+  }
+}
+.btn-wrap.col2 {
+  .btn-box {
+    button,
+    a {
+      width: 33.3%;
+      &:first-child {
+        width: 66.6%;
+      }
+    }
+  }
+}
+
+/*** pc ***/
+@media (min-width: 1000px) {
+}
+
+/*** tablet ***/
+@media (max-width: 999px) {
+}
+
+/*** mo ***/
+@media (max-width: 599px) {
+  //LG G Pad 8.3, Samsung Galaxy Tab 2 (7")  - 600
+
+  .btn-wrap {
+    .btn-box {
+      width: 100%;
+    }
+  }
+}

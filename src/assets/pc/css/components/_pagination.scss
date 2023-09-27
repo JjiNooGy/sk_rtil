@@ -1,0 +1,74 @@
+/**************************************************************************************************
+  *** 페이지네이션
+  **************************************************************************************************/
+.paging-wrap {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 4px;
+
+  .first,
+  .prev,
+  .next,
+  .last {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+  }
+  .first {
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='32' rx='6' fill='%23ECEEF0'/%3E%3Cpath d='M14.8572 11.4286L10.2857 16L14.8572 20.5714' stroke='%23858B93' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M19.4286 11.4286L14.8572 16L19.4286 20.5714' stroke='%23858B93' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  }
+
+  .prev {
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='32' rx='6' fill='%23ECEEF0'/%3E%3Cpath d='M17.1429 11.4286L12.5715 16L17.1429 20.5714' stroke='%23858B93' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  }
+
+  .next {
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='32' rx='6' transform='matrix(-1 0 0 1 32 0)' fill='%23ECEEF0'/%3E%3Cpath d='M14.8571 11.4286L19.4285 16L14.8571 20.5714' stroke='%23858B93' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  }
+
+  .last {
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='32' rx='6' transform='matrix(-1 0 0 1 32 0)' fill='%23ECEEF0'/%3E%3Cpath d='M17.1428 11.4286L21.7143 16L17.1428 20.5714' stroke='%23858B93' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M12.5714 11.4286L17.1428 16L12.5714 20.5714' stroke='%23858B93' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  }
+  ol {
+    display: flex;
+    gap: 0 12px;
+    padding: 0 30px;
+
+    .page-btn {
+      display: inline-flex;
+      width: 19px;
+      height: 19px;
+
+      a {
+        color: #b5b9c0;
+        text-align: center;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px;
+        width: 100%;
+        height: 100%;
+      }
+
+      .this,
+      a:hover {
+        position: relative;
+        color: #fa4e29;
+        font-weight: 700;
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 12px;
+          height: 1px;
+          background-color: #fa4e29;
+          position: absolute;
+          bottom: -4px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+}
