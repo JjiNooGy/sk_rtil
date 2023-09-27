@@ -1,0 +1,136 @@
+<div class="footer-layer layer1">
+  <!-- 푸터로고 -->
+  <div class="footer_logo" title="SK렌터카"></div>
+  <!-- //푸터로고 -->
+
+  <!-- -->
+  <div class="company-info">
+    <div class="customer-group">
+      <a href="https://company.skcarrental.com/" target="_blank" title="회사소개 이동">회사소개</a>
+      <a href="" title="서비스 이용약관 이동">서비스 이용약관</a>
+      <a href="" title="개인정보 처리방침 이동"><strong>개인정보 처리방침</strong></a>
+      <a href="" title="이메일무단수집거부 이동">이메일무단수집거부</a>
+    </div>
+
+    <div class="info-detail">
+      <div class="more-view"><button onclick="moreView();">사업자 정보</button><span></span></div>
+      <p>SK렌터카(주)</p>
+      <span class="bar"></span>
+      <address>서울특별시 구로구 서부샛길 822</address>
+      <span class="bar pc"></span>
+
+      <p class="br mo"></p>
+      <p><span>대표이사</span>황일문</p>
+      <span class="bar mo"></span>
+      <p><span>사업자번호</span>113-81-32864</p>
+      <span class="bar pc"></span>
+      <p class="br mo"></p>
+      <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=1138132864&apv_perm_no" target="_blank"><span>통신판매업신고</span>구로구청 제2006-03389</a>
+      <p class="rep-tel pc">SK렌터카 대표번호 1599-9111</p>
+    </div>
+  </div>
+
+  <!-- 사이트이동그룹 -->
+  <div class="link-group">
+    <!-- 소셜미디어 -->
+    <div class="sns-group">
+      <a href="" target="_blank" title="유튜브 이동" class="youtube"><span class="hide-txt">유튜브</span></a>
+      <a href="" target="_blank" title="인스타그램 이동" class="insta"><span class="hide-txt">인스타그램</span></a>
+      <a href="" target="_blank" title="블로그 이동" class="blog"><span class="hide-txt">블로그</span></a>
+      <a href="" target="_blank" title="페이스북 이동" class="facebook"><span class="hide-txt">페이스북</span></a>
+    </div>
+    <!-- //소셜미디어 -->
+
+    <!-- 패밀리사이트 -->
+    <div class="select FamilySite">
+      <div class="selected">
+        <div class="selected-value">FamilySite</div>
+        <div class="arrow"></div>
+      </div>
+      <ul>
+        <li class="option"><a href="https://www.skcarrental.com/rent/rentcar/short_rent_reservation_new_jeju.do" target="_blank">SK렌터카 제주도 단기예약</a></li>
+        <li class="option"><a href="https://www.skcarrental.com/rent/rentcar/short_rent_reservation_new.do" target="_blank">SK렌터카 내륙지역 단기예약</a></li>
+        <li class="option"><a href="https://smartcare.skcarrental.com/" target="_blank">스마트케어</a></li>
+      </ul>
+    </div>
+    <!-- //패밀리사이트 -->
+  </div>
+  <!-- //사이트이동그룹 -->
+</div>
+
+<div class="footer-layer layer2">
+  <div class="contact-info">
+    <!-- <a href=""> -->
+    <h6>다이렉트 상담센터</h6>
+    <a href="tel:1599-3651">1599-3651</a>
+    <span
+      ><strong>평일 09:00 ~ 18:00</strong> (토요일 및 공휴일 휴무) <span class="pc">/</span> <br class="mo" />
+      장기렌터카 이용 문의/상담</span
+    >
+    <!-- </a> -->
+  </div>
+  <div class="contact-info customer">
+    <a href="">
+      <h6>SK렌터카 고객센터</h6>
+      <a href="tel:1599-9111">1599-9111</a>
+      <span><strong>평일 09:00 ~ 18:00</strong> (토요일 및 공휴일 휴무)<em class="pc"> / </em></span>
+      <span><strong class="fw_b">ARS 1번</strong> 사고접수<em class="bar"></em><strong class="fw_b">ARS 2번</strong> 긴급출동, 사고/정비 문의</span>
+    </a>
+  </div>
+</div>
+
+<div class="footer-layer layer3">
+  <p class="copyright">Copyright ⓒ SK렌터카. All Rights Reserved.</p>
+</div>
+
+<div class="footer-solid">
+  <p class="copyright">Copyright ⓒ SK렌터카. All Rights Reserved.</p>
+</div>
+<script>
+  // 패밀리사이트 셀렉트박스 스크립트
+  const selectBoxElements = document.querySelectorAll(".FamilySite");
+
+  function toggleSelectBox(selectBox) {
+    selectBox.classList.toggle("active");
+  }
+
+  // function selectOption(optionElement) { //선택옵션 셀렉트 박스에 반영하기
+  //   const selectBox = optionElement.closest(".FamilySite");
+  //   const selectedElement = selectBox.querySelector(".selected-value");
+  //   selectedElement.textContent = optionElement.textContent;
+  // }
+
+  selectBoxElements.forEach((selectBoxElement) => {
+    selectBoxElement.addEventListener("click", function (e) {
+      const targetElement = e.target;
+      const isOptionElement = targetElement.classList.contains("option");
+
+      if (isOptionElement) {
+        selectOption(targetElement);
+      }
+
+      toggleSelectBox(selectBoxElement);
+    });
+  });
+
+  document.addEventListener("click", function (e) {
+    const targetElement = e.target;
+    const isSelect = targetElement.classList.contains("select") || targetElement.closest(".FamilySite");
+
+    if (isSelect) {
+      return;
+    }
+
+    const allSelectBoxElements = document.querySelectorAll(".FamilySite");
+
+    allSelectBoxElements.forEach((boxElement) => {
+      boxElement.classList.remove("active");
+    });
+  });
+
+  // 모바일 사업자정보 펼침 토글
+  function moreView() {
+    let menu = document.querySelector(".info-detail");
+    menu.classList.toggle("active");
+  }
+</script>

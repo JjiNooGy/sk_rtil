@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, inital-scale=1.0" />
+    <link href="../../img/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" type="text/css" href="../../../assets/pc/css/style.css" />
+
+    <script src="include.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- headerWrap -->
+      <div class="header_wrap" w3-include-html="./include/header.html"></div>
+      <!-- headerWrap -->
+
+      <main>
+        <article>
+          <section></section>
+        </article>
+
+        <!-- quick -->
+        <article class="quick" w3-include-html="./include/quick.html"></article>
+        <!-- //quick -->
+      </main>
+
+      <!-- footer -->
+      <footer w3-include-html="./include/footer.html"></footer>
+      <!-- //footer -->
+    </div>
+  </body>
+  <!-- 아이디찾기 -->
+  <div class="popup-wrap pop-members find-id" style="display: block">
+    <div class="pop-box">
+      <div class="pop-header">
+        <h2><span class="hide-txt">아이디 찾기</span></h2>
+        <button class="pop-close"><span class="hide-txt">팝업닫기</span></button>
+      </div>
+
+      <div class="pop-content">
+        <p class="title">회원님의<br />아이디를 찾았어요!</p>
+        <p class="summary">2023년 7월 21일에 가입하였어요.</p>
+
+        <div class="find-info">
+          <p>아이디 정보</p>
+          <div class="fine-outcome">hongildong1234</div>
+        </div>
+
+        <div class="btn-box">
+          <button class="btn-gray">비밀번호 재설정</button>
+          <button class="btn-primary">로그인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //아이디찾기 -->
+  <script src="../../../assets/pc/js/ui.js"></script>
+
+  <script>
+    includeHTML();
+  </script>
+</html>
