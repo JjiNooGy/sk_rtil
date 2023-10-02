@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, inital-scale=1.0" />
+    <link href="../../img/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" type="text/css" href="../../../assets/pc/css/style.css" />
+
+    <script src="include.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- headerWrap -->
+      <div class="header_wrap" w3-include-html="./include/header.html"></div>
+      <!-- headerWrap -->
+
+      <main>
+        <article>
+          <section><button data-rel="#pop-01" class="btn-open">메인 팝업</button></section>
+        </article>
+
+        <!-- quick -->
+        <article class="quick" w3-include-html="./include/FP2-RT3200.html"></article>
+        <!-- //quick -->
+      </main>
+
+      <!-- footer -->
+      <footer w3-include-html="./include/footer.html"></footer>
+      <!-- //footer -->
+    </div>
+  </body>
+
+  <!-- 비밀번호 변경 -->
+  <div class="popup-wrap pop-main" id="pop-01" >
+    <div class="pop-box">
+      <div class="pop-header">
+        <h2><span class="hide-txt">비밀번호 재설정</span></h2>
+        <button class="pop-close btn-close" ><span class="hide-txt">팝업닫기</span></button>
+      </div>
+
+      <div class="pop-content"></div>
+
+      <div class="pop-footer">
+        <!-- <div class="main-btn-box"> -->
+          <button class="btn-today-close"><i class="icon"></i>오늘 하루 보지않기</button>
+          <button class="btn-close" onclick="popClose();">닫기</button>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+  <!-- //비밀번호 변경 -->
+  <script src="../../../assets/pc/js/ui.js"></script>
+s
+  <script>
+    includeHTML();
+
+
+/******************************
+///////팝업스크립트2
+******************************/
+var target = document.querySelectorAll('.btn-open');
+//var popWrap = document.querySelectorAll('.popup-wrap');
+var btnPopClose = document.querySelectorAll('.popup-wrap .btn-close');
+var targetID;
+//var targetIDClose;
+
+// 팝업 열기
+for(var i = 0; i < target.length; i++){
+  target[i].addEventListener('click', function(){
+    targetID = this.getAttribute('data-rel');
+    document.querySelector(targetID).style.display = 'block';
+  });
+}
+
+// 팝업 닫기
+for(var j = 0; j < target.length; j++){
+  btnPopClose[j].addEventListener('click', function(){
+    //targetIDClose = this.getAttribute('data-rel');
+    //document.querySelector(targetIDClose).style.display = 'none';
+    this.parentNode.parentNode.parentNode.style.display = 'none';
+    // popWrap.style.display = 'none';
+  });
+}
+  </script>
+</html>

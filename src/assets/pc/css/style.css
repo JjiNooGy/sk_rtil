@@ -233,8 +233,6 @@ b {
 }
 
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 *::before, *::after {
@@ -504,6 +502,7 @@ div {
   padding: 0px 19px;
   justify-content: center;
   align-items: center;
+  width: -moz-fit-content;
   width: fit-content;
   border-radius: 60px;
   border: 1px solid var(--grayscale-200, #d4d7dc);
@@ -1172,6 +1171,7 @@ footer.solid .footer-solid .copyright {
     justify-content: center;
   }
   footer .footer-layer.layer2 .contact-info h6 {
+    width: -moz-fit-content;
     width: fit-content;
     font-size: 14px;
     font-style: normal;
@@ -1180,6 +1180,7 @@ footer.solid .footer-solid .copyright {
     color: var(--txt-sub);
   }
   footer .footer-layer.layer2 .contact-info a {
+    width: -moz-fit-content;
     width: fit-content;
     margin: unset;
     margin-left: 6px;
@@ -1265,6 +1266,7 @@ footer.solid .footer-solid .copyright {
 }
 .side-filter .filter-group {
   border-top: 1px solid #d9d9d9;
+  height: -moz-fit-content;
   height: fit-content;
 }
 .side-filter .filter-group .filter-item button {
@@ -1406,6 +1408,9 @@ article.join {
 }
 
 /*** reset ***/
+input::-moz-placeholder, select::-moz-placeholder, textarea::-moz-placeholder {
+  color: var(--form-placeholder-text);
+}
 input::placeholder,
 select::placeholder,
 textarea::placeholder {
@@ -1431,7 +1436,8 @@ textarea::placeholder {
   height: 1px;
   margin: -1px;
   overflow: hidden;
-  clip-path: polygon(0 0, 0 0, 0 0);
+  -webkit-clip-path: polygon(0 0, 0 0, 0 0);
+          clip-path: polygon(0 0, 0 0, 0 0);
   border: 0;
 }
 
@@ -3251,8 +3257,10 @@ textarea::placeholder {
 .wrap.login {
   width: 100vw;
   height: 100vh;
+  min-height: 800px;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
   justify-content: center;
   background: #f9f9f9;
 }
@@ -3262,8 +3270,6 @@ textarea::placeholder {
   color: #666;
   font-size: 11px;
   line-height: 16px;
-  position: fixed;
-  bottom: 42px;
 }
 .wrap.login .login-sns {
   width: 100%;
@@ -3389,9 +3395,12 @@ textarea::placeholder {
   color: var(--txt-sub);
   font-size: 16px;
   line-height: 24px;
-}
-.wrap.login .login_wrap .login-more a:first-child {
   font-weight: 700;
+}
+.wrap.login .login_wrap .login-more button {
+  color: var(--txt-sub);
+  font-size: 16px;
+  line-height: 24px;
 }
 .wrap.login .login_wrap .login-more .bar {
   position: relative;
@@ -3496,25 +3505,6 @@ textarea::placeholder {
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
-}
-.pop-members .btn-box {
-  width: 100%;
-  display: flex;
-  gap: 0 10px;
-  margin-top: 40px;
-}
-.pop-members .btn-box button {
-  width: inherit;
-  padding: 14px 15px;
-  border-radius: 12px;
-  color: var(--color-text);
-  text-align: center;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 28px;
-}
-.pop-members .btn-box .btn-primary {
-  color: #fff;
 }
 
 /*** 비밀번호 변경팝업 ***/
@@ -4110,7 +4100,9 @@ textarea::placeholder {
   width: 25%;
 }
 .privacy__wrap .policy-header select {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   position: relative;
   display: block;
   width: 100%;
@@ -4412,6 +4404,15 @@ textarea::placeholder {
 /**************************************************************************************************
 *** button
 **************************************************************************************************/
+.btn-open-pop {
+  background: linear-gradient(70deg, #ff7d00 -1%, #f35b5b 37%, #fe532d 116.61%);
+  color: #fff;
+  padding: 8px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
 .btn-box button,
 .btn-box a {
   --color-text: #50555c;
@@ -4438,20 +4439,13 @@ textarea::placeholder {
   color: var(--color-text);
 }
 
-.btn-wrap {
-  display: grid;
-  justify-items: center;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 8px 8px;
-  margin-top: 40px;
-}
-.btn-wrap .btn-box {
-  width: 400px;
+.btn-box {
+  width: 100%;
   display: flex;
   gap: 0 8px;
 }
-.btn-wrap .btn-box button,
-.btn-wrap .btn-box a {
+.btn-box button,
+.btn-box a {
   width: inherit;
   padding: 14px 15px;
   border-radius: 12px;
@@ -4461,38 +4455,49 @@ textarea::placeholder {
   line-height: 28px;
   cursor: pointer;
 }
-.btn-wrap .btn-box button:disabled,
-.btn-wrap .btn-box a:disabled {
+.btn-box button:disabled,
+.btn-box a:disabled {
   background: #f7f7f9 !important;
   color: #d4d7dc !important;
   cursor: default;
   border: transparent;
 }
-.btn-wrap .btn-box button.disabled,
-.btn-wrap .btn-box a.disabled {
+.btn-box button.disabled,
+.btn-box a.disabled {
   background: #f7f7f9 !important;
   color: #d4d7dc !important;
   border: transparent;
 }
-.btn-wrap .btn-box .btn-primary {
+.btn-box .btn-primary {
   background: linear-gradient(70deg, #ff7d00 -1%, #f35b5b 37%, #fe532d 116.61%);
   color: #fff;
 }
-.btn-wrap .btn-box .btn-primary:hover {
+.btn-box .btn-primary:hover {
   background: linear-gradient(70deg, #e56c02 -1%, #e45e1a 37%, #e55300 116.61%);
 }
-.btn-wrap .btn-box .btn-gray {
+.btn-box .btn-gray {
   background-color: var(--bg-gray);
 }
-.btn-wrap .btn-box .btn-gray:hover {
+.btn-box .btn-gray:hover {
   background: #d4d6d8;
 }
-.btn-wrap .btn-box .btn-line {
+.btn-box .btn-line {
   background-color: #fff;
   border: 1px solid #b5b9c0;
 }
-.btn-wrap .btn-box .btn-line:hover {
+.btn-box .btn-line:hover {
   background: #e6e6e6;
+}
+
+.btn-wrap {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 8px 8px;
+  margin-top: 40px;
+}
+.btn-wrap .btn-box {
+  max-width: 400px;
 }
 
 .btn-wrap.col1 .btn-box button,
@@ -4581,7 +4586,8 @@ textarea::placeholder {
   flex-wrap: wrap;
   overflow: hidden;
   border: 1px solid red;
-  column-count: 4;
+  -moz-column-count: 4;
+       column-count: 4;
 }
 .review-box .review-contnet .writer-info {
   display: flex;
@@ -4686,7 +4692,6 @@ textarea::placeholder {
   width: 100%;
   display: flex;
   padding: 20px 30px 20px 24px;
-  border-bottom: 1px solid #eceef0;
   border-radius: 16px 16px 0 0;
   background: #fff;
 }

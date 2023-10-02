@@ -1,7 +1,11 @@
 console.log("loading");
 
+
+/******************************
+///////lnb 제조사 필터
+******************************/
 function filterArcoddian() {
-  //필터아코디언
+
   var fltBtn = document.querySelectorAll(".filter-item");
   fltBtn.forEach(function (flt) {
     flt.addEventListener("click", function () {
@@ -12,7 +16,10 @@ function filterArcoddian() {
   });
 }
 
-// Tab
+
+/******************************
+///////Tab 1depth
+******************************/
 function tabContent2(evt, carStatus) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -26,11 +33,11 @@ function tabContent2(evt, carStatus) {
   document.getElementById(carStatus).style.display = "block";
   evt.currentTarget.className += " active";
 }
-//
-//
-//
 
-// 탭 안의 탭 - 호출함수 필요함
+
+/******************************
+///////Tab 2depth
+******************************/
 function tabInTab() {
   console.log("call tabSample");
   const tabItem = document.querySelectorAll(".tab_item_dpt1");
@@ -52,7 +59,10 @@ function tabInTab() {
   });
 }
 
-// 패밀리사이트 셀렉트박스 스크립트
+
+/******************************
+///////패밀리사이트 셀렉트박스 스크립트
+******************************/
 const selectBoxElements = document.querySelectorAll(".FamilySite");
 
 function toggleSelectBox(selectBox) {
@@ -93,6 +103,10 @@ document.addEventListener("click", function (e) {
   });
 });
 
+
+/******************************
+///////아코디언-qna-개별
+******************************/
 // 모바일 사업자정보 펼침 토글
 function moreView() {
   let menu = document.querySelector(".info-detail");
@@ -107,6 +121,10 @@ btnClear.forEach(function (btn) {
   });
 });
 
+
+/******************************
+///////아코디언-qna-개별
+******************************/
 // qna
 var acc = document.getElementsByClassName("q-box");
 var i;
@@ -122,7 +140,9 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
-
+/******************************
+///////아코디언-qna-연동
+******************************/
 var acc = document.getElementsByClassName("accordion"); //아코디언클래스리스트를 가져온다.
 var i;
 for (i = 0; i < acc.length; i++) {
@@ -143,7 +163,10 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
-//아코디언
+
+/******************************
+///////아코디언
+******************************/
 const items = document.querySelectorAll(".accordion button");
 
 function toggleAccordion() {
@@ -159,3 +182,49 @@ function toggleAccordion() {
 }
 
 items.forEach((item) => item.addEventListener("click", toggleAccordion));
+
+
+
+
+/******************************
+///////팝업스크립트
+******************************/
+
+var target = document.querySelectorAll('.open-pop');
+var btnPopClose = document.querySelectorAll('.popup-wrap .pop-close');
+var targetID;
+
+// 팝업 열기
+for(var i = 0; i < target.length; i++){
+  target[i].addEventListener('click', function(){
+    targetID = this.getAttribute('data-rel');
+    document.querySelector(targetID).style.display = 'block';
+  });
+}
+
+// 팝업 닫기
+for(var j = 0; j < target.length; j++){
+  btnPopClose[j].addEventListener('click', function(){
+    this.parentNode.parentNode.parentNode.style.display = 'none';
+  });
+}
+/*
+var target = document.querySelectorAll('.btn-open');
+var btnPopClose = document.querySelectorAll('.pop_wrap .btn_close');
+var targetID;
+
+// 팝업 열기
+for(var i = 0; i < target.length; i++){
+  target[i].addEventListener('click', function(){
+    targetID = this.getAttribute('data-rel');
+    document.querySelector(targetID).style.display = 'block';
+  });
+}
+
+// 팝업 닫기
+for(var j = 0; j < target.length; j++){
+  btnPopClose[j].addEventListener('click', function(){
+    this.parentNode.parentNode.style.display = 'none';
+  });
+}
+*/

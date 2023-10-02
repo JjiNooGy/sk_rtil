@@ -6,10 +6,14 @@
 .wrap.login {
   width: 100vw;
   height: 100vh;
+  min-height: 800px;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  // align-items: center;
+  align-content: center;
   justify-content: center;
   background: #f9f9f9;
+
 
   .copyright {
     width: 100%;
@@ -17,8 +21,8 @@
     color: #666;
     font-size: 11px;
     line-height: 16px;
-    position: fixed;
-    bottom: 42px;
+    // position: fixed;
+    // bottom: 42px;
   }
 
   .login-sns {
@@ -159,9 +163,12 @@
         color: var(--txt-sub);
         font-size: 16px;
         line-height: 24px;
-        &:first-child {
           font-weight: 700;
-        }
+      }
+      button{
+        color: var(--txt-sub);
+        font-size: 16px;
+        line-height: 24px;
       }
 
       .bar {
@@ -282,25 +289,25 @@
     }
   }
 
-  .btn-box {
-    width: 100%;
-    display: flex;
-    gap: 0 10px;
-    margin-top: 40px;
-    button {
-      width: inherit;
-      padding: 14px 15px;
-      border-radius: 12px;
-      color: var(--color-text);
-      text-align: center;
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 28px;
-    }
-    .btn-primary {
-      color: #fff;
-    }
-  }
+  // .btn-box {
+  //   width: 100%;
+  //   display: flex;
+  //   gap: 0 10px;
+  //   margin-top: 40px;
+  //   button {
+  //     width: inherit;
+  //     padding: 14px 15px;
+  //     border-radius: 12px;
+  //     color: var(--color-text);
+  //     text-align: center;
+  //     font-size: 18px;
+  //     font-weight: 700;
+  //     line-height: 28px;
+  //   }
+  //   .btn-primary {
+  //     color: #fff;
+  //   }
+  // }
 }
 
 /*** 비밀번호 변경팝업 ***/
