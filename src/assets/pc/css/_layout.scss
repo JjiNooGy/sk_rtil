@@ -373,7 +373,10 @@
           line-height: 40px;
 
           a:hover {
-            background: var(--gradient-orange, linear-gradient(180deg, #fa4e29 0%, #ff7d05 100%));
+            background: var(
+              --gradient-orange,
+              linear-gradient(180deg, #fa4e29 0%, #ff7d05 100%)
+            );
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -389,7 +392,7 @@ main {
   width: 100%;
   min-height: calc(100vh - 318px);
   margin: 0px auto;
-  padding-top: 60px;
+  padding-top: 100px;
   padding-bottom: 120px;
   display: flex;
   gap: 0 30px;
@@ -1149,7 +1152,6 @@ article.join {
 }
 
 .page-title {
-  margin-top: 80px;
   margin-bottom: 40px;
   h2 {
     color: var(--txt-defult);

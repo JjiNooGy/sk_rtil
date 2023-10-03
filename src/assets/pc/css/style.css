@@ -692,7 +692,7 @@ main {
   width: 100%;
   min-height: calc(100vh - 318px);
   margin: 0px auto;
-  padding-top: 60px;
+  padding-top: 100px;
   padding-bottom: 120px;
   display: flex;
   gap: 0 30px;
@@ -1329,7 +1329,6 @@ article.join {
 }
 
 .page-title {
-  margin-top: 80px;
   margin-bottom: 40px;
 }
 .page-title h2 {
@@ -3228,6 +3227,10 @@ textarea::placeholder {
 
 .fc_gray {
   color: #666 !important;
+}
+
+.fc_orange {
+  color: #fa4e29 !important;
 }
 
 /* weight */
@@ -6158,4 +6161,11 @@ label.panel-label:hover {
 }
 .easy-privacy-info span {
   color: #4c84fa;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/**************************************************************************************************
+*** 마이페이지
+**************************************************************************************************/
+/*******************************
+** 내 정보수정
+*******************************//*# sourceMappingURL=style.css.map */
