@@ -1,0 +1,505 @@
+/* reset css */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+details,
+figcaption,
+figure,
+dialog,
+footer,
+header,
+hgroup,
+menu,
+main,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+dialog,
+footer,
+header,
+hgroup,
+menu,
+main,
+nav,
+section {
+  display: block;
+}
+/* html{scroll-behavior: smooth;} */
+html,
+body {
+  font-size: 1rem;
+  width: 100vw;
+}
+body {
+  word-wrap: break-word;
+  word-break: keep-all;
+  color: #000000;
+  line-height: 1.6;
+  -webkit-text-size-adjust: none;
+  background: #fff;
+}
+html * {
+  max-height: 1000000px;
+} /* Android tablet bug fix */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+body,
+select,
+input,
+textarea,
+button {
+  font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", "Dotum",
+    helvetica, arial, sans-serif;
+  vertical-align: middle;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+label {
+  vertical-align: middle;
+  display: inline-block;
+}
+legend,
+caption {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+}
+img {
+  vertical-align: middle;
+  border: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+address,
+em,
+i {
+  font-style: normal;
+}
+strong,
+b {
+  font-weight: normal;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+* {
+  /*outline-color: rgb(0 114 255 / 20%);outline-width: 0;*/
+  outline: none !important;
+}
+*:focus {
+  /*outline: -webkit-focus-ring-color auto 0px;*/
+  outline: none !important;
+}
+::-ms-clear {
+  display: none;
+}
+
+/////////////////
+// VARIABLES
+/////////////////
+
+$tab-count: 5;
+$menu-item-height: 46px;
+
+$color-primary-light: #e74c3c;
+$color-primary-dark: #c0392b;
+$color-text: #444444;
+
+$color-border: #dfdfdf;
+$color-border-top: $color-primary-dark;
+
+$color-label-bg-inactive: #ecf0f1;
+$color-label-bg-active: white;
+$color-label-active: $color-border-top;
+$color-label-inactive: #bdc3c7;
+
+$btn-border-top-thickness: 6px;
+
+$tab-padding: 24px;
+$tab-transition-duration: 200ms;
+$tab-base-border-style: 1px solid $color-border;
+$tab-trans-border-style: 1px solid transparent;
+
+$panel-transition-duration: 600ms;
+$main-padding: 48px 24px;
+$menu-padding: 12px 24px;
+
+/////////////////
+// ELEMENTS
+/////////////////
+
+// global list style
+
+.tab-ctrl-radio {
+  display: none;
+}
+
+.tab2-wrap > input[type="radio"] {
+  display: none;
+}
+ul.tabs-list {
+  list-style: none;
+  text-align: center;
+  // border-bottom: $tab-base-border-style;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0 10px;
+}
+
+// global label style
+label.panel-label {
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  padding: 15px 24px;
+  cursor: pointer;
+
+  transition-property: background-color, color;
+  transition-duration: $tab-transition-duration;
+
+  border-radius: 68px;
+  border: 1px solid var(--grayscale-100, #eceef0);
+  background: var(--sk-white-ffffff, #fff);
+
+  font-size: 16px;
+  line-height: 24px;
+  // hover style
+  &:hover {
+    color: #fff;
+    background-color: #2e3033;
+  }
+}
+
+// global panel style
+#tab-panels {
+  .container {
+    margin: 0 auto;
+    width: 90%;
+  }
+  section {
+    header {
+      label.panel-label {
+        padding: $menu-padding;
+        box-sizing: border-box;
+      }
+    }
+    .main {
+      box-sizing: border-box;
+      max-height: 0;
+      opacity: 0;
+      transition: opacity $panel-transition-duration;
+      overflow-y: hidden;
+    }
+  }
+}
+
+/////////////////
+// MIXINS
+/////////////////
+
+// tabs list style
+@mixin tabs-list-style {
+  // text-align: center;
+  // border-bottom: $tab-base-border-style;
+  // li child
+  li {
+    position: relative;
+    // hover
+    &:hover {
+      transition: none;
+      // border-right: none;
+      // conditional transborder on last li
+      &.last {
+        // border-right: $tab-trans-border-style;
+      }
+      & + li {
+        // border-left: $tab-base-border-style;
+      }
+    }
+    // tab labels
+    label.panel-label {
+      position: relative;
+
+      &:hover {
+        // padding-top: $tab-padding + 1;
+        color: #fff;
+        background-color: #2e3033;
+        &::after {
+          // height: $btn-border-top-thickness;
+        }
+      }
+    }
+  }
+}
+
+// global active label styles
+@mixin active-label {
+  background-color: $color-label-bg-active;
+  color: $color-border-top;
+}
+
+// active tab label style
+@mixin active-tab-label {
+}
+
+// active tab li style
+@mixin active-tab-li-style {
+  pointer-events: none;
+  cursor: default;
+  // shift down over border. label has extra pixel in padding.
+  transform: translate3d(0, 1px, 0);
+  box-shadow: none;
+  // border-right: none;
+  // conditional transborder on last li
+  &.last {
+    // border-right: $tab-trans-border-style;
+  }
+  // next li border-left
+  & + li {
+    // border-left: $tab-base-border-style;
+  }
+  label.panel-label {
+    color: #fff;
+    background-color: #2e3033;
+    // @include active-label;
+    // @include active-tab-label;
+  }
+}
+
+// active menu label style
+@mixin active-menu-label {
+  background-color: $color-label-active;
+  color: $color-label-bg-active;
+}
+
+// active menu li style
+@mixin active-menu-li-style {
+  max-height: $menu-item-height;
+  opacity: 1;
+  label.panel-label {
+    @include active-label;
+    @include active-menu-label;
+  }
+}
+
+// active panel style
+@mixin active-panel-style {
+  .main {
+    max-height: initial;
+    opacity: 1;
+    padding: $main-padding;
+  }
+}
+
+// panel toggling
+@for $i from 1 through $tab-count {
+  #panel-#{$i}-ctrl:checked ~ #tab-panels #panel-#{$i} {
+    @include active-panel-style;
+  }
+}
+
+/////////////////
+// MEDIA QUERIES
+/////////////////
+
+// small devices
+@media all and (max-width: 767px) {
+  // displaying menu nav
+  @for $i from 1 through $tab-count {
+    #nav-ctrl:checked ~ #tabs-list #li-for-panel-#{$i} {
+      max-height: $menu-item-height;
+      opacity: 1;
+    }
+  }
+  // "show" open nav label when closed, hide when open
+  #open-nav-label {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+    //background: rgba(0,0,0,0.6)
+  }
+  #nav-ctrl:checked ~ #tabs-list #open-nav-label {
+    display: none;
+  }
+  // "show" close nav label when open, hide when closed
+  #close-nav-label {
+    display: block;
+    max-height: 0;
+    overflow-y: hidden;
+    background-color: $color-text;
+    color: $color-label-bg-inactive;
+    padding: 0px;
+    transition: max-height $tab-transition-duration;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 1px;
+  }
+  #nav-ctrl:checked ~ #tabs-list #close-nav-label {
+    max-height: 36px;
+    opacity: 1;
+    padding: $menu-padding;
+  }
+  // tabs list style
+  #tabs-list {
+    position: relative;
+    label.panel-label {
+      padding: $tab-padding / 2 0;
+    }
+    @for $i from 1 through $tab-count {
+      #li-for-panel-#{$i} {
+        max-height: 0;
+        overflow-y: hidden;
+        transition: max-height $tab-transition-duration;
+      }
+    }
+  }
+  // tab controller triggering menu
+  @for $i from 1 through $tab-count {
+    #panel-#{$i}-ctrl:checked ~ #tabs-list #li-for-panel-#{$i} {
+      @include active-menu-li-style;
+    }
+  }
+  #panels {
+    .container {
+      width: 100%;
+    }
+    section header {
+      display: block;
+    }
+  }
+}
+
+// big devices
+@media all and (min-width: 768px) {
+  // tab controller triggering tabs
+  @for $i from 1 through $tab-count {
+    #panel-#{$i}-ctrl:checked ~ #tabs-list #li-for-panel-#{$i} {
+      @include active-tab-li-style;
+    }
+  }
+  // tabs list style
+  ul#tabs-list {
+    @include tabs-list-style;
+  }
+  // nav label
+  #open-nav-label,
+  #close-nav-label {
+    display: none;
+  }
+  // nav checkbox
+  #nav-ctrl {
+    display: none;
+  }
+}
+
+// real big devices
+@media all and (min-width: 900px) {
+  main {
+    width: 70%;
+    margin: 0 auto;
+  }
+}

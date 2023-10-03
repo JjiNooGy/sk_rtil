@@ -1,4 +1,10 @@
-/* tab */
+/**************************************************************************************************
+*** tab
+**************************************************************************************************/
+
+/*******************************
+** tab 1depth
+*******************************/
 .tab-wrap {
   position: relative;
   margin-top: 88px;
@@ -113,5 +119,151 @@
     justify-content: flex-start;
     max-width: 1200px;
     width: 100%;
+  }
+}
+
+/*******************************
+** tab 2depth
+*******************************/
+/////////////////
+// VARIABLES
+/////////////////
+$tab-count: 15;
+$tab-transition-duration: 200ms;
+$panel-transition-duration: 600ms;
+
+// global list style
+.tab2-wrap > input[type="radio"] {
+  display: none;
+}
+ul.tabs-list {
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0 10px;
+}
+
+// global label style
+label.panel-label {
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  padding: 15px 24px;
+  border-radius: 68px;
+  border: 1px solid var(--grayscale-100, #eceef0);
+  background: var(--sk-white-ffffff, #fff);
+  font-size: 16px;
+  line-height: 23px;
+  cursor: pointer;
+  transition-property: background-color, color;
+  transition-duration: $tab-transition-duration;
+
+  &:hover {
+    color: #fff;
+    background-color: #2e3033;
+  }
+}
+
+// global panel style
+.tab-panels {
+  position: relative;
+  padding: 60px 0;
+
+  .container {
+    margin: 0 auto;
+    width: 100%;
+  }
+  .section {
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 100vw;
+      background: #f9f9f9;
+      position: absolute;
+      top: 60px;
+      bottom: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+    .main {
+      box-sizing: border-box;
+      max-height: 0;
+      opacity: 0;
+      transition: opacity $panel-transition-duration;
+      overflow-y: hidden;
+    }
+  }
+}
+@for $i from 1 through $tab-count {
+  .panel-#{$i}-ctrl:checked ~ .tabs-list .li-for-panel-#{$i} {
+    pointer-events: none;
+    cursor: default;
+    transform: translate3d(0, 1px, 0);
+    box-shadow: none;
+
+    label.panel-label {
+      color: #fff;
+      background-color: #2e3033;
+      border: 1px solid #2e3033;
+    }
+  }
+}
+
+// panel toggling
+@for $i from 1 through $tab-count {
+  .panel-#{$i}-ctrl:checked ~ .tab-panels .panel-#{$i} {
+    .main {
+      max-height: initial;
+      opacity: 1;
+    }
+
+    padding-top: 60px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  // 나중에 모바일 화면 할때 참고하기
+  // displaying menu nav
+  @for $i from 1 through $tab-count {
+  }
+
+  // tabs list style
+  .tabs-list {
+    position: relative;
+    label.panel-label {
+      color: #fff;
+      background-color: #2e3033;
+    }
+    @for $i from 1 through $tab-count {
+      .li-for-panel-#{$i} {
+        max-height: 0;
+        overflow-y: hidden;
+        transition: max-height $tab-transition-duration;
+      }
+    }
+  }
+  // tab controller triggering menu
+  @for $i from 1 through $tab-count {
+    .panel-#{$i}-ctrl:checked ~ .tabs-list .li-for-panel-#{$i} {
+      opacity: 1;
+      label.panel-label {
+        color: #fff;
+        background-color: #2e3033;
+      }
+    }
+  }
+  #panels {
+    .container {
+      width: 100%;
+    }
+    .section header {
+      display: block;
+    }
   }
 }

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, inital-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="tabintab.css" />
+  </head>
+  <body>
+    <div class="tab2-wrap">
+      <input
+        id="panel-1-ctrl"
+        class="panel-radios"
+        type="radio"
+        name="tab-radios"
+        checked
+      />
+      <input
+        id="panel-2-ctrl"
+        class="panel-radios"
+        type="radio"
+        name="tab-radios"
+      />
+      <input
+        id="panel-3-ctrl"
+        class="panel-radios"
+        type="radio"
+        name="tab-radios"
+      />
+      <input
+        id="panel-4-ctrl"
+        class="panel-radios"
+        type="radio"
+        name="tab-radios"
+      />
+      <input
+        id="panel-5-ctrl"
+        class="panel-radios"
+        type="radio"
+        name="tab-radios"
+      />
+
+      <!-- TABS LIST -->
+      <ul id="tabs-list" class="tabs-list">
+        <!-- MENU TOGGLE -->
+        <!-- <label id="open-nav-label" for="nav-ctrl"></label> -->
+        <li id="li-for-panel-1">
+          <label class="panel-label" for="panel-1-ctrl">개인정보 수집</label>
+        </li>
+        <!--INLINE-BLOCK FIX-->
+        <li id="li-for-panel-2">
+          <label class="panel-label" for="panel-2-ctrl">개인정보 이용</label>
+        </li>
+        <!--INLINE-BLOCK FIX-->
+        <li id="li-for-panel-3">
+          <label class="panel-label" for="panel-3-ctrl">개인정보 제공</label>
+        </li>
+        <!--INLINE-BLOCK FIX-->
+        <li id="li-for-panel-4">
+          <label class="panel-label" for="panel-4-ctrl">개인정보 파기</label>
+        </li>
+        <!--INLINE-BLOCK FIX-->
+        <li id="li-for-panel-5" class="last">
+          <label class="panel-label" for="panel-5-ctrl">이용자 권리 보호</label>
+        </li>
+        <!-- <label id="close-nav-label" for="nav-ctrl">Close</label> -->
+      </ul>
+
+      <!-- THE PANELS -->
+      <div id="tab-panels">
+        <div class="container">
+          <section id="panel-1">
+            <div class="main">tab1</div>
+          </section>
+          <section id="panel-2">
+            <div class="main">tab2</div>
+          </section>
+          <section id="panel-3">
+            <div class="main">tab3</div>
+          </section>
+          <section id="panel-4">
+            <div class="main">tab4</div>
+          </section>
+          <section id="panel-5">
+            <div class="main">tab5</div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
