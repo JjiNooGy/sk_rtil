@@ -6,13 +6,14 @@
 .wrap.login {
   width: 100vw;
   height: 100vh;
-  min-height: 800px;
+  min-height: 900px;
   display: flex;
   flex-wrap: wrap;
   // align-items: center;
-  align-content: center;
+  // align-content: center;
   justify-content: center;
   background: #f9f9f9;
+  flex-direction: column;
 
 
   .copyright {
@@ -21,6 +22,7 @@
     color: #666;
     font-size: 11px;
     line-height: 16px;
+    padding-bottom:40px;
     // position: fixed;
     // bottom: 42px;
   }
@@ -89,7 +91,7 @@
     width: calc(100vw - 64px);
     flex-wrap: wrap;
     align-items: flex-start;
-
+    flex-direction: column;margin: auto;
     border: 1px solid #d6d6d6;
     background: #fff;
 
@@ -139,7 +141,7 @@
       display: flex;
       justify-content: center;
       width: 100%;
-      margin-top: 16px;
+      margin-top: 20px;
 
       .bar {
         position: relative;
@@ -199,13 +201,15 @@
     gap: 12px;
     align-self: stretch;
     border-radius: 8px;
-    border: 1px solid var(--gray-50050555-c, #50555c);
+    border: 1px solid #D4D7DC;
     position: relative;
 
     input::-ms-clear,
     input::-ms-reveal {
       /* IE의 경우 */
       display: none;
+&:focus{border-color:#50555C}
+
     }
 
     input::-webkit-search-decoration,
@@ -517,7 +521,7 @@
           }
 
           input {
-            padding: 16px 30px 16px 16px;
+            padding: 10px 30px 10px 16px;
             // height: 30px;
             width: 100%;
             border: 1px solid #d4d7dc;
@@ -560,6 +564,7 @@
           font-size: 11px;
           position: absolute;
           left: 10px;
+          bottom:-14px;
         }
         .error.on {
           display: block;
@@ -628,7 +633,7 @@
       max-width: 340px;
 
       text-align: center;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
       line-height: 28px;
     }

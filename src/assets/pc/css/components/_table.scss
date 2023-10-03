@@ -1,33 +1,42 @@
 /**************************************************************************************************
 *** 일반게시판 - 리스트
 **************************************************************************************************/
-table {
-  --color-text: #50555c;
-  --color-text-info: #50555c;
-  --color-text-bk: #2e3033;
-  --color-text-red: #50555c;
 
-  --color-line: #50555c;
-  --color-line-top: #2e3033;
-  --color-line-gray: #b5b9c0;
-
-  --color-bg-fff: #fff;
-  --color-bg-gray: #f5f5f5;
-}
-
-table {
+.board {
   width: 100%;
+  border-top: 1px solid #2e3033;
+
   th {
-    border-bottom: 1px solid var(--color-line);
-    background: var(--color-bg-gray);
-    color: var(--color-text-bk);
+    padding: 23px 0;
+    border-bottom: 1px solid #b5b9c0;
+    background: #f5f5f5;
+
+    color: var(--txt-sub);
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
   }
   td {
-    border-bottom: 1px solid var(--color-line);
-    background-color: var(--color-bg-fff);
+    padding: 25px 0;
+    border-bottom: 1px solid #b5b9c0;
+    background-color: #fff;
+    text-align: center;
+
     color: var(--txt-info);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
 
     .badge {
+      display: inline-flex;
+      padding: 0px 13px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 6px;
+      background-color: var(--bdr-red);
+      color: #fff;
+      text-align: center;
       font-size: 16px;
       font-weight: 700;
       line-height: 30px;
@@ -50,56 +59,78 @@ table {
   }
 }
 
-.board {
-  width: 100%;
-  border-top: 1px solid var(--color-line-top);
-
-  table {
-  }
-  th {
-  }
-  td {
-    .badge {
-    }
-
-    a {
-      .category {
-      }
-    }
-  }
-}
-
 .board-wrap {
   width: 100%;
   position: relative;
 
   table {
     width: 100%;
-    border-top: 1px solid var(--color-line-top);
+    border-top: 1px solid #2e3033;
 
     th {
+      padding: 23px 0;
+      border-bottom: 1px solid #b5b9c0;
+      background: #f5f5f5;
+
+      color: var(--txt-sub);
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 28px;
     }
     td {
+      padding: 25px 0;
+      border-bottom: 1px solid #b5b9c0;
+      background-color: #ffffff;
+      text-align: center;
+
+      color: var(--txt-info);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 30px;
+
       .badge {
+        display: inline-flex;
+        padding: 0px 13px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+        background-color: var(--bdr-red);
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 30px;
       }
 
       a {
+        display: inline-block;
+        width: 100%;
+        color: var(--txt-sub);
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 30px;
+        text-align: left;
         .category {
+          color: inherit;
+          font-weight: 700;
+          margin-right: 8px;
         }
       }
     }
   }
 }
 
+
 /**************************************************************************************************
-  *** 일반게시판 - 상세
-  **************************************************************************************************/
+*** 일반게시판 - 상세
+**************************************************************************************************/
 .board-view-wrap {
   width: 100%;
 
   .board-title {
     width: 100%;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
     border-bottom: 1px solid #d4d7dc;
     .title {
       color: var(--txt-defult);
@@ -113,7 +144,7 @@ table {
     }
     .writer-info {
       width: 100%;
-      margin-top: 15px;
+      margin-top: 14px;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -198,6 +229,10 @@ table {
       width: 93px;
       display: inline-flex;
       align-items: center;
+      font-size: 14px;
+      color:var(--txt-info);
+      font-weight: 700;
+      line-height: 22px; 
 
       .icon {
         display: inline-flex;
@@ -214,15 +249,23 @@ table {
 
       a {
         width: 100%;
+        height:24px;
         flex: 0 0 1;
+        color:var(--txt-info);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: -0.4px;
       }
     }
   }
 }
 
+.board-view-wrap + .btn-wrap{margin-top:80px;}
+
 /**************************************************************************************************
-    *** 자주묻는질문 faq
-    **************************************************************************************************/
+  *** 자주묻는질문 faq
+  **************************************************************************************************/
 
 .faq-wrap {
   border-top: 1px solid #2e3033;
@@ -242,10 +285,11 @@ table {
       background: no-repeat center right 27px;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M21.9591 25.9058C21.1689 26.7486 19.8311 26.7486 19.0409 25.9058L12.2705 18.684C11.8927 18.281 11.9131 17.6482 12.3161 17.2705C12.719 16.8927 13.3518 16.9132 13.7295 17.3161L20.5 24.5379L21.2295 25.2218L20.5 24.5379L27.2705 17.3161C27.6482 16.9132 28.281 16.8928 28.6839 17.2705C29.0869 17.6482 29.1073 18.281 28.7295 18.684L21.9591 25.9058Z' fill='%23858B93'/%3E%3C/svg%3E");
 
-      a {
+      p {
         width: 100%;
         display: flex;
         align-items: flex-start;
+        cursor: pointer;
 
         .subject {
           width: calc(100% - 150px);

@@ -189,11 +189,9 @@ items.forEach((item) => item.addEventListener("click", toggleAccordion));
 /******************************
 ///////팝업스크립트
 ******************************/
-
 var target = document.querySelectorAll('.open-pop');
 var btnPopClose = document.querySelectorAll('.popup-wrap .pop-close');
 var targetID;
-
 // 팝업 열기
 for(var i = 0; i < target.length; i++){
   target[i].addEventListener('click', function(){
@@ -205,9 +203,14 @@ for(var i = 0; i < target.length; i++){
 // 팝업 닫기
 for(var j = 0; j < target.length; j++){
   btnPopClose[j].addEventListener('click', function(){
-    this.parentNode.parentNode.parentNode.style.display = 'none';
+//    document.querySelector(targetID).style.display = 'none';
+  this.parentNode.parentNode.parentNode.style.display = 'none';
   });
 }
+
+
+
+
 /*
 var target = document.querySelectorAll('.btn-open');
 var btnPopClose = document.querySelectorAll('.pop_wrap .btn_close');
