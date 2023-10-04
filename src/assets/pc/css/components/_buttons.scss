@@ -1,11 +1,14 @@
 /**************************************************************************************************
 *** button
 **************************************************************************************************/
-.btn-open-pop{ background: linear-gradient(70deg, #ff7d00 -1%, #f35b5b 37%, #fe532d 116.61%);
+.btn-open-pop {
+  background: linear-gradient(70deg, #ff7d00 -1%, #f35b5b 37%, #fe532d 116.61%);
   color: #fff;
-padding:8px 24px;border-radius:8px;font-weight:500;font-size:18px;}
-
-
+  padding: 8px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 18px;
+}
 
 .btn-box {
   button,
@@ -35,7 +38,6 @@ padding:8px 24px;border-radius:8px;font-weight:500;font-size:18px;}
   border: 1px solid #b5b9c0;
   color: var(--color-text);
 }
-
 
 .btn-box {
   width: 100%;
@@ -71,7 +73,7 @@ padding:8px 24px;border-radius:8px;font-weight:500;font-size:18px;}
   .btn-primary {
     background: linear-gradient(70deg, #ff7d00 -1%, #f35b5b 37%, #fe532d 116.61%);
     // background: linear-gradient(91deg, #f35b5b 1.64%, rgba(254, 83, 45, 0.84) 116.61%);
-    
+
     color: #fff;
 
     &:hover {
@@ -96,19 +98,17 @@ padding:8px 24px;border-radius:8px;font-weight:500;font-size:18px;}
   }
 }
 
-
 .btn-wrap {
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(1, 1fr);
   gap: 8px 8px;
   margin-top: 40px;
-  
 
-  .btn-box {max-width: 400px;}
+  .btn-box {
+    max-width: 400px;
+  }
 }
-
-
 
 .btn-wrap.col1 {
   .btn-box {

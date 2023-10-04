@@ -233,6 +233,8 @@ b {
 }
 
 * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 *::before, *::after {
@@ -502,7 +504,6 @@ div {
   padding: 0px 19px;
   justify-content: center;
   align-items: center;
-  width: -moz-fit-content;
   width: fit-content;
   border-radius: 60px;
   border: 1px solid var(--grayscale-200, #d4d7dc);
@@ -1171,7 +1172,6 @@ footer.solid .footer-solid .copyright {
     justify-content: center;
   }
   footer .footer-layer.layer2 .contact-info h6 {
-    width: -moz-fit-content;
     width: fit-content;
     font-size: 14px;
     font-style: normal;
@@ -1180,7 +1180,6 @@ footer.solid .footer-solid .copyright {
     color: var(--txt-sub);
   }
   footer .footer-layer.layer2 .contact-info a {
-    width: -moz-fit-content;
     width: fit-content;
     margin: unset;
     margin-left: 6px;
@@ -1266,7 +1265,6 @@ footer.solid .footer-solid .copyright {
 }
 .side-filter .filter-group {
   border-top: 1px solid #d9d9d9;
-  height: -moz-fit-content;
   height: fit-content;
 }
 .side-filter .filter-group .filter-item button {
@@ -1407,9 +1405,6 @@ article.join {
 }
 
 /*** reset ***/
-input::-moz-placeholder, select::-moz-placeholder, textarea::-moz-placeholder {
-  color: var(--form-placeholder-text);
-}
 input::placeholder,
 select::placeholder,
 textarea::placeholder {
@@ -1435,8 +1430,7 @@ textarea::placeholder {
   height: 1px;
   margin: -1px;
   overflow: hidden;
-  -webkit-clip-path: polygon(0 0, 0 0, 0 0);
-          clip-path: polygon(0 0, 0 0, 0 0);
+  clip-path: polygon(0 0, 0 0, 0 0);
   border: 0;
 }
 
@@ -4115,9 +4109,7 @@ textarea::placeholder {
   width: 25%;
 }
 .privacy__wrap .policy-header select {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   position: relative;
   display: block;
   width: 100%;
@@ -4695,8 +4687,7 @@ textarea::placeholder {
   flex-wrap: wrap;
   overflow: hidden;
   border: 1px solid red;
-  -moz-column-count: 4;
-       column-count: 4;
+  column-count: 4;
 }
 .review-box .review-contnet .writer-info {
   display: flex;
@@ -5031,9 +5022,7 @@ ul.tabs-list {
 }
 
 label.panel-label {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   display: flex;
   align-items: center;
   justify-content: center;
