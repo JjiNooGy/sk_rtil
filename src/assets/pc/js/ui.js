@@ -244,7 +244,9 @@ selectBoxElements.forEach((selectBoxElement) => {
 
 document.addEventListener("click", function (e) {
   const targetElement = e.target;
-  const isSelect = targetElement.classList.contains("select") || targetElement.closest(".dropdown-box");
+  const isSelect =
+    targetElement.classList.contains("select") ||
+    targetElement.closest(".dropdown-box");
 
   if (isSelect) {
     return;
@@ -256,3 +258,41 @@ document.addEventListener("click", function (e) {
     boxElement.classList.remove("active");
   });
 });
+
+/******************************
+///////메인검색
+******************************/
+let headerSearchBtn = document.querySelector(".button-search");
+var headerSearchElements = document.querySelector(".header-search-wrap");
+
+headerSearchBtn.addEventListener("click", function () {
+  console.log("크으으을릭!!!!!");
+
+  if (!document.querySelector(".button-search").classList.contains("on")) {
+    console.log("false");
+    this.classList.toggle("on");
+    // document.querySelector(headerSearchElements).
+    headerSearchElements.classList.add("active");
+    ui.dim.set();
+  } else {
+    console.log("true");
+    this.classList.toggle("on");
+    headerSearchElements.classList.remove("active");
+    ui.dim.close();
+  }
+});
+
+/******************************
+///////공통 호출 스크립트
+******************************/
+var ui = {
+  dim: {
+    //dim 처리시 body에 scroll 제거
+    set: function () {
+      document.querySelector("body").classList.add("dim");
+    },
+    close: function () {
+      document.querySelector("body").classList.remove("dim");
+    },
+  },
+};

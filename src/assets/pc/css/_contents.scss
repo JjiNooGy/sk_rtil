@@ -315,6 +315,15 @@
 ** 내 정보수정
 *******************************/
 
+.my-page {
+  .user-name {
+    color: var(--grayscale-600, var(--Txt_Defult, #2e3033));
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 56px;
+  }
+}
+
 .my-car-wrap {
   .my-car-box {
     .my-car-info {
