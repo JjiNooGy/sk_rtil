@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, inital-scale=1.0" />
-    <link href="../../img/favicon.ico" rel="shortcut icon" />
+    <link href="../../../assets/pc/img/favicon.ico" rel="shortcut icon" />
     <link rel="stylesheet" type="text/css" href="../../../assets/pc/css/style.css" />
 
     <script src="include.js"></script>
@@ -1729,6 +1729,196 @@
   </body>
   <script src="../../../assets/pc/js/ui.js"></script>
 
+  <style>
+    /**************************************************************************************************
+*** 개인정보처리방침
+**************************************************************************************************/
+    .privacy__wrap {
+      width: 100%;
+      padding: 40px 19px;
+      border-top: 2px solid #50555c;
+    }
+    .privacy__wrap h4 {
+      margin-bottom: 20px;
+      color: var(--txt-defult);
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 30px;
+    }
+    .privacy__wrap p {
+      color: var(--txt-sub);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: -0.4px;
+    }
+    .privacy__wrap p + p {
+      margin-top: 10px;
+    }
+    .privacy__wrap .category {
+      margin-top: 60px;
+    }
+    .privacy__wrap .category div > ul {
+      margin-top: 10px;
+    }
+    .privacy__wrap .category div > ul li {
+      color: var(--txt-sub);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: -0.4px;
+    }
+    .privacy__wrap .category div > ul li + li {
+      margin-top: 10px;
+    }
+    .privacy__wrap .title-sub {
+      color: var(--txt-sub);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 22px;
+    }
+    .privacy__wrap .privacy__table--01 {
+      width: 100%;
+      margin-top: 10px;
+    }
+    .privacy__wrap .privacy__table--01 th {
+      padding: 11px;
+      border: 1px solid #d0d0d0;
+      border-left: none;
+      border-right: none;
+      background-color: #f5f5f5;
+      color: var(--text-600-basic, var(--Txt_Defult, #2e3033));
+      text-align: center;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+    .privacy__wrap .privacy__table--01 td {
+      width: 100%;
+      padding: 13px 30px;
+      border-bottom: 1px solid #d0d0d0;
+    }
+    .privacy__wrap .privacy__table--01 td .bg-line1 {
+      width: 100%;
+    }
+    .privacy__wrap .privacy__table--01 td .bg-line1 ul {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 10px 0;
+      height: 246px;
+      margin-top: 0;
+    }
+    .privacy__wrap .privacy__table--01 td .bg-line1 ul li {
+      width: 50%;
+      color: var(--txt-defult);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: -0.4px;
+    }
+    .privacy__wrap .privacy__table--01 td .bg-line1 ul li a {
+      color: inherit;
+    }
+    .privacy__wrap .privacy__table--01 td .bg-line1 ul li + li {
+      margin: 0;
+    }
+    .privacy__wrap .privacy__table--02 {
+      width: 100%;
+      margin-top: 10px;
+      border-top: 1px solid #d0d0d0;
+    }
+    .privacy__wrap .privacy__table--02 .text-c {
+      text-align: center;
+    }
+    .privacy__wrap .privacy__table--02 th {
+      text-align: center;
+      padding: 12px 5px 11px;
+      background: #f5f5f5;
+      border-bottom: 1px solid #d0d0d0;
+      vertical-align: middle;
+      color: var(--txt-sub);
+      text-align: center;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+    .privacy__wrap .privacy__table--02 th + th {
+      border-left: 1px solid #d0d0d0;
+    }
+    .privacy__wrap .privacy__table--02 td {
+      background: #fff;
+      padding: 10px 6px 10px;
+      text-align: left;
+      border-bottom: 1px solid #d0d0d0;
+      border-left: 1px solid #d0d0d0;
+      vertical-align: middle;
+      word-break: keep-all;
+      color: var(--txt-sub);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: -0.4px;
+    }
+    .privacy__wrap .privacy__table--02 td + td {
+      border-left: 1px solid #d0d0d0;
+    }
+    .privacy__wrap .privacy__table--02 th:first-child,
+    .privacy__wrap .privacy__table--02 td:first-child {
+      border-left: 0;
+    }
+    .privacy__wrap .privacy__table--02 [rowspan]:first-child {
+      border-left: 0;
+    }
+    .privacy__wrap .privacy__table--02 [rowspan]:last-child {
+      border-right: 0;
+    }
+    .privacy__wrap .privacy__table--02 [rowspan] {
+      border-left: 1px solid #d0d0d0;
+      border-right: 1px solid #d0d0d0;
+    }
+    .privacy__wrap .privacy__table--02 td .dot_list li {
+      font-size: 12px;
+      line-height: 18px;
+      color: #858b93;
+      margin-top: 6px;
+    }
+    .privacy__wrap .policy-header {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-top: 60px;
+      gap: 0 40px;
+    }
+    .privacy__wrap .policy-header .fl {
+      color: var(--txt-sub);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+    .privacy__wrap .policy-header .select-box {
+      float: none;
+      width: 25%;
+    }
+    .privacy__wrap .policy-header select {
+      appearance: none;
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 48px;
+      padding: 8px 48px 8px 14px;
+      box-sizing: border-box;
+      border: 1px solid #d4d7dc;
+      z-index: 2;
+      border-radius: 8px;
+      background: #fff no-repeat center right 14px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M15.8337 7.08325L10.0003 12.9166L4.16699 7.08325' stroke='%2350555C' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      color: var(--txt-sub);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  </style>
   <script>
     includeHTML();
   </script>
