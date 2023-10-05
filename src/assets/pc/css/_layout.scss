@@ -2,6 +2,9 @@
   width: 100%;
 }
 
+/**************************************************************************************************
+*** 헤더
+**************************************************************************************************/
 .header_wrap {
   position: sticky;
   top: 0;
@@ -115,88 +118,6 @@
         }
         .button-gnb {
           background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Cg%3E%3Cpath d='M11.4287 14.8572H35.4287M11.4287 24H35.4287M11.4287 33.1429H35.4287' stroke='%232E3033' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-      }
-
-      .header-search {
-        display: none;
-        position: absolute;
-        right: 0;
-        top: 81px;
-        width: 100vw;
-        max-width: 1200px;
-        // height: 473px;
-        background-color: #f7f8f9;
-        border-radius: 0 0 24px 24px;
-
-        &::before {
-          content: "";
-          position: fixed;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          top: 0;
-          z-index: -1;
-          width: 100vw;
-          height: 100vh;
-          background: rgba(0, 0, 0, 0.7);
-        }
-
-        .search-form {
-          width: 100%;
-          height: 153px;
-          padding: 26px 165px 47px;
-          background-color: #fff;
-
-          .search-form-content {
-            padding: 28px 0;
-            border-bottom: 2px solid #000;
-            display: flex;
-
-            .search-form-content-input {
-              border: 0;
-              color: var(--txt-sub);
-              font-size: 24px;
-              font-weight: 400;
-              line-height: 100%;
-            }
-
-            .search-form-content-button {
-              width: 25px;
-              height: 25px;
-              display: inline-block;
-              margin-left: auto;
-              background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='27' viewBox='0 0 27 27' fill='none'%3E%3Cpath d='M12.5 23.9787C18.8513 23.9787 24 18.8348 24 12.4894C24 6.14396 18.8513 1 12.5 1C6.14873 1 1 6.14396 1 12.4894C1 18.8348 6.14873 23.9787 12.5 23.9787Z' stroke='black' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M20.5 21.481L26 25.9768' stroke='black' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-            }
-          }
-        }
-
-        .search-results {
-          display: flex;
-          gap: 22px 20px;
-          align-items: center;
-          justify-content: center;
-          padding: 68px 165px;
-          flex-wrap: wrap;
-          a {
-            display: inline-flex;
-            padding: 0px 19px;
-            justify-content: center;
-            align-items: center;
-            width: fit-content;
-            border-radius: 60px;
-            border: 1px solid var(--grayscale-200, #d4d7dc);
-
-            color: var(--txt-sub);
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 42px;
-
-            span {
-              margin-right: 4px;
-              color: #fa4e29;
-            }
-          }
         }
       }
     }
@@ -358,7 +279,6 @@
           padding: 0;
           color: var(--txt-info);
           font-size: 12px;
-          font-weight: 400;
           line-height: 18px;
         }
 
@@ -367,74 +287,103 @@
             font-weight: 700;
           }
         }
+      }
+    }
+  }
+}
+/*******************************
+** 헤더 - 검색모달
+*******************************/
+.header-search {
+  // display: none;
+  // position: absolute;
+  // right: 0;
+  // top: 81px;
+  // width: 100vw;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 131px;
+  width: 100vw;
+  max-width: 1200px;
+  // height: 473px;
+  background-color: #f7f8f9;
+  border-radius: 0 0 24px 24px;
 
-        .btn-drop {
-          padding-right: 20px;
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5' viewBox='0 0 8 5' fill='none'%3E%3Cpath d='M1 1L4 4L7 1' stroke='%23858B93' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-          background-position: 100% 50%;
-          background-repeat: no-repeat;
-          &::after {
-            content: "";
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5' viewBox='0 0 8 5' fill='none'%3E%3Cpath d='M1 1L4 4L7 1' stroke='%23858B93' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-          }
-        }
+  &::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .search-form {
+    width: 100%;
+    height: 153px;
+    padding: 26px 165px 47px;
+    background-color: #fff;
+
+    .search-form-content {
+      padding: 28px 0;
+      border-bottom: 2px solid #000;
+      display: flex;
+
+      .search-form-content-input {
+        border: 0;
+        color: var(--txt-sub);
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 100%;
       }
 
-      .drop-customer-box {
-        // display: none;
-        position: absolute;
-        width: 133px;
-        top: 40px;
-        right: 0;
+      .search-form-content-button {
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        margin-left: auto;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='27' viewBox='0 0 27 27' fill='none'%3E%3Cpath d='M12.5 23.9787C18.8513 23.9787 24 18.8348 24 12.4894C24 6.14396 18.8513 1 12.5 1C6.14873 1 1 6.14396 1 12.4894C1 18.8348 6.14873 23.9787 12.5 23.9787Z' stroke='black' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M20.5 21.481L26 25.9768' stroke='black' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      }
+    }
+  }
 
-        .drop-customer {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 4px 0;
-          padding: 10px 0 20px;
-          border: 1px solid #eceef0;
-          border-radius: 8px;
-          background: #fff;
-          filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.16));
-          &:before {
-            content: "";
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            background-color: #fff;
-            border-radius: 4px;
-            border: solid #eceef0;
-            border-width: 1px 1px 0 0;
-            transform: rotate(-45deg);
-            position: absolute;
-            top: -7px;
-            right: 35px;
-          }
+  .search-results {
+    display: flex;
+    gap: 22px 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 68px 165px;
+    flex-wrap: wrap;
+    a {
+      display: inline-flex;
+      padding: 0px 19px;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      border-radius: 60px;
+      border: 1px solid var(--grayscale-200, #d4d7dc);
 
-          div {
-            width: 100%;
+      color: var(--txt-sub);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 42px;
 
-            a {
-              padding: 8px 15px;
-              color: var(--grayscale-500, var(--Txt_02, #50555c));
-              font-size: 16px;
-              font-weight: 400;
-              line-height: 24px;
-            }
-            a:hover {
-              background: var(--gradient-orange, linear-gradient(180deg, #fa4e29 0%, #ff7d05 100%));
-              background-clip: text;
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
-              font-weight: 700;
-            }
-          }
-        }
+      span {
+        margin-right: 4px;
+        color: #fa4e29;
       }
     }
   }
 }
 
+/**************************************************************************************************
+*** 컨테이너
+**************************************************************************************************/
 main {
   width: 100%;
   min-height: calc(100vh - 318px);
@@ -482,6 +431,9 @@ main {
   }
 }
 
+/**************************************************************************************************
+*** 퀵메뉴
+**************************************************************************************************/
 .quick {
   position: fixed;
   top: 200px;
@@ -494,6 +446,10 @@ main {
   background: #fff;
   box-shadow: 0px 8px 6px 0px rgba(0, 0, 0, 0.2);
 }
+
+/**************************************************************************************************
+*** 푸터
+**************************************************************************************************/
 
 footer {
   width: 100vw;

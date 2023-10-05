@@ -59,39 +59,39 @@ function tabInTab() {
 ///////패밀리사이트 셀렉트박스 스크립트
 ******************************/
 // 패밀리사이트 셀렉트박스 스크립트
-const familyElements = document.querySelectorAll(".FamilySite");
+// const familyElements = document.querySelectorAll(".FamilySite");
 
-function toggleSelectBox(familyBox) {
-  familyBox.classList.toggle("active");
-}
+// function toggleSelectBox(familyBox) {
+//   familyBox.classList.toggle("active");
+// }
 
-familyElements.forEach((familyBoxElement) => {
-  familyBoxElement.addEventListener("click", function (e) {
-    const targetElement = e.target;
-    const isOptionElement = targetElement.classList.contains("option");
+// familyElements.forEach((familyBoxElement) => {
+//   familyBoxElement.addEventListener("click", function (e) {
+//     const targetElement = e.target;
+//     const isOptionElement = targetElement.classList.contains("option");
 
-    if (isOptionElement) {
-      selectOption(targetElement);
-    }
+//     if (isOptionElement) {
+//       selectOption(targetElement);
+//     }
 
-    toggleSelectBox(familyBoxElement);
-  });
-});
+//     toggleSelectBox(familyBoxElement);
+//   });
+// });
 
-document.addEventListener("click", function (e) {
-  const targetElement = e.target;
-  const isSelect = targetElement.classList.contains("select") || targetElement.closest(".FamilySite");
+// document.addEventListener("click", function (e) {
+//   const targetElement = e.target;
+//   const isSelect = targetElement.classList.contains("select") || targetElement.closest(".FamilySite");
 
-  if (isSelect) {
-    return;
-  }
+//   if (isSelect) {
+//     return;
+//   }
 
-  const allFamilyElements = document.querySelectorAll(".FamilySite");
+//   const allFamilyElements = document.querySelectorAll(".FamilySite");
 
-  allFamilyElements.forEach((boxElement) => {
-    boxElement.classList.remove("active");
-  });
-});
+//   allFamilyElements.forEach((boxElement) => {
+//     boxElement.classList.remove("active");
+//   });
+// });
 
 /******************************
 ///////아코디언-qna-개별
@@ -216,7 +216,7 @@ for(var j = 0; j < target.length; j++){
 /******************************
 ///////드롭다운
 ******************************/
-const selectBoxElements = document.querySelectorAll(".dropdown");
+const selectBoxElements = document.querySelectorAll(".dropdown-box");
 
 function toggleSelectBox(selectBox) {
   selectBox.classList.toggle("active");
@@ -224,8 +224,8 @@ function toggleSelectBox(selectBox) {
 
 function selectOption(optionElement) {
   //선택옵션 셀렉트 박스에 반영하기
-  const selectBox = optionElement.closest(".dropdown");
-  const selectedElement = selectBox.querySelector(".selected-value");
+  const selectBox = optionElement.closest(".dropdown-box");
+  const selectedElement = selectBox.querySelector(".droped-value");
   selectedElement.textContent = optionElement.textContent;
 }
 
@@ -244,13 +244,13 @@ selectBoxElements.forEach((selectBoxElement) => {
 
 document.addEventListener("click", function (e) {
   const targetElement = e.target;
-  const isSelect = targetElement.classList.contains("select") || targetElement.closest(".dropdown");
+  const isSelect = targetElement.classList.contains("select") || targetElement.closest(".dropdown-box");
 
   if (isSelect) {
     return;
   }
 
-  const allSelectBoxElements = document.querySelectorAll(".dropdown");
+  const allSelectBoxElements = document.querySelectorAll(".dropdown-box");
 
   allSelectBoxElements.forEach((boxElement) => {
     boxElement.classList.remove("active");
