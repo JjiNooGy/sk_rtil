@@ -34,36 +34,18 @@
             <div class="header-util-button">
               <button type="button" class="button-mymenu" title=""><span class="hide-txt">마이메뉴</span></button>
             </div>
-            <div class="header-util-button">
+            <div class="header-util-button active">
               <button type="button" class="button-search" title=""><span class="hide-txt">검색</span></button>
             </div>
-            <div class="header-util-button">
+            <div class="header-util-button new">
               <span class="bullet">N</span>
               <button type="button" class="button-arlam" title=""><span class="hide-txt">알림</span></button>
             </div>
             <div class="header-util-button">
               <button type="button" class="button-gnb" title=""><span class="hide-txt">메뉴</span></button>
             </div>
-
-            <div class="header-search">
-              <form class="search-form">
-                <div class="search-form-content">
-                  <input class="search-form-content-input" placeholder="원하시는 차량을 검색해주세요." />
-                  <button class="search-form-content-button"><span class="hide-txt">차량검색 버튼</span></button>
-                </div>
-              </form>
-
-              <div class="search-results">
-                <a href="" class="" title=""><span>#</span>SK인증 중고차</a>
-                <a href="" class="" title=""><span>#</span>합리적인 가격</a>
-                <a href="" class="" title=""><span>#</span>고급 세단</a>
-                <a href="" class="" title=""><span>#</span>전기차</a>
-                <a href="" class="" title=""><span>#</span>소형차</a>
-                <a href="" class="" title=""><span>#</span>보증 중고차</a>
-                <a href="" class="" title=""><span>#</span>SUV</a>
-              </div>
-            </div>
           </div>
+
           <nav class="gnb">gnb</nav>
         </header>
         <!-- //header -->
@@ -88,17 +70,25 @@
               <div class="bar"></div>
               <a href="" title="회원가입">회원가입</a>
               <div class="bar"></div>
-              <button type="button" class="btn-drop" title="고객센터">고객센터</button>
-              <div class="drop-customer-box">
-                <div class="drop-customer">
-                  <div><a href="" title="">고객센터</a></div>
-                  <div><a href="" title="">자주하는 질문</a></div>
-                  <div><a href="" title="">공지사항</a></div>
+
+              <!-- dropdown - 고객센터 -->
+              <div class="dropdown-box drop-cstm">
+                <div class="dropdown">
+                  <div class="droped-value">고객센터</div>
+                  <div class="arrow"></div>
                 </div>
+                <ul>
+                  <li class="option"><a href="">고객센터</a></li>
+                  <li class="option"><a href="">자주하는 질문</a></li>
+                  <li class="option"><a href="">공지사항</a></li>
+                </ul>
               </div>
+              <!-- //dropdown - 고객센터 -->
             </div>
           </div>
         </article>
+        <script></script>
+
         <!-- 상단 이벤트영역 -->
       </div>
       <!-- headerWrap -->
@@ -215,56 +205,74 @@
         <div class="footer-solid">
           <p class="copyright">Copyright ⓒ SK렌터카. All Rights Reserved.</p>
         </div>
-        <script>
-          // 패밀리사이트 셀렉트박스 스크립트
-          const familyElements = document.querySelectorAll(".FamilySite");
-
-          function toggleSelectBox(familyBox) {
-            familyBox.classList.toggle("active");
-          }
-
-          familyElements.forEach((familyBoxElement) => {
-            familyBoxElement.addEventListener("click", function (e) {
-              const targetElement = e.target;
-              const isOptionElement = targetElement.classList.contains("option");
-
-              if (isOptionElement) {
-                selectOption(targetElement);
-              }
-
-              toggleSelectBox(familyBoxElement);
-            });
-          });
-
-          document.addEventListener("click", function (e) {
-            const targetElement = e.target;
-            const isSelect = targetElement.classList.contains("select") || targetElement.closest(".FamilySite");
-
-            if (isSelect) {
-              return;
-            }
-
-            const allFamilyElements = document.querySelectorAll(".FamilySite");
-
-            allFamilyElements.forEach((boxElement) => {
-              boxElement.classList.remove("active");
-            });
-          });
-
-          // 모바일 사업자정보 펼침 토글
-          function moreView() {
-            let menu = document.querySelector(".info-detail");
-            menu.classList.toggle("active");
-          }
-        </script>
       </footer>
       <!-- //footer -->
     </div>
   </body>
+
+  <div class="header-search">
+    <form class="search-form">
+      <div class="search-form-content">
+        <input class="search-form-content-input" placeholder="원하시는 차량을 검색해주세요." />
+        <button class="search-form-content-button"><span class="hide-txt">차량검색 버튼</span></button>
+      </div>
+    </form>
+
+    <div class="search-results">
+      <a href="" class="" title=""><span>#</span>SK인증 중고차</a>
+      <a href="" class="" title=""><span>#</span>합리적인 가격</a>
+      <a href="" class="" title=""><span>#</span>고급 세단</a>
+      <a href="" class="" title=""><span>#</span>전기차</a>
+      <a href="" class="" title=""><span>#</span>소형차</a>
+      <a href="" class="" title=""><span>#</span>보증 중고차</a>
+      <a href="" class="" title=""><span>#</span>SUV</a>
+    </div>
+  </div>
   <script src="../../../assets/pc/js/ui.js"></script>
   <script>
     includeHTML();
 
     filterArcoddian();
+
+    // 패밀리사이트 셀렉트박스 스크립트
+    const familyElements = document.querySelectorAll(".FamilySite");
+
+    function toggleSelectBox(familyBox) {
+      familyBox.classList.toggle("active");
+    }
+
+    familyElements.forEach((familyBoxElement) => {
+      familyBoxElement.addEventListener("click", function (e) {
+        const targetElement = e.target;
+        const isOptionElement = targetElement.classList.contains("option");
+
+        if (isOptionElement) {
+          selectOption(targetElement);
+        }
+
+        toggleSelectBox(familyBoxElement);
+      });
+    });
+
+    document.addEventListener("click", function (e) {
+      const targetElement = e.target;
+      const isSelect = targetElement.classList.contains("select") || targetElement.closest(".FamilySite");
+
+      if (isSelect) {
+        return;
+      }
+
+      const allFamilyElements = document.querySelectorAll(".FamilySite");
+
+      allFamilyElements.forEach((boxElement) => {
+        boxElement.classList.remove("active");
+      });
+    });
+
+    // 모바일 사업자정보 펼침 토글
+    function moreView() {
+      let menu = document.querySelector(".info-detail");
+      menu.classList.toggle("active");
+    }
   </script>
 </html>
