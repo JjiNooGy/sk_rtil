@@ -1,34 +1,40 @@
 <!-- header -->
 <header>
-  <div class="header__logo">
+  <div class="header-logo">
     <div class="logo">
-      <a href="#" class="logo__link">
+      <a href="#" class="logo-link">
         <h1 class="hide-txt">SK렌터카</h1>
       </a>
-      <span class="logo__title">소매몰</span>
+      <span class="logo-title">소매몰</span>
     </div>
   </div>
-  <div class="sub-nav">탁송, 경매 gnb</div>
-  <div class="header__util">
-    <div class="header__util--button">
+  <!-- 탁송/경매 에서만 사용-->
+  <div class="ptn-gnb">
+    <div class="menu"><a href="">탁송리스트</a></div>
+    <div class="menu active"><a href="">탁송리스트</a></div>
+  </div>
+  <!-- //탁송/경매 에서만 사용-->
+
+  <div class="header-util">
+    <div class="header-util-button">
       <button type="button" class="button-mymenu" title=""><span class="hide-txt">마이메뉴</span></button>
     </div>
-    <div class="header__util--button">
+    <div class="header-util-button">
       <button type="button" class="button-search" title=""><span class="hide-txt">검색</span></button>
     </div>
-    <div class="header__util--button">
+    <div class="header-util-button">
       <span class="bullet">N</span>
       <button type="button" class="button-arlam" title=""><span class="hide-txt">알림</span></button>
     </div>
-    <div class="header__util--button">
+    <div class="header-util-button">
       <button type="button" class="button-gnb" title=""><span class="hide-txt">메뉴</span></button>
     </div>
 
-    <div class="header__search">
+    <div class="header-search">
       <form class="search-form">
-        <div class="search-form__content">
-          <input class="search-form__content__input" placeholder="원하시는 차량을 검색해주세요." />
-          <button class="search-form__content__button"><span class="hide-txt">차량검색 버튼</span></button>
+        <div class="search-form-content">
+          <input class="search-form-content-input" placeholder="원하시는 차량을 검색해주세요." />
+          <button class="search-form-content-button"><span class="hide-txt">차량검색 버튼</span></button>
         </div>
       </form>
 
@@ -49,7 +55,7 @@
 
 <!-- 상단 이벤트영역 -->
 <article class="top-bar">
-  <div class="wrap--top-bar">
+  <div class="wrap-top-bar">
     <div class="site-menu">
       <div class="site"><a href="" title="양도">양도</a></div>
       <div class="site active"><a href="" class="active" title="소매 POST">소매 POST</a></div>
@@ -57,21 +63,25 @@
       <div class="site"><a href="" title="단지제휴">단지제휴</a></div>
       <div class="site"><a href="" title="폐차공매">폐차공매</a></div>
     </div>
-    <div class="top-bar__content">
+    <div class="top-bar-content">
+      <div class="user-name"><span>홍길동</span>님</div>
+
+      <div class="bar"></div>
+      <a href="" title="로그아웃">로그아웃</a>
+      <div class="bar"></div>
       <a href="" title="로그인">로그인</a>
       <div class="bar"></div>
       <a href="" title="회원가입">회원가입</a>
       <div class="bar"></div>
       <button type="button" class="btn-drop" title="고객센터">고객센터</button>
-      <div class="drop-customer">
-        <ul>
-          <li><a href="" title="">고객센터</a></li>
-          <li><a href="" title="">자주하는 질문</a></li>
-          <li><a href="" title="">공지사항</a></li>
-        </ul>
+      <div class="drop-customer-box">
+        <div class="drop-customer">
+          <div><a href="" title="">고객센터</a></div>
+          <div><a href="" title="">자주하는 질문</a></div>
+          <div><a href="" title="">공지사항</a></div>
+        </div>
       </div>
     </div>
   </div>
 </article>
 <!-- 상단 이벤트영역 -->
-<script></script>

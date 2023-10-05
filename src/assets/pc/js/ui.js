@@ -1,11 +1,9 @@
 console.log("loading");
 
-
 /******************************
 ///////lnb 제조사 필터
 ******************************/
 function filterArcoddian() {
-
   var fltBtn = document.querySelectorAll(".filter-item");
   fltBtn.forEach(function (flt) {
     flt.addEventListener("click", function () {
@@ -15,7 +13,6 @@ function filterArcoddian() {
     });
   });
 }
-
 
 /******************************
 ///////Tab 1depth
@@ -33,7 +30,6 @@ function tabContent2(evt, carStatus) {
   document.getElementById(carStatus).style.display = "block";
   evt.currentTarget.className += " active";
 }
-
 
 /******************************
 ///////Tab 2depth
@@ -59,24 +55,18 @@ function tabInTab() {
   });
 }
 
-
 /******************************
 ///////패밀리사이트 셀렉트박스 스크립트
 ******************************/
-const selectBoxElements = document.querySelectorAll(".FamilySite");
+// 패밀리사이트 셀렉트박스 스크립트
+const familyElements = document.querySelectorAll(".FamilySite");
 
-function toggleSelectBox(selectBox) {
-  selectBox.classList.toggle("active");
+function toggleSelectBox(familyBox) {
+  familyBox.classList.toggle("active");
 }
 
-// function selectOption(optionElement) { //선택옵션 셀렉트 박스에 반영하기
-//   const selectBox = optionElement.closest(".FamilySite");
-//   const selectedElement = selectBox.querySelector(".selected-value");
-//   selectedElement.textContent = optionElement.textContent;
-// }
-
-selectBoxElements.forEach((selectBoxElement) => {
-  selectBoxElement.addEventListener("click", function (e) {
+familyElements.forEach((familyBoxElement) => {
+  familyBoxElement.addEventListener("click", function (e) {
     const targetElement = e.target;
     const isOptionElement = targetElement.classList.contains("option");
 
@@ -84,7 +74,7 @@ selectBoxElements.forEach((selectBoxElement) => {
       selectOption(targetElement);
     }
 
-    toggleSelectBox(selectBoxElement);
+    toggleSelectBox(familyBoxElement);
   });
 });
 
@@ -96,13 +86,12 @@ document.addEventListener("click", function (e) {
     return;
   }
 
-  const allSelectBoxElements = document.querySelectorAll(".FamilySite");
+  const allFamilyElements = document.querySelectorAll(".FamilySite");
 
-  allSelectBoxElements.forEach((boxElement) => {
+  allFamilyElements.forEach((boxElement) => {
     boxElement.classList.remove("active");
   });
 });
-
 
 /******************************
 ///////아코디언-qna-개별
@@ -120,7 +109,6 @@ btnClear.forEach(function (btn) {
     btn.parentNode.querySelector("input").value = "";
   });
 });
-
 
 /******************************
 ///////아코디언-qna-개별
@@ -163,7 +151,6 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
-
 /******************************
 ///////아코디언
 ******************************/
@@ -183,33 +170,27 @@ function toggleAccordion() {
 
 items.forEach((item) => item.addEventListener("click", toggleAccordion));
 
-
-
-
 /******************************
 ///////팝업스크립트
 ******************************/
-var target = document.querySelectorAll('.open-pop');
-var btnPopClose = document.querySelectorAll('.popup-wrap .pop-close');
+var target = document.querySelectorAll(".open-pop");
+var btnPopClose = document.querySelectorAll(".popup-wrap .pop-close");
 var targetID;
 // 팝업 열기
-for(var i = 0; i < target.length; i++){
-  target[i].addEventListener('click', function(){
-    targetID = this.getAttribute('data-rel');
-    document.querySelector(targetID).style.display = 'block';
+for (var i = 0; i < target.length; i++) {
+  target[i].addEventListener("click", function () {
+    targetID = this.getAttribute("data-rel");
+    document.querySelector(targetID).style.display = "block";
   });
 }
 
 // 팝업 닫기
-for(var j = 0; j < target.length; j++){
-  btnPopClose[j].addEventListener('click', function(){
-//    document.querySelector(targetID).style.display = 'none';
-  this.parentNode.parentNode.parentNode.style.display = 'none';
+for (var j = 0; j < target.length; j++) {
+  btnPopClose[j].addEventListener("click", function () {
+    //    document.querySelector(targetID).style.display = 'none';
+    this.parentNode.parentNode.parentNode.style.display = "none";
   });
 }
-
-
-
 
 /*
 var target = document.querySelectorAll('.btn-open');
@@ -231,3 +212,47 @@ for(var j = 0; j < target.length; j++){
   });
 }
 */
+
+/******************************
+///////드롭다운
+******************************/
+const selectBoxElements = document.querySelectorAll(".dropdown");
+
+function toggleSelectBox(selectBox) {
+  selectBox.classList.toggle("active");
+}
+
+function selectOption(optionElement) {
+  //선택옵션 셀렉트 박스에 반영하기
+  const selectBox = optionElement.closest(".dropdown");
+  const selectedElement = selectBox.querySelector(".selected-value");
+  selectedElement.textContent = optionElement.textContent;
+}
+
+selectBoxElements.forEach((selectBoxElement) => {
+  selectBoxElement.addEventListener("click", function (e) {
+    const targetElement = e.target;
+    const isOptionElement = targetElement.classList.contains("option");
+
+    if (isOptionElement) {
+      selectOption(targetElement);
+    }
+
+    toggleSelectBox(selectBoxElement);
+  });
+});
+
+document.addEventListener("click", function (e) {
+  const targetElement = e.target;
+  const isSelect = targetElement.classList.contains("select") || targetElement.closest(".dropdown");
+
+  if (isSelect) {
+    return;
+  }
+
+  const allSelectBoxElements = document.querySelectorAll(".dropdown");
+
+  allSelectBoxElements.forEach((boxElement) => {
+    boxElement.classList.remove("active");
+  });
+});

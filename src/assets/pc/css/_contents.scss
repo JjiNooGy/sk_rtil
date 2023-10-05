@@ -136,8 +136,8 @@
 }
 
 /******************
-* 자주하는 질문
-*******************/
+  * 자주하는 질문
+  *******************/
 
 .accordion.qna {
   border-top: 1px solid #2e3033;
@@ -232,72 +232,73 @@
     background: #fff;
 
     .icon-privacy {
-    }
+      width: 48px;
+      height: 48px;
 
-    .title {
-      color: var(--text-600-basic, var(--Txt_Defult, #2e3033));
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 30px;
-    }
-    .title-sub {
-      color: var(--text-500, var(--Txt_02, #50555c));
-      font-size: 16px;
-      line-height: 24px;
+      .title {
+        color: var(--text-600-basic, var(--Txt_Defult, #2e3033));
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+      }
+      .title-sub {
+        color: var(--text-500, var(--Txt_02, #50555c));
+        font-size: 16px;
+        line-height: 24px;
 
-      dl {
-        display: inline-block;
-        padding-left: 10px;
-        dt {
-          position: relative;
-          margin-top: 10px;
-          color: var(--text-400, var(--Gray800, #858b93));
-          font-size: 16px;
-          font-weight: 700;
-          line-height: 24px;
-          &::before {
-            content: "";
-            display: inline-block;
-            position: absolute;
-            left: -10px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 4px;
-            height: 4px;
-            background-image: url("data:image/svg+xml,%3Csvg width='4' height='4' viewBox='0 0 4 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle id='Ellipse 523' cx='2' cy='2' r='2' fill='%23858B93'/%3E%3C/svg%3E%0A");
+        dl {
+          display: inline-block;
+          padding-left: 10px;
+          dt {
+            position: relative;
+            margin-top: 10px;
+            color: var(--text-400, var(--Gray800, #858b93));
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+            &::before {
+              content: "";
+              display: inline-block;
+              position: absolute;
+              left: -10px;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 4px;
+              height: 4px;
+              background-image: url("data:image/svg+xml,%3Csvg width='4' height='4' viewBox='0 0 4 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle id='Ellipse 523' cx='2' cy='2' r='2' fill='%23858B93'/%3E%3C/svg%3E%0A");
+            }
+          }
+          dd {
+            color: var(--text-400, var(--Gray800, #858b93));
+            font-size: 16px;
+            line-height: 24px;
           }
         }
-        dd {
-          color: var(--text-400, var(--Gray800, #858b93));
-          font-size: 16px;
-          line-height: 24px;
-        }
-      }
 
-      ul {
-        padding-left: 10px;
-        li {
-          position: relative;
-          color: var(--text-400, var(--Gray800, #858b93));
-          font-size: 16px;
-          line-height: 24px;
-          &::before {
-            content: "";
-            display: inline-block;
-            position: absolute;
-            left: -10px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 4px;
-            height: 4px;
-            background-image: url("data:image/svg+xml,%3Csvg width='4' height='4' viewBox='0 0 4 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle id='Ellipse 523' cx='2' cy='2' r='2' fill='%23858B93'/%3E%3C/svg%3E%0A");
+        ul {
+          padding-left: 10px;
+          li {
+            position: relative;
+            color: var(--text-400, var(--Gray800, #858b93));
+            font-size: 16px;
+            line-height: 24px;
+            &::before {
+              content: "";
+              display: inline-block;
+              position: absolute;
+              left: -10px;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 4px;
+              height: 4px;
+              background-image: url("data:image/svg+xml,%3Csvg width='4' height='4' viewBox='0 0 4 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle id='Ellipse 523' cx='2' cy='2' r='2' fill='%23858B93'/%3E%3C/svg%3E%0A");
+            }
           }
         }
       }
     }
   }
 }
-
 .easy-privacy-info {
   margin-top: 40px;
   color: var(--text-500, var(--Txt_02, #50555c));
@@ -307,7 +308,6 @@
     color: #4c84fa;
   }
 }
-
 /**************************************************************************************************
 *** 마이페이지
 **************************************************************************************************/

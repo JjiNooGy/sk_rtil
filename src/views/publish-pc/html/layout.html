@@ -15,35 +15,41 @@
       <div class="header_wrap">
         <!-- header -->
         <header>
-          <div class="header__logo">
+          <div class="header-logo">
             <div class="logo">
-              <a href="#" class="logo__link">
+              <a href="#" class="logo-link">
                 <h1 class="hide-txt">SK렌터카</h1>
               </a>
-              <span class="logo__title">소매몰</span>
+              <span class="logo-title">소매몰</span>
             </div>
           </div>
-          <div class="sub-nav">탁송, 경매 gnb</div>
-          <div class="header__util">
-            <div class="header__util--button">
+          <!-- 탁송/경매 에서만 사용-->
+          <div class="ptn-gnb">
+            <div class="menu"><a href="">탁송리스트</a></div>
+            <div class="menu active"><a href="">탁송리스트</a></div>
+          </div>
+          <!-- //탁송/경매 에서만 사용-->
+
+          <div class="header-util">
+            <div class="header-util-button">
               <button type="button" class="button-mymenu" title=""><span class="hide-txt">마이메뉴</span></button>
             </div>
-            <div class="header__util--button">
+            <div class="header-util-button">
               <button type="button" class="button-search" title=""><span class="hide-txt">검색</span></button>
             </div>
-            <div class="header__util--button">
+            <div class="header-util-button">
               <span class="bullet">N</span>
               <button type="button" class="button-arlam" title=""><span class="hide-txt">알림</span></button>
             </div>
-            <div class="header__util--button">
+            <div class="header-util-button">
               <button type="button" class="button-gnb" title=""><span class="hide-txt">메뉴</span></button>
             </div>
 
-            <div class="header__search">
+            <div class="header-search">
               <form class="search-form">
-                <div class="search-form__content">
-                  <input class="search-form__content__input" placeholder="원하시는 차량을 검색해주세요." />
-                  <button class="search-form__content__button"><span class="hide-txt">차량검색 버튼</span></button>
+                <div class="search-form-content">
+                  <input class="search-form-content-input" placeholder="원하시는 차량을 검색해주세요." />
+                  <button class="search-form-content-button"><span class="hide-txt">차량검색 버튼</span></button>
                 </div>
               </form>
 
@@ -64,7 +70,7 @@
 
         <!-- 상단 이벤트영역 -->
         <article class="top-bar">
-          <div class="wrap--top-bar">
+          <div class="wrap-top-bar">
             <div class="site-menu">
               <div class="site"><a href="" title="양도">양도</a></div>
               <div class="site active"><a href="" class="active" title="소매 POST">소매 POST</a></div>
@@ -72,18 +78,23 @@
               <div class="site"><a href="" title="단지제휴">단지제휴</a></div>
               <div class="site"><a href="" title="폐차공매">폐차공매</a></div>
             </div>
-            <div class="top-bar__content">
+            <div class="top-bar-content">
+              <div class="user-name"><span>홍길동</span>님</div>
+
+              <div class="bar"></div>
+              <a href="" title="로그아웃">로그아웃</a>
+              <div class="bar"></div>
               <a href="" title="로그인">로그인</a>
               <div class="bar"></div>
               <a href="" title="회원가입">회원가입</a>
               <div class="bar"></div>
               <button type="button" class="btn-drop" title="고객센터">고객센터</button>
-              <div class="drop-customer">
-                <ul>
-                  <li><a href="" title="">고객센터</a></li>
-                  <li><a href="" title="">자주하는 질문</a></li>
-                  <li><a href="" title="">공지사항</a></li>
-                </ul>
+              <div class="drop-customer-box">
+                <div class="drop-customer">
+                  <div><a href="" title="">고객센터</a></div>
+                  <div><a href="" title="">자주하는 질문</a></div>
+                  <div><a href="" title="">공지사항</a></div>
+                </div>
               </div>
             </div>
           </div>
@@ -93,7 +104,7 @@
       <!-- headerWrap -->
 
       <main>
-        <aside w3-include-html="./include/aside.html"></aside>
+        <!-- <aside w3-include-html="./include/aside.html"></aside> -->
 
         <article>
           <section>
@@ -103,8 +114,6 @@
             </div>
           </section>
           <section>컨텐츠</section>
-
-        
         </article>
 
         <!-- quick -->
@@ -141,7 +150,7 @@
               <p><span>사업자번호</span>113-81-32864</p>
               <span class="bar pc"></span>
               <p class="br mo"></p>
-              <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=1138132864&apv_perm_no" target="_blank"><span>통신판매업신고</span>구로구청 제2006-03389</a>
+              <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=1138132864&apv_perm_no" target="_blank" title="통신판매업신고 새창이동"><span>통신판매업신고</span>구로구청 제2006-03389</a>
               <p class="rep-tel pc">SK렌터카 대표번호 1599-9111</p>
             </div>
           </div>
@@ -150,10 +159,10 @@
           <div class="link-group">
             <!-- 소셜미디어 -->
             <div class="sns-group">
-              <a href="" target="_blank" title="유튜브 이동" class="youtube"><span class="hide-txt">유튜브</span></a>
-              <a href="" target="_blank" title="인스타그램 이동" class="insta"><span class="hide-txt">인스타그램</span></a>
-              <a href="" target="_blank" title="블로그 이동" class="blog"><span class="hide-txt">블로그</span></a>
-              <a href="" target="_blank" title="페이스북 이동" class="facebook"><span class="hide-txt">페이스북</span></a>
+              <a href="https://bit.ly/3bHtyMe" target="_blank" title="유튜브 새창열림" class="youtube"><span class="hide-txt">유튜브</span></a>
+              <a href="https://www.instagram.com/skrentacar_official" target="_blank" title="인스타그램 새창열림" class="insta"><span class="hide-txt">인스타그램</span></a>
+              <a href="https://blog.naver.com/skrentacar_official" target="_blank" title="블로그 새창열림" class="blog"><span class="hide-txt">블로그</span></a>
+              <a href="https://www.facebook.com/SKRentacarsns" target="_blank" title="페이스북 새창열림" class="facebook"><span class="hide-txt">페이스북</span></a>
             </div>
             <!-- //소셜미디어 -->
 
@@ -164,9 +173,13 @@
                 <div class="arrow"></div>
               </div>
               <ul>
-                <li class="option"><a href="https://www.skcarrental.com/rent/rentcar/short_rent_reservation_new_jeju.do" target="_blank">SK렌터카 제주도 단기예약</a></li>
-                <li class="option"><a href="https://www.skcarrental.com/rent/rentcar/short_rent_reservation_new.do" target="_blank">SK렌터카 내륙지역 단기예약</a></li>
-                <li class="option"><a href="https://smartcare.skcarrental.com/" target="_blank">스마트케어</a></li>
+                <li class="option">
+                  <a href="https://www.skcarrental.com/rent/rentcar/short_rent_reservation_new_jeju.do" target="_blank" title="SK렌터카 제주도 단기예약 새창열림">SK렌터카 제주도 단기예약</a>
+                </li>
+                <li class="option">
+                  <a href="https://www.skcarrental.com/rent/rentcar/short_rent_reservation_new.do" target="_blank" title="SK렌터카 내륙지역 단기예약 새창열림">SK렌터카 내륙지역 단기예약</a>
+                </li>
+                <li class="option"><a href="https://smartcare.skcarrental.com/" target="_blank" title="스마트케어 새창열림">스마트케어</a></li>
               </ul>
             </div>
             <!-- //패밀리사이트 -->
@@ -204,20 +217,14 @@
         </div>
         <script>
           // 패밀리사이트 셀렉트박스 스크립트
-          const selectBoxElements = document.querySelectorAll(".FamilySite");
+          const familyElements = document.querySelectorAll(".FamilySite");
 
-          function toggleSelectBox(selectBox) {
-            selectBox.classList.toggle("active");
+          function toggleSelectBox(familyBox) {
+            familyBox.classList.toggle("active");
           }
 
-          // function selectOption(optionElement) { //선택옵션 셀렉트 박스에 반영하기
-          //   const selectBox = optionElement.closest(".FamilySite");
-          //   const selectedElement = selectBox.querySelector(".selected-value");
-          //   selectedElement.textContent = optionElement.textContent;
-          // }
-
-          selectBoxElements.forEach((selectBoxElement) => {
-            selectBoxElement.addEventListener("click", function (e) {
+          familyElements.forEach((familyBoxElement) => {
+            familyBoxElement.addEventListener("click", function (e) {
               const targetElement = e.target;
               const isOptionElement = targetElement.classList.contains("option");
 
@@ -225,7 +232,7 @@
                 selectOption(targetElement);
               }
 
-              toggleSelectBox(selectBoxElement);
+              toggleSelectBox(familyBoxElement);
             });
           });
 
@@ -237,9 +244,9 @@
               return;
             }
 
-            const allSelectBoxElements = document.querySelectorAll(".FamilySite");
+            const allFamilyElements = document.querySelectorAll(".FamilySite");
 
-            allSelectBoxElements.forEach((boxElement) => {
+            allFamilyElements.forEach((boxElement) => {
               boxElement.classList.remove("active");
             });
           });

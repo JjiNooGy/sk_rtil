@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, inital-scale=1.0" />
+    <link href="../../../assets/pc/img/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" type="text/css" href="../../../assets/pc/css/style.css" />
+
+    <script src="include.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- headerWrap -->
+      <div class="header_wrap" w3-include-html="./include/header.html"></div>
+      <!-- headerWrap -->
+
+      <main>
+        <article>
+          <section>
+            <div class="page-title">
+              <h2 class="title">페이지 타이틀</h2>
+              <p class="title-desc">페이지 설명</p>
+            </div>
+          </section>
+          <section>컨텐츠</section>
+        </article>
+
+        <!-- quick -->
+        <article class="quick" w3-include-html="./include/FP2-RT3200.html"></article>
+        <!-- //quick -->
+      </main>
+
+      <!-- footer -->
+      <footer w3-include-html="./include/footer.html"></footer>
+      <!-- //footer -->
+    </div>
+  </body>
+
+  <script src="../../../assets/pc/js/ui.js"></script>
+  <script>
+    includeHTML();
+  </script>
+</html>

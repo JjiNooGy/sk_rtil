@@ -22,11 +22,11 @@
       border: none;
       outline: none;
       cursor: pointer;
-      padding: 7px 0 20px;
+      padding: 7px 0 13px;
       transition: 0.3s;
-      font-size: 30px;
+      font-size: 26px;
       font-weight: 700;
-      line-height: 37px;
+      line-height: 36px;
       color: #d4d7dc;
       border-bottom: 3px solid transparent;
 
@@ -49,7 +49,7 @@
     max-width: 1200px;
     justify-content: flex-start;
     width: 100%;
-    gap: 0 40px;
+    gap: 0 30px;
   }
 
   .tabcontent-wrap {
@@ -166,6 +166,7 @@ label.panel-label {
   &:hover {
     color: #fff;
     background-color: #2e3033;
+    border: 1px solid #2e3033;
   }
 }
 
