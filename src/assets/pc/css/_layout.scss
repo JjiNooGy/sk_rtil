@@ -139,7 +139,7 @@
     height: 50px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #f7f7f9;
+    border-bottom: 1px solid #eceef0;
 
     .wrap-top-bar {
       position: relative;
@@ -185,18 +185,19 @@
       .site-menu {
         display: flex;
         align-items: flex-end;
-        gap: 0 20px;
+        // gap: 0 20px;
         margin-bottom: -1px;
         .site {
           display: inline-flex;
           align-items: center;
-          padding: 8px 0px 14px 0px;
+          padding: 9px 23px 10px 19px;
+
           &.active,
           &:hover {
             position: relative;
             justify-content: center;
             min-width: 59px;
-            padding: 8px 16px 14px 12px;
+            // padding: 8px 16px 14px 12px;
             border-top: 1px solid #eceef0;
             border-radius: 8px 8px 0 0;
             background: #fff;
@@ -205,25 +206,28 @@
               content: "";
               position: absolute;
               left: -8px;
-              bottom: 1px;
+              top: 0px;
               display: inline-block;
-              width: 8px;
-              height: 33px;
-              border: 1px solid #eceef0;
-              border-width: 0 1px 1px 0;
-              border-radius: 0 0 8px 0;
+              width: 16px;
+              height: 38px;
+              // border: 1px solid #eceef0;
+              // border-width: 0 1px 1px 0;
+              // border-radius: 0 0 8px 0;
+              background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='38' viewBox='0 0 16 38' fill='none'%3E%3Cpath d='M0 38H2.7333C3.41911 38 4.06516 37.8111 4.64163 37.513C5.14854 37.2446 5.5958 36.8768 5.96356 36.4295C6.56985 35.684 6.95748 34.7397 6.95748 33.706V8.56814C6.95748 4.13497 10.5356 0.496992 14.9089 0.496992H16V38H0Z' fill='white'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.46052 8.44886C6.46052 3.80085 10.2612 0 14.9089 0H16V0.993984H14.9089C10.8101 0.993984 7.45444 4.34981 7.45444 8.44886V33.2189C7.45444 34.3724 7.01701 35.406 6.34703 36.2188L6.34391 36.2226C5.93744 36.706 5.43918 37.1173 4.86832 37.4085C4.22957 37.7387 3.50633 37.9404 2.7333 37.9404H0V36.9464H2.7333C3.33122 36.9464 3.89952 36.7906 4.41332 36.5248L4.41592 36.5235C4.85778 36.2982 5.25318 35.9749 5.58168 35.5846C6.12335 34.9267 6.46052 34.1122 6.46052 33.2189V8.44886Z' fill='%23ECEEF0'/%3E%3C/svg%3E");
             }
             &::after {
               content: "";
               position: absolute;
               right: -8px;
-              bottom: 1px;
+              top: 0px;
               display: inline-block;
-              width: 8px;
-              height: 33px;
-              border: 1px solid #eceef0;
-              border-width: 0 0 1px 1px;
-              border-radius: 0 0 0 8px;
+              width: 16px;
+              height: 38px;
+              background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='38' viewBox='0 0 16 38' fill='none'%3E%3Cpath d='M16 38H13.2667C12.5809 38 11.9348 37.8111 11.3584 37.513C10.8515 37.2446 10.4042 36.8768 10.0364 36.4295C9.43015 35.684 9.04252 34.7397 9.04252 33.706V8.56814C9.04252 4.13497 5.46438 0.496992 1.09111 0.496992H0V38H16Z' fill='white'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.53948 8.44886C9.53948 3.80085 5.73885 0 1.09111 0H0V0.993984H1.09111C5.18992 0.993984 8.54556 4.34981 8.54556 8.44886V33.2189C8.54556 34.3724 8.98299 35.406 9.65297 36.2188L9.65609 36.2226C10.0626 36.706 10.5608 37.1173 11.1317 37.4085C11.7704 37.7387 12.4937 37.9404 13.2667 37.9404H16V36.9464H13.2667C12.6688 36.9464 12.1005 36.7906 11.5867 36.5248L11.5841 36.5235C11.1422 36.2982 10.7468 35.9749 10.4183 35.5846C9.87665 34.9267 9.53948 34.1122 9.53948 33.2189V8.44886Z' fill='%23ECEEF0'/%3E%3C/svg%3E");
+              // border: 1px solid #eceef0;
+              // border-width: 0 0 1px 1px;
+              // border-radius: 0 0 0 8px;
+              // z-index: 10;
             }
 
             a {
@@ -243,6 +247,13 @@
               }
             }
           }
+
+          &:hover {
+            z-index: 100;
+          }
+          // &:hover ~ .site.active {
+          //   background-color: transparent;
+          // }
 
           a {
             color: var(--txt-sub);
