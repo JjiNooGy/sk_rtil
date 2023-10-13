@@ -5,11 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, inital-scale=1.0" />
     <link href="../../../assets/pc/img/favicon.ico" rel="shortcut icon" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../../assets/pc/css/style.css"
-    />
+    <link rel="stylesheet" type="text/css" href="../../../assets/pc/css/style.css" />
 
     <script src="include.js"></script>
   </head>
@@ -24,6 +20,7 @@
           <section>
             <div class="page-title">
               <h2 class="title">마이페이지</h2>
+              <div class="title-button my-edit"><button type="button">내 정보수정</button></div>
               <!-- <p class="title-desc">SK 렌터카의 새로운 소식과 정보들을 한곳에서 확인할 수 있어요.</p> -->
             </div>
           </section>
@@ -33,52 +30,17 @@
             <div class="tab-wrap">
               <div class="tab">
                 <div class="tab-button-wrap">
-                  <button
-                    class="tablinks active"
-                    onclick="tabContent2(event, 'Status01')"
-                  >
-                    My
-                  </button>
-                  <button
-                    class="tablinks"
-                    onclick="tabContent2(event, 'Status02')"
-                  >
-                    내 정보 수정
-                  </button>
-                  <button
-                    class="tablinks"
-                    onclick="tabContent2(event, 'Status03')"
-                  >
-                    찜한 차량
-                  </button>
-                  <button
-                    class="tablinks"
-                    onclick="tabContent2(event, 'Status04')"
-                  >
-                    최근 본 차량
-                  </button>
-                  <button
-                    class="tablinks"
-                    onclick="tabContent2(event, 'Status05')"
-                  >
-                    방문예약신청현황
-                  </button>
-                  <button
-                    class="tablinks"
-                    onclick="tabContent2(event, 'Status06')"
-                  >
-                    내차구매현황
-                  </button>
-                  <button
-                    class="tablinks"
-                    onclick="tabContent2(event, 'Status07')"
-                  >
-                    구매리뷰작성
-                  </button>
+                  <button class="tablinks" onclick="tabContent2(event, 'Status01')">My</button>
+                  <button class="tablinks active" onclick="tabContent2(event, 'Status02')">찜한 차량</button>
+                  <button class="tablinks" onclick="tabContent2(event, 'Status03')">최근 본 차량</button>
+                  <button class="tablinks" onclick="tabContent2(event, 'Status04')">방문예약신청현황</button>
+                  <button class="tablinks" onclick="tabContent2(event, 'Status05')">홈 서비스신청 현황</button>
+                  <button class="tablinks" onclick="tabContent2(event, 'Status06')">내차구매현황</button>
+                  <button class="tablinks" onclick="tabContent2(event, 'Status07')">구매후기 작성</button>
                 </div>
               </div>
 
-              <div id="Status01" class="tabcontent active">
+              <div id="Status01" class="tabcontent">
                 <div class="tabcontent-wrap my-page">
                   <div class="user-name">
                     박길동님,<br />
@@ -113,142 +75,158 @@
                     </div>
                   </section>
                   <div class="wrap-board-search">
-                    <div class="box-search">
-                      <input type="search" /><button
-                        type="button"
-                        class="btn-search"
-                      >
-                        검색
-                      </button>
-                    </div>
+                    <div class="box-search"><input type="search" /><button type="button" class="btn-search">검색</button></div>
                   </div>
 
-                  <div class="form bbs">
-                    <!-- bbs list -->
-                    <div class="bbs-wrap mt60" style="margin-top: 60px">
-                      <!-- table -->
-                      <table class="table-default">
-                        <caption>
-                          방문예약현황
-                        </caption>
-                        <colgroup>
-                          <col width="*" />
-                          <col width="15%" />
-                          <col width="15%" />
-                          <col width="15%" />
-                        </colgroup>
-                        <thead>
-                          <tr>
-                            <th>차량정보</th>
-                            <th>방문일</th>
-                            <th>차량정보</th>
-                            <th>예약상태</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td class="align-left">G80 2.5 1WD</td>
-                            <td>2023-08-02</td>
-                            <td>오전 10:00</td>
-                            <td>
-                              <span class="status-wait">방문예약대기</span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="align-left">G80 2.5 1WD</td>
-                            <td>2023-08-02</td>
-                            <td>오전 10:00</td>
-                            <td>
-                              <span class="status-confirm">방문예약확정</span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="align-left">G80 2.5 1WD</td>
-                            <td>2023-08-02</td>
-                            <td>오전 10:00</td>
-                            <td>
-                              <span class="status-cancel">방문예약취소</span>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      <!-- //table -->
-                    </div>
-                    <!-- //bbs list -->
+                  <!-- 방문예약현황리스트 -->
+                  <div class="board-wrap">
+                    <table>
+                      <colgroup>
+                        <col width="auto" />
+                        <col width="230px" />
+                        <col width="230px" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">차량정보</th>
+                          <th scope="col">방문일</th>
+                          <th scope="col">방문시간</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td scope="row">G80 2.5T 2WD</td>
+                          <td>2023-10-03</td>
+                          <td>2013-08-17</td>
+                        </tr>
+                        <tr>
+                          <td scope="row">10.</td>
+                          <td>
+                            <a href="" title="공지사항 제목"><span class="category">[안내]</span>서비스 오픈 안내</a>
+                          </td>
+                          <td>2013-08-17</td>
+                        </tr>
+
+                        <tr>
+                          <td scope="row">9.</td>
+                          <td>
+                            <a href="" title="공지사항 제목"><span class="category">[안내]</span>서비스 오픈 안내</a>
+                          </td>
+                          <td>2013-08-17</td>
+                        </tr>
+
+                        <tr>
+                          <td scope="row">8.</td>
+                          <td>
+                            <a href="" title="공지사항 제목"><span class="category">[안내]</span>서비스 오픈 안내</a>
+                          </td>
+                          <td>2013-08-17</td>
+                        </tr>
+
+                        <tr>
+                          <td scope="row">7.</td>
+                          <td>
+                            <a href="" title="공지사항 제목"><span class="category">[안내]</span>서비스 오픈 안내</a>
+                          </td>
+                          <td>2013-08-17</td>
+                        </tr>
+                        <tr>
+                          <td scope="row">6.</td>
+                          <td>
+                            <a href="" title="공지사항 제목"><span class="category">[안내]</span>서비스 오픈 안내</a>
+                          </td>
+                          <td>2013-08-17</td>
+                        </tr>
+                        <tr>
+                          <td scope="row">5.</td>
+                          <td>
+                            <a href="" title="공지사항 제목"><span class="category">[안내]</span>서비스 오픈 안내</a>
+                          </td>
+                          <td>2013-08-17</td>
+                        </tr>
+                        <tr>
+                          <td scope="row">4.</td>
+                          <td>
+                            <a href="" title="공지사항 제목"><span class="category">[안내]</span>서비스 오픈 안내</a>
+                          </td>
+                          <td>2013-08-17</td>
+                        </tr>
+                        <tr>
+                          <td scope="row">3.</td>
+                          <td>
+                            <a href="" title="공지사항 제목"><span class="category">[안내]</span>서비스 오픈 안내</a>
+                          </td>
+                          <td>2013-08-17</td>
+                        </tr>
+                        <tr>
+                          <td scope="row">2.</td>
+                          <td>
+                            <a href="" title="공지사항 제목"><span class="category">[안내]</span>서비스 오픈 안내</a>
+                          </td>
+                          <td>2013-08-17</td>
+                        </tr>
+                        <tr>
+                          <td scope="row">1.</td>
+                          <td>
+                            <a href="" title="공지사항 제목"><span class="category">[안내]</span>서비스 오픈 안내</a>
+                          </td>
+                          <td>2013-08-17</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- //방문예약현황리스트 -->
+
+                  <div role="navigation" class="paging-wrap">
+                    <a href="" class="first"><span class="hide-txt">첫페이지</span></a>
+                    <a href="" class="prev"><span class="hide-txt">이전페이지</span></a>
+                    <ol>
+                      <li class="page-btn"><a href="page=1">1</a></li>
+                      <li class="page-btn"><a href="page=2">2</a></li>
+                      <li class="page-btn"><a href="page=3">3</a></li>
+                      <li class="page-btn"><a href="page=4">4</a></li>
+                      <li class="page-btn"><a href="page=5">5</a></li>
+                      <li class="page-btn"><a href="page=6">6</a></li>
+                      <li class="page-btn"><a href="page=7">7</a></li>
+                      <li class="page-btn"><a href="page=8">8</a></li>
+                      <li class="page-btn"><a href="page=9">9</a></li>
+                      <li class="page-btn"><a href="page=10" class="this">10</a></li>
+                    </ol>
+                    <a href="" class="next"><span class="hide-txt">다음페이지</span></a>
+                    <a href="" class="last"><span class="hide-txt">마지막페이지</span></a>
                   </div>
                 </div>
               </div>
 
-              <div id="Status02" class="tabcontent">
-                <div
-                  class="tabcontent-wrap"
-                  w3-include-html="FP2-RT3140.html"
-                ></div>
+              <div id="Status02" class="tabcontent active">
+                <div class="tabcontent-wrap" w3-include-html="FP2-RT3110.html"></div>
               </div>
 
               <div id="Status03" class="tabcontent">
-                <div class="tabcontent-wrap">
-                  <div class="tab-desc-wrap">
-                    <div>
-                      ※ 찜한 차량은
-                      <strong class="stress">최대 10개</strong>까지 저장됩니다.
-                    </div>
-                  </div>
-                </div>
+                <div class="tabcontent-wrap" w3-include-html="FP2-RT3120.html"></div>
               </div>
 
               <div id="Status04" class="tabcontent">
-                <div class="tabcontent-wrap">
-                  <div class="tab-desc-wrap">
-                    <div>
-                      ※ 찜한 차량은
-                      <strong class="stress">최대 10개</strong>까지 저장됩니다.
-                    </div>
-                  </div>
-
-                  <div class="tab-cont-wrap">
-                    <div>Tab 4</div>
-                  </div>
-                </div>
+                <div class="tabcontent-wrap" w3-include-html="FP2-RT3130.html"></div>
               </div>
 
               <div id="Status05" class="tabcontent">
-                <div class="tabcontent-wrap">
-                  <div class="tab-desc-wrap">
-                    <div>
-                      ※ 찜한 차량은
-                      <strong class="stress">최대 10개</strong>까지 저장됩니다.
-                    </div>
-                  </div>
-
-                  <div class="tab-cont-wrap">
-                    <div>Tab 5</div>
-                  </div>
-                </div>
+                <div class="tabcontent-wrap" w3-include-html="FP2-RT3181.html"></div>
               </div>
 
               <div id="Status06" class="tabcontent">
-                <div
-                  class="tabcontent-wrap"
-                  w3-include-html="FP2-RT3140.html"
-                ></div>
+                <div class="tabcontent-wrap" w3-include-html="FP2-RT3170.html"></div>
               </div>
 
               <div id="Status07" class="tabcontent">
-                <div
-                  class="tabcontent-wrap"
-                  w3-include-html="FP2-RT3140.html"
-                ></div>
+                <div class="tabcontent-wrap" w3-include-html="FP2-RT3150.html"></div>
               </div>
             </div>
           </section>
         </article>
 
         <!-- quick -->
-        <article
-          class="quick"
-          w3-include-html="./include/FP2-RT3200.html"
-        ></article>
+        <article class="quick" w3-include-html="./include/FP2-RT3200.html"></article>
         <!-- //quick -->
       </main>
 

@@ -7,7 +7,7 @@
 *******************************/
 .tab-wrap {
   position: relative;
-  margin-top: 88px;
+  margin-top: 60px;
 
   .tab {
     overflow: hidden;
@@ -22,18 +22,18 @@
       border: none;
       outline: none;
       cursor: pointer;
-      padding: 7px 0 13px;
+      padding: 0 0 20px;
       transition: 0.3s;
       font-size: 26px;
       font-weight: 700;
       line-height: 36px;
       color: #d4d7dc;
       border-bottom: 3px solid transparent;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 138%; /* 138.462% */
 
-      &:hover {
-        background-color: transparent;
-      }
-
+      &:hover,
       &.active {
         box-sizing: border-box;
         background-color: transparent;
@@ -57,7 +57,6 @@
     justify-content: center;
     flex-direction: column;
     position: relative;
-    padding-top: 60px;
   }
 
   .tabcontent {
@@ -105,15 +104,18 @@
   }
 
   .tab-desc-wrap strong {
-    color: red;
+    color: var(--color-primary);
+    font-weight: 700;
   }
 
   .tab-cont-wrap {
     display: flex;
-    padding: 22px 0 24px;
+    padding: 80px 0 24px;
     justify-content: center;
   }
-
+  .tab-desc-wrap + .tab-cont-wrap {
+    padding-top: 124px;
+  }
   .tab-cont-wrap div:first-child {
     display: flex;
     justify-content: flex-start;

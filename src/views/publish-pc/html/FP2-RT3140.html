@@ -1,26 +1,155 @@
-<button data-rel="#pop-01" class="open-pop btn-open-pop">메인 팝업</button>
-<!-- 비밀번호 변경 -->
-<div class="popup-wrap pop-main load-pop" id="pop-01">
-  <div class="pop-box">
-    <!-- <div class="pop-header">
-        <h2><span class="hide-txt">비밀번호 재설정</span></h2>
-        <button class="pop-close btn-close" ><span class="hide-txt">팝업닫기</span></button>
-      </div> -->
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, inital-scale=1.0" />
+    <link href="../../../assets/pc/img/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" type="text/css" href="../../../assets/pc/css/style.css" />
 
-    <div class="pop-content"></div>
+    <script src="include.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- headerWrap -->
+      <div class="header_wrap" w3-include-html="./include/header.html"></div>
+      <!-- headerWrap -->
 
-    <div class="main-btn-box">
-      <button class="btn-today-close"><i class="icon"></i>오늘 하루 보지않기</button>
-      <button class="pop-close">닫기</button>
+      <main>
+        <article>
+          <section>
+            <div class="page-title">
+              <h2 class="title">마이페이지</h2>
+              <div class="title-button my-edit active"><button type="button">내 정보수정</button></div>
+              <!-- <p class="title-desc">SK 렌터카의 새로운 소식과 정보들을 한곳에서 확인할 수 있어요.</p> -->
+            </div>
+          </section>
+          <!-- <section></section> -->
+
+          <section>
+            <div class="tab-wrap">
+              <div class="tab">
+                <div class="tab-button-wrap">
+                  <button class="tablinks" onclick="tabContent2(event, 'Status01')">My</button>
+                  <button class="tablinks" onclick="tabContent2(event, 'Status02')">찜한 차량</button>
+                  <button class="tablinks" onclick="tabContent2(event, 'Status03')">최근 본 차량</button>
+                  <button class="tablinks" onclick="tabContent2(event, 'Status04')">방문예약신청현황</button>
+                  <button class="tablinks" onclick="tabContent2(event, 'Status05')">홈 서비스신청 현황</button>
+                  <button class="tablinks" onclick="tabContent2(event, 'Status06')">내차구매현황</button>
+                  <button class="tablinks" onclick="tabContent2(event, 'Status07')">구매후기 작성</button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="title-wrap">
+              <h3 class="title">내 정보 수정</h3>
+              <p class="title-desc">회원님의 기본정보를 확인해주세요.</p>
+            </div>
+          </section>
+          <section>
+            <div class="section-title-wrap">
+              <div class="title">비밀번호 재확인 전체 <strong>12</strong>건</div>
+
+              <div class="title-right-wrap">
+                <!-- 리스트정렬순서라디오 -->
+                <div class="check-radio sort">
+                  <li>
+                    <input type="radio" id="radio1" name="radio1" />
+                    <label for="radio1">가격 낮은 순</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="radio2" name="radio1" />
+                    <label for="radio2">가격 높은 순</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="radio3" name="radio1" />
+                    <label for="radio3">주행거리 낮은 순</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="radio4" name="radio1" />
+                    <label for="radio4">주행거리 높은 순</label>
+                  </li>
+                </div>
+                <!-- //리스트정렬순서라디오 -->
+
+                <div class="title-btn-box"><button type="button" class="btn-line">비교하기</button></div>
+              </div>
+            </div>
+            <div class="print-table-wrap">
+              <div class="print-table">
+                <div class="row">
+                  <div class="col">
+                    <div class="col-box">
+                      <div class="col-label">
+                        <span>고객명</span>
+                      </div>
+                      <div class="col-cell">홍길동</div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="col-box">
+                      <div class="col-label">
+                        <span>회원구분</span>
+                      </div>
+                      <div class="col-cell">정회원</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="col-box">
+                      <div class="col-label">
+                        <span>연락처</span>
+                      </div>
+                      <div class="col-cell">
+                        <div class="form-wrap">
+                          <span>010-1234-5678</span>
+                          <div class="btn-box">
+                            <button class="btn-line">본인인증 다시하기</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="col-box">
+                      <div class="col-label">
+                        <span>생년월일</span>
+                      </div>
+                      <div class="col-cell">2022년 08월 02일</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="col-box">
+                      <div class="col-label">
+                        <span>주소</span>
+                      </div>
+                      <div class="col-cell">서울시 용산구 한남동 11-5 경기빌딩 10층</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </article>
+
+        <!-- quick -->
+        <article class="quick" w3-include-html="./include/FP2-RT3200.html"></article>
+        <!-- //quick -->
+      </main>
+
+      <!-- footer -->
+      <footer w3-include-html="./include/footer.html"></footer>
+      <!-- //footer -->
     </div>
+  </body>
+  <script src="../../../assets/pc/js/ui.js"></script>
+  <script>
+    includeHTML();
 
-    <!-- <div class="pop-footer">
-        <div class="main-btn-box">
-          <button class="btn-today-close"><i class="icon"></i>오늘 하루 보지않기</button>
-          <button class="pop-close">닫기</button>
-        </div>
-      </div> -->
-  </div>
-</div>
-<!-- //비밀번호 변경 -->
-<script src="../../../assets/pc/js/ui.js"></script>
+    tabInTab();
+  </script>
+</html>

@@ -441,11 +441,12 @@ main {
   width: 100%;
   min-height: calc(100vh - 318px);
   margin: 0px auto;
-  padding-top: 100px;
+  padding-top: 60px;
   padding-bottom: 120px;
   display: flex;
   gap: 0 30px;
   justify-content: center;
+  flex-wrap: wrap;
 
   aside {
     width: 276px;
@@ -481,6 +482,13 @@ main {
     .bg-test {
       left: calc(50% - 153px);
     }
+  }
+  .sub-top {
+    display: block;
+    width: 100%;
+    margin-top: -60px;
+
+    border: 1px solid red;
   }
 }
 
@@ -1187,43 +1195,129 @@ article.join {
   max-width: 800px;
 }
 
+.page-title {
+  margin-bottom: 30px;
+  h2 {
+    color: var(--txt-defult);
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 130%;
+  }
+  p {
+    margin-top: 12px;
+    color: var(--txt-info);
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .title-button {
+    position: absolute;
+    right: 0;
+    top: 8px;
+  }
+
+  .title-button.my-edit {
+    position: absolute;
+    right: 0;
+    top: 8px;
+
+    button {
+      width: 100%;
+      height: 60px;
+      padding: 7px 24px 7px 63px;
+      border-radius: 60px;
+      background: rgba(155, 178, 206, 0.6) 7px center no-repeat;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40' fill='none'%3E%3Ccircle cx='20' cy='20' r='20' fill='white' fill-opacity='0.4'/%3E%3Cmask id='mask0_1540_73393' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_1540_73393)'%3E%3Cellipse cx='19.82' cy='36.0363' rx='15.1351' ry='8.28829' fill='white' fill-opacity='0.6'/%3E%3C/g%3E%3Ccircle cx='20.0002' cy='17.1169' r='7.74775' fill='white' fill-opacity='0.6'/%3E%3C/svg%3E");
+      color: var(--Pramary_white, #fff);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 150%;
+      &:hover {
+        background-color: var(--color-primary);
+      }
+    }
+
+    &.active {
+      button {
+        background-color: var(--color-primary);
+      }
+    }
+  }
+}
+
 .title-wrap {
   width: 100%;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  padding: 100px 30px 50px;
+  // padding: 100px 30px;
   .title {
-    font-size: 54px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 56px;
-    margin-bottom: 10px;
-    color: #2e3033;
-    letter-spacing: -1px;
-  }
-  .title-desc {
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 30px;
-    color: #858b93;
-  }
-}
-
-.page-title {
-  margin-bottom: 40px;
-  h2 {
     color: var(--txt-defult);
     font-size: 40px;
     font-weight: 700;
-    line-height: 56px;
+    line-height: 140%;
   }
-  p {
-    margin-top: 20px;
-    color: var(--txt-info);
-    font-size: 20px;
-    line-height: 30px;
+  .title-desc {
+    margin-top: 10px;
+    color: var(--txt-sub);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 140%; /* 33.6px */
+  }
+}
+
+.section-title-wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 80px;
+  // margin-bottom: 20px;
+
+  height: 56px;
+  padding-bottom: 10px;
+  // border: 1px solid red;
+  .title {
+    color: var(--txt-defult);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 140%;
+
+    strong {
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+  }
+
+  .title-right-wrap {
+    display: flex;
+    // align-items: flex-end;
+    align-items: center;
+    gap: 0 20px;
+
+    // border: 1px solid blue;
+  }
+}
+
+.tabcontent-wrap {
+  .page-title {
+    margin-bottom: 40px;
+    .title {
+      color: var(--txt-defult);
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 56px;
+      color: var(--grayscale-600, #2e3033);
+
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%;
+    }
+    p {
+      margin-top: 20px;
+      color: var(--txt-info);
+      font-size: 20px;
+      line-height: 30px;
+    }
   }
 }
 /*** pc ***/

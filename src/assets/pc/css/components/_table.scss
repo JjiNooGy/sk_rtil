@@ -336,3 +336,90 @@
     }
   }
 }
+
+/**************************************************************************************************
+  *** 입출력 테이블
+  **************************************************************************************************/
+.print-table {
+  width: 100%;
+  border-top: 2px solid var(--grayscale-500, #50555c);
+  position: relative;
+
+  .row {
+    width: 100%;
+    border-bottom: 1px solid var(--grayscale-200, #d4d7dc);
+    display: table;
+    .col {
+      width: 50%;
+      display: table-cell;
+    }
+
+    .col-box {
+      display: flex;
+      width: 100%;
+
+      .col-label {
+        display: flex;
+        align-items: center;
+        width: 220px;
+        min-height: 70px;
+        padding: 16px 30px;
+        background: #f2f2f2;
+        border-right: 1px solid var(--grayscale-200, #d4d7dc);
+
+        color: var(--txt-defult);
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 150%;
+        .req {
+          position: relative;
+          &::before {
+            content: "";
+            display: inline-block;
+            width: 3px;
+            height: 3px;
+            border-radius: 3px;
+            background-color: #fa4e29;
+            position: absolute;
+            left: -6px;
+            top: 0;
+          }
+        }
+      }
+      .col-cell {
+        width: calc(100% - 220px);
+        display: flex;
+        align-items: center;
+        padding: 11px 12px 11px 30px;
+        color: var(--txt-defult);
+
+        .form-wrap {
+          position: relative;
+          display: inline-flex;
+          width: 100%;
+          justify-content: space-between;
+          align-items: center;
+          .bar {
+            width: 20px;
+            color: var(--text-title, #343a40);
+            text-align: center;
+            font-size: 16px;
+            line-height: 24px;
+          }
+          .btn-box {
+            width: auto;
+
+            button {
+              padding: 9px 15px;
+              border-radius: 8px;
+              font-size: 14px;
+              font-weight: 400;
+              color: var(--txt-defult);
+              line-height: 160%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

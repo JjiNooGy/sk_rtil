@@ -104,9 +104,62 @@
   grid-template-columns: repeat(1, 1fr);
   gap: 8px 8px;
   margin-top: 40px;
-
   .btn-box {
-    max-width: 400px;
+    width: 400px;
+    display: flex;
+    gap: 0 8px;
+
+    button,
+    a {
+      width: inherit;
+      padding: 14px 15px;
+      border-radius: 12px;
+
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 28px;
+      cursor: pointer;
+
+      &:disabled {
+        background: #f7f7f9 !important;
+        color: #d4d7dc !important;
+        cursor: default;
+        border: transparent;
+      }
+
+      &.disabled {
+        background: #f7f7f9 !important;
+        color: #d4d7dc !important;
+        border: transparent;
+      }
+    }
+
+    .btn-primary {
+      background: linear-gradient(70deg, #ff7d00 -1%, #f35b5b 37%, #fe532d 116.61%);
+      // background: linear-gradient(91deg, #f35b5b 1.64%, rgba(254, 83, 45, 0.84) 116.61%);
+      color: #fff;
+
+      &:hover {
+        background: linear-gradient(70deg, #e56c02 -1%, #e45e1a 37%, #e55300 116.61%);
+      }
+    }
+    .btn-gray {
+      background-color: var(--bg-gray);
+
+      &:hover {
+        background: #d4d6d8;
+      }
+    }
+
+    .btn-line {
+      background-color: #fff;
+      border: 1px solid #b5b9c0;
+
+      &:hover {
+        background: #e6e6e6;
+      }
+    }
   }
 }
 
@@ -149,5 +202,22 @@
     .btn-box {
       width: 100%;
     }
+  }
+}
+
+/*******************************
+** 섹션타이틀 영역 버튼
+*******************************/
+.title-btn-box {
+  button {
+    padding: 9px 24px;
+    border-radius: 8px;
+    color: var(--Primary_black, #2e3033);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+  }
+  .btn-line {
+    border-color: var(--color-primary--line);
   }
 }
