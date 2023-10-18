@@ -37,10 +37,14 @@
   background-color: #fff;
   border: 1px solid #b5b9c0;
   color: var(--color-text);
+  &:hover {
+    background-color: var(--btn-bg-hover);
+  }
 }
 
 .btn-box {
   width: 100%;
+
   display: flex;
   gap: 0 8px;
 
@@ -71,13 +75,15 @@
   }
 
   .btn-primary {
-    background: linear-gradient(70deg, #ff7d00 -1%, #f35b5b 37%, #fe532d 116.61%);
+    // background: linear-gradient(70deg, #ff7d00 -1%, #f35b5b 37%, #fe532d 116.61%);
     // background: linear-gradient(91deg, #f35b5b 1.64%, rgba(254, 83, 45, 0.84) 116.61%);
+    background: var(--btn-bg-primary);
 
     color: #fff;
 
     &:hover {
-      background: linear-gradient(70deg, #e56c02 -1%, #e45e1a 37%, #e55300 116.61%);
+      // background: linear-gradient(70deg, #e56c02 -1%, #e45e1a 37%, #e55300 116.61%);
+      background: var(--btn-bg-primary-hover);
     }
   }
   .btn-gray {
@@ -103,15 +109,18 @@
   justify-items: center;
   grid-template-columns: repeat(1, 1fr);
   gap: 8px 8px;
-  margin-top: 40px;
+  width: 100%;
+  margin-top: 80px;
   .btn-box {
-    width: 400px;
+    max-width: 400px;
     display: flex;
+    justify-content: center;
     gap: 0 8px;
 
     button,
     a {
       width: inherit;
+      max-width: 240px;
       padding: 14px 15px;
       border-radius: 12px;
 
@@ -136,24 +145,26 @@
     }
 
     .btn-primary {
-      background: linear-gradient(70deg, #ff7d00 -1%, #f35b5b 37%, #fe532d 116.61%);
+      // background: linear-gradient(70deg, #ff7d00 -1%, #f35b5b 37%, #fe532d 116.61%);
       // background: linear-gradient(91deg, #f35b5b 1.64%, rgba(254, 83, 45, 0.84) 116.61%);
+      background: var(--btn-bg-primary);
       color: #fff;
 
       &:hover {
-        background: linear-gradient(70deg, #e56c02 -1%, #e45e1a 37%, #e55300 116.61%);
+        // background: linear-gradient(70deg, #e56c02 -1%, #e45e1a 37%, #e55300 116.61%);
+        background: var(--btn-bg-primary-hover);
       }
     }
     .btn-gray {
-      background-color: var(--bg-gray);
+      background-color: var(--btn-bg-gray);
 
       &:hover {
-        background: #d4d6d8;
+        background-color: var(--btn-bg-gray-hover);
       }
     }
 
     .btn-line {
-      background-color: #fff;
+      background-color: var(--btn-bg-white);
       border: 1px solid #b5b9c0;
 
       &:hover {

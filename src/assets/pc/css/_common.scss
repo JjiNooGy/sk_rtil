@@ -2,25 +2,6 @@
 
 /*** var ****/
 :root {
-  /* 디자인팀 네이밍 */
-  /* text */
-
-  --gray-800: #858b93;
-  --txt-02: #50555c;
-
-  /* bg */
-  --sk-white-ffffff: #fff;
-  --gray-50: #f7f7f9;
-
-  --gray-100: #eceef0;
-  --gray-800: #858b93;
-
-  --gray-04: #d4d7dc;
-  --gray-03: #b5b9c0;
-  --gray-800: #858b93;
-  --txt-02: #50555c;
-  // --txt-defult: #2E3033;
-
   /*** text ***/
   --txt-defult: #2e3033;
   --txt-sub: #50555c;
@@ -28,13 +9,11 @@
   --txt-label: #b5b9c0;
 
   --color-primary: #fa4e29;
-  --color-primary-red: #ea002c;
+  --color-red: #ea002c;
+  --color-orange: #fa4e29;
+  --color-blue: #4c84fa;
+  --color-mint: #009A93;
   --color-error-message: #f71010;
-
-  /*** border ***/
-  --bdr-defult: #d4d7dc;
-
-  --bdr-red: #ff3d44;
 
   /** background ***/
   --bg-gray: #eceef0;
@@ -43,23 +22,37 @@
   --form-text: #50555c;
   --form-line: #d4d7dc;
   --form-bg: #fff;
-  --form-hover-text: #fff;
-  --form-hover-line: ;
-  --form-hover-bg: ;
-  --form-focus-text: ;
+  --form-focus-text: #50555c;
   --form-focus-line: #50555c;
-  --form-focus-bg: ;
-  --form-disabled-text: ;
-  --form-disabled-line: ;
-  --form-disabled-bg: ;
-  --form-readonly-text: ;
-  --form-readonly-line: ;
-  --form-readonly-bg: ;
-  --form-placeholder-text: #d4d7dc;
+  --form-focus-bg: #ffffff ;
+  --form-disabled-text: #858B93;
+  --form-disabled-line: #858B93;
+  --form-disabled-bg: #f7f7f9;
+  --form-readonly-text:#c2c7cf ;
+  --form-readonly-line: transparent;
+  --form-readonly-bg: #f7f7f9;
+  --form-placeholder-text: #c2c7cf;
   --form-error-line: #f71010;
+
+  /* button */
+  --btn-bg-primary: linear-gradient(70deg, #ff7d00 -1%, #f35b5b 37%, #fe532d 116.61%);
+  --btn-bg-primary-hover:linear-gradient(70deg, #e56c02 -1%, #e45e1a 37%, #e55300 116.61%);
+  --btn-bg-gray: #eceef0;
+  --btn-bg-gray-hover: #F7F7F9;
+  --btn-bg-white: #fff;
+  --btn-bg-white-hover:#e6e6e6
+  --btn-line: #b5b9c0; 
+  --btn-line-hover: ;
 
   /* border-radius */
   --border-radius-form: 8px;
+
+  /* table */
+  --table-top: #50555c;
+  --table-line: #d4d7dc;
+  --table-bg: #f5f5f5;
+  --table-label: #2e3033;
+  --table-text: #2e3033;
 }
 
 /*** reset ***/
