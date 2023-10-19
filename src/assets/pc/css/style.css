@@ -4246,6 +4246,68 @@ textarea::placeholder {
   margin-top: 6px;
 }
 
+/*** 약관내 테이블 ***/
+.tb-cnt.tb-my {
+  width: 100%;
+  margin-top: 10px;
+  border-top: 1px solid #d0d0d0;
+}
+.tb-cnt.tb-my .text-c {
+  text-align: center;
+}
+.tb-cnt.tb-my th {
+  text-align: center;
+  padding: 12px 5px 11px;
+  background: #f5f5f5;
+  border-bottom: 1px solid #d0d0d0;
+  vertical-align: middle;
+  color: var(--txt-sub);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+.tb-cnt.tb-my th + th {
+  border-left: 1px solid #d0d0d0;
+}
+.tb-cnt.tb-my td {
+  background: #fff;
+  padding: 10px 9px 10px;
+  text-align: left;
+  border-bottom: 1px solid #d0d0d0;
+  border-left: 1px solid #d0d0d0;
+  vertical-align: middle;
+  word-break: keep-all;
+  color: var(--txt-sub);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.4px;
+}
+.tb-cnt.tb-my td + td {
+  border-left: 1px solid #d0d0d0;
+}
+.tb-cnt.tb-my th:first-child,
+.tb-cnt.tb-my td:first-child {
+  border-left: 0;
+}
+.tb-cnt.tb-my [rowspan]:first-child {
+  border-left: 0;
+}
+.tb-cnt.tb-my [rowspan]:last-child {
+  border-right: 0;
+}
+.tb-cnt.tb-my [rowspan] {
+  border-left: 1px solid #d0d0d0;
+  border-right: 1px solid #d0d0d0;
+}
+.tb-cnt.tb-my td .dot_list li {
+  font-size: 12px;
+  line-height: 18px;
+  color: #858b93;
+  margin-top: 6px;
+}
+
 /**************************************************************************************************
 *** 장애접속 화면
 **************************************************************************************************/
