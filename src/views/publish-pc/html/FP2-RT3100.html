@@ -30,21 +30,28 @@
             <div class="tab-wrap">
               <div class="tab">
                 <div class="tab-button-wrap">
-                  <button class="tablinks" onclick="tabContent2(event, 'Status01')">My</button>
+                  <button class="tablinks active" onclick="tabContent2(event, 'Status01')">My</button>
                   <button class="tablinks" onclick="tabContent2(event, 'Status02')">찜한 차량</button>
                   <button class="tablinks" onclick="tabContent2(event, 'Status03')">최근 본 차량</button>
                   <button class="tablinks" onclick="tabContent2(event, 'Status04')">방문예약신청현황</button>
-                  <button class="tablinks active" onclick="tabContent2(event, 'Status05')">홈 서비스신청 현황</button>
+                  <button class="tablinks" onclick="tabContent2(event, 'Status05')">홈 서비스신청 현황</button>
                   <button class="tablinks" onclick="tabContent2(event, 'Status06')">내차구매현황</button>
                   <button class="tablinks" onclick="tabContent2(event, 'Status07')">구매후기 작성</button>
                 </div>
               </div>
 
-              <div id="Status01" class="tabcontent">
+              <div id="Status01" class="tabcontent active">
                 <div class="tabcontent-wrap my-page">
-                  <div class="user-name">
+                  <!-- <div class="user-name">
                     박길동님,<br />
                     환영합니다 <span class="fc_orange">:)</span>
+                  </div> -->
+
+                  <div class="title-wrap">
+                    <h3 class="title">
+                      박길동님,<br />
+                      환영합니다 <span class="fc_orange">:)</span>
+                    </h3>
                   </div>
 
                   <section>
@@ -54,7 +61,7 @@
                           <div class="title">찜한 차량</div>
                           <div class="count">10</div>
                         </div>
-                        <div class="icon">icon</div>
+                        <div class="icon"><span class="hide-txt">아이콘 이미지</span></div>
                       </div>
 
                       <div class="my-car-box last-view">
@@ -62,7 +69,7 @@
                           <div class="title">최근 본 차량</div>
                           <div class="count">10</div>
                         </div>
-                        <div class="icon">icon</div>
+                        <div class="icon"><span class="hide-txt">아이콘 이미지</span></div>
                       </div>
 
                       <div class="my-car-box visit">
@@ -70,131 +77,156 @@
                           <div class="title">방문예약 차량</div>
                           <div class="count">10</div>
                         </div>
-                        <div class="icon">icon</div>
+                        <div class="icon"><span class="hide-txt">아이콘 이미지</span></div>
                       </div>
                     </div>
                   </section>
-                  <div class="wrap-board-search">
-                    <div class="box-search"><input type="search" /><button type="button" class="btn-search">검색</button></div>
-                  </div>
 
-                  <!-- 방문예약현황리스트 -->
-                  <div class="board-wrap">
-                    <table>
+                  <div class="banner-wrap-my">
+                    <img src="../../../assets/pc/img/banner-mypage-home.svg" />
+                  </div>
+                  <!-- <div class="wrap-board-search">
+                    <div class="box-search"><input type="search" /><button type="button" class="btn-search">검색</button></div>
+                  </div> -->
+                  <!-- 
+                  <div class="section-title-wrap">
+                    <div class="title">방문예약신청 현황</div>
+
+                    <div class="title-right-wrap">
+                      <div class="title-btn-box"><button type="button" class="btn-line">더보기</button></div>
+                    </div>
+                  </div> -->
+                  <!-- 방문예약신청현황 -->
+                  <section>
+                    <div class="section-title-wrap">
+                      <div class="title">방문예약신청 현황</div>
+                      <div class="title-right-wrap">
+                        <div class="title-btn-box"><button type="button" class="btn-line">더보기</button></div>
+                      </div>
+                    </div>
+                    <table class="my-car">
                       <colgroup>
+                        <col width="102px" />
+                        <col width="230px" />
                         <col width="auto" />
-                        <col width="230px" />
-                        <col width="230px" />
+                        <col width="174px" />
+                        <col width="151px" />
                       </colgroup>
                       <thead>
                         <tr>
-                          <th scope="col">차량정보</th>
-                          <th scope="col">방문일</th>
-                          <th scope="col">방문시간</th>
+                          <th>신청일</th>
+                          <th colspan="2">차량정보</th>
+                          <th>방문 일시</th>
+                          <th>예약상태</th>
                         </tr>
                       </thead>
                       <tbody>
+                        <!-- list 1set -->
                         <tr>
-                          <td scope="row">G80 2.5T 2WD</td>
-                          <td>2023-10-03</td>
-                          <td>2013-08-17</td>
-                        </tr>
-                        <tr>
-                          <td scope="row">10.</td>
                           <td>
-                            <a href="" title="공지사항 제목"><span class="category">[안내]</span>서비스 오픈 안내</a>
+                            <div class="ask-date">2023년 09월 23일</div>
                           </td>
-                          <td>2013-08-17</td>
-                        </tr>
-
-                        <tr>
-                          <td scope="row">9.</td>
                           <td>
-                            <a href="" title="공지사항 제목"><span class="category">[안내]</span>서비스 오픈 안내</a>
+                            <div class="card-thum">
+                              <a href="" class="product-img"><img src="https://via.placeholder.com1/230x150" onerror="this.style.display='none';" alt="상품이미지" style="display: none" /></a>
+                            </div>
                           </td>
-                          <td>2013-08-17</td>
-                        </tr>
-
-                        <tr>
-                          <td scope="row">8.</td>
                           <td>
-                            <a href="" title="공지사항 제목"><span class="category">[안내]</span>서비스 오픈 안내</a>
+                            <div class="card-content">
+                              <div class="product-info-box">
+                                <div class="title"><a href="">방문예약신청 - 기아 신형 쏘렌토 (MQ4) 2.2 디젤 2WD 시그니처 - 상품이미지 오류시</a></div>
+                                <div class="resource-box"><span>2020년식</span><span>10,762km</span><span>경유</span></div>
+                                <div class="bdg-box">
+                                  <span class="orange">SK인증중고차</span>
+                                  <span class="line-block">HOT</span>
+                                  <span class="line-green">무사고</span>
+                                  <span class="green">HOT</span>
+                                </div>
+                              </div>
+                              <div class="price-box">
+                                <div class="price"><span>2,196</span><em class="unit">만원</em></div>
+                                <div class="sale">40% 할인</div>
+                              </div>
+                            </div>
                           </td>
-                          <td>2013-08-17</td>
-                        </tr>
-
-                        <tr>
-                          <td scope="row">7.</td>
                           <td>
-                            <a href="" title="공지사항 제목"><span class="category">[안내]</span>서비스 오픈 안내</a>
+                            <div class="date-visit">2023년 09월 23일 <br />오전 10:00</div>
                           </td>
-                          <td>2013-08-17</td>
-                        </tr>
-                        <tr>
-                          <td scope="row">6.</td>
                           <td>
-                            <a href="" title="공지사항 제목"><span class="category">[안내]</span>서비스 오픈 안내</a>
+                            <div class="status visit-confirm"><span class="hide-txt">방문예약확정</span></div>
                           </td>
-                          <td>2013-08-17</td>
                         </tr>
-                        <tr>
-                          <td scope="row">5.</td>
-                          <td>
-                            <a href="" title="공지사항 제목"><span class="category">[안내]</span>서비스 오픈 안내</a>
-                          </td>
-                          <td>2013-08-17</td>
-                        </tr>
-                        <tr>
-                          <td scope="row">4.</td>
-                          <td>
-                            <a href="" title="공지사항 제목"><span class="category">[안내]</span>서비스 오픈 안내</a>
-                          </td>
-                          <td>2013-08-17</td>
-                        </tr>
-                        <tr>
-                          <td scope="row">3.</td>
-                          <td>
-                            <a href="" title="공지사항 제목"><span class="category">[안내]</span>서비스 오픈 안내</a>
-                          </td>
-                          <td>2013-08-17</td>
-                        </tr>
-                        <tr>
-                          <td scope="row">2.</td>
-                          <td>
-                            <a href="" title="공지사항 제목"><span class="category">[안내]</span>서비스 오픈 안내</a>
-                          </td>
-                          <td>2013-08-17</td>
-                        </tr>
-                        <tr>
-                          <td scope="row">1.</td>
-                          <td>
-                            <a href="" title="공지사항 제목"><span class="category">[안내]</span>서비스 오픈 안내</a>
-                          </td>
-                          <td>2013-08-17</td>
-                        </tr>
+                        <!-- //list 1set -->
                       </tbody>
                     </table>
-                  </div>
-                  <!-- //방문예약현황리스트 -->
+                  </section>
+                  <!-- //방문예약신청현황-->
 
-                  <div role="navigation" class="paging-wrap">
-                    <a href="" class="first"><span class="hide-txt">첫페이지</span></a>
-                    <a href="" class="prev"><span class="hide-txt">이전페이지</span></a>
-                    <ol>
-                      <li class="page-btn"><a href="page=1">1</a></li>
-                      <li class="page-btn"><a href="page=2">2</a></li>
-                      <li class="page-btn"><a href="page=3">3</a></li>
-                      <li class="page-btn"><a href="page=4">4</a></li>
-                      <li class="page-btn"><a href="page=5">5</a></li>
-                      <li class="page-btn"><a href="page=6">6</a></li>
-                      <li class="page-btn"><a href="page=7">7</a></li>
-                      <li class="page-btn"><a href="page=8">8</a></li>
-                      <li class="page-btn"><a href="page=9">9</a></li>
-                      <li class="page-btn"><a href="page=10" class="this">10</a></li>
-                    </ol>
-                    <a href="" class="next"><span class="hide-txt">다음페이지</span></a>
-                    <a href="" class="last"><span class="hide-txt">마지막페이지</span></a>
-                  </div>
+                  <!-- 홈서비스신청현황 -->
+                  <section>
+                    <div class="section-title-wrap">
+                      <div class="title">홈 서비스신청 현황</div>
+                      <div class="title-right-wrap">
+                        <div class="title-btn-box"><button type="button" class="btn-line more">더보기</button></div>
+                      </div>
+                    </div>
+                    <table class="my-car">
+                      <colgroup>
+                        <col width="102px" />
+                        <col width="230px" />
+                        <col width="auto" />
+                        <col width="174px" />
+                        <col width="151px" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th>신청일</th>
+                          <th colspan="2">차량정보</th>
+                          <th>방문 일시</th>
+                          <th>예약상태</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <!-- list 1set -->
+                        <tr>
+                          <td>
+                            <div class="ask-date">2023년 09월 23일</div>
+                          </td>
+                          <td>
+                            <div class="card-thum">
+                              <a href="" class="product-img"><img src="https://via.placeholder.com1/230x150" onerror="this.style.display='none';" alt="상품이미지" style="display: none" /></a>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="card-content">
+                              <div class="product-info-box">
+                                <div class="title"><a href="">방문예약신청 - 기아 신형 쏘렌토 (MQ4) 2.2 디젤 2WD 시그니처 - 상품이미지 오류시</a></div>
+                                <div class="resource-box"><span>2020년식</span><span>10,762km</span><span>경유</span></div>
+                                <div class="bdg-box">
+                                  <span class="orange">SK인증중고차</span>
+                                  <span class="line-block">HOT</span>
+                                  <span class="line-green">무사고</span>
+                                  <span class="green">HOT</span>
+                                </div>
+                              </div>
+                              <div class="price-box">
+                                <div class="price"><span>2,196</span><em class="unit">만원</em></div>
+                                <div class="sale">40% 할인</div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="date-visit">2023년 09월 23일 <br />오전 10:00</div>
+                          </td>
+                          <td>
+                            <div class="status home-wait"><span class="hide-txt">접수대기</span></div>
+                          </td>
+                        </tr>
+                        <!-- //list 1set -->
+                      </tbody>
+                    </table>
+                  </section>
+                  <!-- //홈서비스신청현황 -->
                 </div>
               </div>
 
@@ -210,7 +242,7 @@
                 <div class="tabcontent-wrap" w3-include-html="FP2-RT3130.html"></div>
               </div>
 
-              <div id="Status05" class="tabcontent active">
+              <div id="Status05" class="tabcontent">
                 <div class="tabcontent-wrap" w3-include-html="FP2-RT3181.html"></div>
               </div>
 

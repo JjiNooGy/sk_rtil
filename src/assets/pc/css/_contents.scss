@@ -282,20 +282,73 @@
 *******************************/
 
 .my-page {
-  .user-name {
-    color: var(--grayscale-600, var(--Txt_Defult, #2e3033));
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 56px;
+  // .user-name {
+  //   color: var(--grayscale-600, var(--Txt_Defult, #2e3033));
+  //   font-size: 40px;
+  //   font-weight: 700;
+  //   line-height: 56px;
+  // }
+  .title-wrap {
+    margin-top: 80px;
   }
 }
 
+.banner-wrap-my {
+  width: 100%;
+  margin-top: 60px;
+}
 .my-car-wrap {
+  width: 100%;
+  margin-top: 80px;
+  display: flex;
+  gap: 0 29px;
   .my-car-box {
+    width: 100%;
+    padding: 36px 36px 28px 36px;
+    background-color: #f3f4f6;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
     .my-car-info {
+      .title {
+        color: var(--txt-defult);
+        font-size: 20px;
+        line-height: 140%;
+      }
+      .count {
+        color: var(--txt-defult);
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 140%;
+      }
     }
   }
   .icon {
+    width: 130px;
+    height: 130px;
+    display: inline-block;
+    background: 50% 50% no-repeat;
+    background-size: contain;
+    border-radius: 100%;
+    font-size: 0;
+  }
+
+  .zzim {
+    .icon {
+      background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvwjlbZmvyyG7apd270C3oV7KKkkTc6BUFTg&usqp=CAU);
+    }
+  }
+
+  .last-view {
+    .icon {
+      background-image: url(https://media.istockphoto.com/id/1214003995/vector/car-search.jpg?s=612x612&w=0&k=20&c=7EeXTkwTQbR9SaOHsgvEaV6Q2hDbnQTmvk4_ZBKqOhY=);
+    }
+  }
+
+  .visit {
+    .icon {
+      background-image: url(https://www.ituran.com/ituranglobal/wp-content/uploads/2022/03/Icons-last-mile-1.png);
+    }
   }
 }
 

@@ -4673,6 +4673,7 @@ textarea::placeholder {
 ** 섹션타이틀 영역 버튼
 *******************************/
 .title-btn-box button {
+  position: relative;
   padding: 9px 24px;
   border-radius: 8px;
   color: var(--Primary_black, #2e3033);
@@ -4682,6 +4683,21 @@ textarea::placeholder {
 }
 .title-btn-box .btn-line {
   border-color: var(--color-primary--line);
+}
+.title-btn-box .btn-line.more {
+  padding-right: 44px;
+}
+.title-btn-box .btn-line.more::before {
+  content: "";
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  width: 10px;
+  height: 16px;
+  background: 50% 50% no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg width='7' height='10' viewBox='0 0 7 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.977579 9L5.01783 5.78223C5.52051 5.38188 5.52051 4.61812 5.01783 4.21777L0.977579 1' stroke='%232E3033' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E%0A");
 }
 
 /**************************************************************************************************
@@ -5114,7 +5130,7 @@ textarea::placeholder {
 }
 
 .popup-wrap.w-lg .pop-box {
-  width: 1080px;
+  width: 1000px;
 }
 
 .popup-wrap {
@@ -8004,11 +8020,57 @@ label.panel-label:hover {
 /*******************************
 ** 내 정보수정
 *******************************/
-.my-page .user-name {
-  color: var(--grayscale-600, var(--Txt_Defult, #2e3033));
+.my-page .title-wrap {
+  margin-top: 80px;
+}
+
+.banner-wrap-my {
+  width: 100%;
+  margin-top: 60px;
+}
+
+.my-car-wrap {
+  width: 100%;
+  margin-top: 80px;
+  display: flex;
+  gap: 0 29px;
+}
+.my-car-wrap .my-car-box {
+  width: 100%;
+  padding: 36px 36px 28px 36px;
+  background-color: #f3f4f6;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.my-car-wrap .my-car-box .my-car-info .title {
+  color: var(--txt-defult);
+  font-size: 20px;
+  line-height: 140%;
+}
+.my-car-wrap .my-car-box .my-car-info .count {
+  color: var(--txt-defult);
   font-size: 40px;
   font-weight: 700;
-  line-height: 56px;
+  line-height: 140%;
+}
+.my-car-wrap .icon {
+  width: 130px;
+  height: 130px;
+  display: inline-block;
+  background: 50% 50% no-repeat;
+  background-size: contain;
+  border-radius: 100%;
+  font-size: 0;
+}
+.my-car-wrap .zzim .icon {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvwjlbZmvyyG7apd270C3oV7KKkkTc6BUFTg&usqp=CAU);
+}
+.my-car-wrap .last-view .icon {
+  background-image: url(https://media.istockphoto.com/id/1214003995/vector/car-search.jpg?s=612x612&w=0&k=20&c=7EeXTkwTQbR9SaOHsgvEaV6Q2hDbnQTmvk4_ZBKqOhY=);
+}
+.my-car-wrap .visit .icon {
+  background-image: url(https://www.ituran.com/ituranglobal/wp-content/uploads/2022/03/Icons-last-mile-1.png);
 }
 
 .print-table.my-info .input-box {
