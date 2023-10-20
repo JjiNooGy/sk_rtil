@@ -6,9 +6,6 @@
   width: 100%;
   .box-textarea {
     width: 100%;
-    border-radius: 8px;
-    padding: 16px;
-    border: 1px solid var(--gray-200-d-4-d-7-dc, #d4d7dc);
 
     &.md {
       height: 160px;
@@ -17,6 +14,13 @@
       width: 100%;
       height: 100%;
       border: none;
+      border-radius: 8px;
+      padding: 16px;
+      border: 1px solid #d4d7dc;
+
+      &:focus {
+        border-color: #2e3033;
+      }
     }
   }
   .txt-cnt {

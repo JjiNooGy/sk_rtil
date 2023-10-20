@@ -1,134 +1,195 @@
-<div class="tab-desc-wrap">
-  <div>방문예약 및 홈서비스 신청을 통해 <strong class="stress">구매한 내역</strong>을 확인하실 수 있습니다.</div>
-</div>
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, inital-scale=1.0" />
+    <link href="../../../assets/pc/img/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" type="text/css" href="../../../assets/pc/css/style.css" />
 
-<div class="tab-cont-wrap">
-  <div class="section-title-wrap">
-    <div class="title">전체 <strong>10</strong>건</div>
-  </div>
+    <script src="include.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- headerWrap -->
+      <div class="header_wrap" w3-include-html="./include/header.html"></div>
+      <!-- headerWrap -->
 
-  <div class="YTg_VlHLOG">
-    <div class="_2zAgkaL5rk">
-      <div class="_1I5x6drBMR" role="radiogroup">
-        <button class="_2IWcKy8CaO N=a:wrtrv.rate5" role="radio" aria-checked="false" data-value="5"><span class="blind">5</span></button
-        ><button class="_2IWcKy8CaO N=a:wrtrv.rate4" role="radio" aria-checked="false" data-value="4"><span class="blind">4</span></button
-        ><button class="_2IWcKy8CaO _3t99v0mtDD N=a:wrtrv.rate3" role="radio" aria-checked="true" data-value="3"><span class="blind">3</span></button
-        ><button class="_2IWcKy8CaO _3t99v0mtDD N=a:wrtrv.rate2" role="radio" aria-checked="false" data-value="2"><span class="blind">2</span></button
-        ><button class="_2IWcKy8CaO _3t99v0mtDD N=a:wrtrv.rate1" role="radio" aria-checked="false" data-value="1"><span class="blind">1</span></button>
-      </div>
-      <div class="_2hd0K6h0tV _7J9JRvEIf4"><strong>3점</strong> (괜찮아요)</div>
+      <main>
+        <article>
+          <section>
+            <div class="page-title">
+              <h2 class="title">마이페이지</h2>
+              <div class="title-button my-edit"><a href="FP2-RT3140.html">내 정보수정</a></div>
+              <!-- <p class="title-desc">SK 렌터카의 새로운 소식과 정보들을 한곳에서 확인할 수 있어요.</p> -->
+            </div>
+          </section>
+          <section></section>
+
+          <section>
+            <div class="tab-wrap">
+              <div class="tab">
+                <div class="tab-button-wrap">
+                  <button class="tablinks" onclick="tabContent2(event, 'Status01')">My</button>
+                  <button class="tablinks" onclick="tabContent2(event, 'Status02')">찜한 차량</button>
+                  <button class="tablinks" onclick="tabContent2(event, 'Status03')">최근 본 차량</button>
+                  <button class="tablinks" onclick="tabContent2(event, 'Status04')">방문예약신청현황</button>
+                  <button class="tablinks" onclick="tabContent2(event, 'Status05')">홈 서비스신청 현황</button>
+                  <button class="tablinks" onclick="tabContent2(event, 'Status06')">내차구매현황</button>
+                  <button class="tablinks active" onclick="tabContent2(event, 'Status07')">구매후기 작성</button>
+                </div>
+              </div>
+
+              <div id="Status01" class="tabcontent">
+                <div class="tabcontent-wrap"></div>
+              </div>
+
+              <div id="Status02" class="tabcontent">
+                <div class="tabcontent-wrap" w3-include-html="FP2-RT3110.html"></div>
+              </div>
+
+              <div id="Status03" class="tabcontent">
+                <div class="tabcontent-wrap" w3-include-html="FP2-RT3120.html"></div>
+              </div>
+
+              <div id="Status04" class="tabcontent">
+                <div class="tabcontent-wrap" w3-include-html="FP2-RT3130.html"></div>
+              </div>
+
+              <div id="Status05" class="tabcontent">
+                <div class="tabcontent-wrap" w3-include-html="FP2-RT3181.html"></div>
+              </div>
+
+              <div id="Status06" class="tabcontent">
+                <div class="tabcontent-wrap" w3-include-html="FP2-RT3170.html"></div>
+              </div>
+
+              <div id="Status07" class="tabcontent active">
+                <div class="tabcontent-wrap">
+                  <div class="tab-desc-wrap">
+                    <div>구매한 차량의 <strong class="stress">소중한 후기</strong>를 작성해주세요.</div>
+                  </div>
+
+                  <div class="tab-cont-wrap">
+                    <div class="buy-swiper-box">
+                      <div class="card-box">
+                        <div class="card-thum">
+                          <a href="" class="product-img"><img src="https://cdn.autotribune.co.kr/news/photo/202211/6896_38841_1219.jpg" onerror="this.style.display='none';" alt="상품이미지" /></a>
+                        </div>
+
+                        <div class="card-content">
+                          <div class="product-info-box">
+                            <div class="title">
+                              <a href=""
+                                >기아 신형 쏘렌토 (MQ4) 2.2 디젤 2WD 시그니처 기아 신형 쏘렌토 (MQ4) 2.2 디젤 2WD 시그니처기아 신형 쏘렌토 (MQ4) 2.2 디젤 2WD 시그니처기아 신형 쏘렌토 (MQ4) 2.2 디젤
+                                2WD 시그니처기아 신형 쏘렌토 (MQ4) 2.2 디젤 2WD 시그니처</a
+                              >
+                            </div>
+                            <div class="resource-box"><span>2020년식</span><span>10,762km</span><span>경유</span></div>
+                            <div class="bdg-box">
+                              <span class="orange">SK인증중고차</span>
+                              <span class="line-block">HOT</span>
+                              <span class="line-green">무사고</span>
+                              <span class="green">HOT</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="review-board-wrap">
+                        <!-- title -->
+                        <div class="board-title">
+                          <p class="title">구매한 차량에 대한 소감을 듣고 싶어요</p>
+                          <p class="title-desc">차량에 대한 만족도를 알려주세요</p>
+                        </div>
+                        <!-- //title -->
+                        <!-- 별점 -->
+                        <div class="star-point-wrap">
+                          <div class="star-point-box" role="radiogroup">
+                            <button class="star-point N=a:wrtrv.rate5" role="radio" aria-checked="false" data-value="5"><span class="hide-txt">5점</span></button>
+                            <button class="star-point N=a:wrtrv.rate4" role="radio" aria-checked="false" data-value="4"><span class="hide-txt">4점</span></button>
+                            <button class="star-point N=a:wrtrv.rate3" role="radio" aria-checked="false" data-value="3"><span class="hide-txt">3점</span></button>
+                            <button class="star-point N=a:wrtrv.rate2" role="radio" aria-checked="true" data-value="2"><span class="hide-txt">2점</span></button>
+                            <button class="star-point N=a:wrtrv.rate1" role="radio" aria-checked="false" data-value="1"><span class="hide-txt">1점</span></button>
+                          </div>
+                        </div>
+                        <!-- 별점 -->
+
+                        <!-- 리뷰내용 -->
+                        <div class="wrap-textarea">
+                          <div class="box-textarea md">
+                            <textarea placeholder="최소 10자 이상 입력해주세요"></textarea>
+                          </div>
+                          <p class="txt-cnt"><span>0</span>/500</p>
+                        </div>
+                        <!-- //리뷰내용 -->
+
+                        <!-- 사진첨부 -->
+                        <div class="photo-add-wrap">
+                          <p class="title">사진을 업로드 해주세요</p>
+                          <p class="title-desc">사진 업로드 시에 실제 구매한 차량이 아닌 다른 사진을 올리거나 부적합한 사진을 등록하시는 경우, 사진이 삭제될 수 있습니다.</p>
+
+                          <div class="photo-add-box">
+                            <div class="photo-add">
+                              <img src="https://via.placeholder.com/300x172" alt="첨부이미지" />
+                              <button type="button" class="btn-del-img" title="첨부이미지삭제버튼">첨부이미지삭제버튼</button>
+                            </div>
+                            <div class="photo-add">
+                              <img src="https://wimg.mk.co.kr/meet/neds/2022/10/image_readmed_2022_879855_16649602275187419.jpg" alt="첨부이미지" />
+                              <button type="button" class="btn-del-img" title="첨부이미지삭제버튼">첨부이미지삭제버튼</button>
+                            </div>
+                            <div class="photo-add">
+                              <img src="https://www.seoulfn.com/news/photo/202211/471383_236568_1059.jpg" alt="첨부이미지" />
+                              <button type="button" class="btn-del-img" title="첨부이미지삭제버튼">첨부이미지삭제버튼</button>
+                            </div>
+
+                            <!-- button으로 개발쿼리 처리 -->
+                            <div class="photo-add">
+                              <button type="button" class="add-photo">사진첨부</button>
+                            </div>
+                            <!-- button으로 개발쿼리 처리 -->
+
+                            <!-- file 타입 커스텀 -->
+                            <div class="photo-add">
+                              <div class="filebox">
+                                <input class="upload-name" value="첨부파일" placeholder="첨부파일" />
+                                <label for="file">사진 첨부</label>
+                                <input type="file" id="file" />
+                              </div>
+                            </div>
+                            <!-- file 타입 커스텀 -->
+                          </div>
+                        </div>
+                        <!-- //사진첨부 -->
+
+                        <div class="btn-wrap">
+                          <div class="btn-box">
+                            <button class="btn-primary" disabled>리뷰 등록</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </article>
+
+        <!-- quick -->
+        <article class="quick" w3-include-html="./include/FP2-RT3200.html"></article>
+        <!-- //quick -->
+      </main>
+
+      <!-- footer -->
+      <footer w3-include-html="./include/footer.html"></footer>
+      <!-- //footer -->
     </div>
-  </div>
-  <table class="my-car">
-    <colgroup>
-      <col width="102px" />
-      <col width="230px" />
-      <col width="auto" />
-    </colgroup>
-    <thead>
-      <tr>
-        <th>신청일</th>
-        <th colspan="2">차량정보</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- list 1set -->
-      <tr>
-        <td>
-          <div class="ask-date">2023년 09월 23일</div>
-        </td>
-        <td>
-          <div class="card-thum">
-            <a href="" class="product-img"><img src="https://via.placeholder.com1/230x150" onerror="this.style.display='none';" alt="상품이미지" /></a>
-          </div>
-        </td>
-        <td>
-          <div class="card-content">
-            <div class="product-info-box">
-              <div class="title"><a href="">방문예약신청 - 기아 신형 쏘렌토 (MQ4) 2.2 디젤 2WD 시그니처 - 상품이미지 오류시</a></div>
-              <div class="resource-box"><span>2020년식</span><span>10,762km</span><span>경유</span></div>
-              <div class="bdg-box">
-                <span class="orange">SK인증중고차</span>
-                <span class="line-block">HOT</span>
-                <span class="line-green">무사고</span>
-                <span class="green">HOT</span>
-              </div>
-            </div>
-            <div class="price-box">
-              <div class="price"><span>2,196</span><em class="unit">만원</em></div>
-              <div class="sale">40% 할인</div>
-            </div>
-          </div>
-        </td>
-      </tr>
-      <!-- //list 1set -->
-      <tr>
-        <td>
-          <div class="ask-date">2023년 09월 23일</div>
-        </td>
-        <td>
-          <div class="card-thum">
-            <a href="" class="product-img"><img src="https://cdn.autotribune.co.kr/news/photo/202211/6896_38841_1219.jpg" onerror="this.style.display='none';" alt="상품이미지" /></a>
-          </div>
-        </td>
-        <td>
-          <div class="card-content">
-            <div class="product-info-box">
-              <div class="title">
-                <a href=""
-                  >기아 신형 쏘렌토 (MQ4) 2.2 디젤 2WD 시그니처 기아 신형 쏘렌토 (MQ4) 2.2 디젤 2WD 시그니처기아 신형 쏘렌토 (MQ4) 2.2 디젤 2WD 시그니처기아 신형 쏘렌토 (MQ4) 2.2 디젤 2WD 시그니처기아
-                  신형 쏘렌토 (MQ4) 2.2 디젤 2WD 시그니처</a
-                >
-              </div>
-              <div class="resource-box"><span>2020년식</span><span>10,762km</span><span>경유</span></div>
-              <div class="bdg-box">
-                <span class="orange">SK인증중고차</span>
-                <span class="line-block">HOT</span>
-                <span class="line-green">무사고</span>
-                <span class="green">HOT</span>
-              </div>
-            </div>
-            <div class="price-box">
-              <div class="price"><span>2,196</span><em class="unit">만원</em></div>
-              <div class="sale">40% 할인</div>
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr class="status-cancel">
-        <td>
-          <div class="ask-date">2023년 09월 23일</div>
-        </td>
-        <td>
-          <div class="card-thum">
-            <a class="product-img">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN4LRfl1sZo1oebRKEQqkUKT3CAOfN-M2iYC0lpSPpOOIohZWrmR272lotbcHfvFplzKM&usqp=CAU"
-                onerror="this.style.display='none';"
-                alt="상품이미지"
-              />
-            </a>
-          </div>
-        </td>
-        <td>
-          <div class="card-content">
-            <div class="product-info-box">
-              <div class="title"><a>기아 신형 쏘렌토 (MQ4) 2.2 디젤 2WD 시그니처, tr class status-cancel 추가</a></div>
-              <div class="resource-box"><span>2020년식</span><span>10,762km</span><span>경유</span></div>
-              <div class="bdg-box">
-                <span class="orange">SK인증중고차</span>
-                <span class="line-block">HOT</span>
-                <span class="line-green">무사고</span>
-                <span class="green">HOT</span>
-              </div>
-            </div>
-            <div class="price-box">
-              <div class="price"><span>2,196</span><em class="unit">만원</em></div>
-              <div class="sale">40% 할인</div>
-            </div>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  </body>
+  <script src="../../../assets/pc/js/ui.js"></script>
+  <script>
+    includeHTML();
+
+    tabInTab();
+  </script>
+</html>

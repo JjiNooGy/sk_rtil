@@ -12,7 +12,7 @@
 .header_wrap {
   position: sticky;
   top: 0;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-flow: column-reverse;
   flex-wrap: wrap;
@@ -314,7 +314,7 @@
   left: 50%;
   top: 131px;
   transform: translateX(-50%);
-  width: 100vw;
+  width: 100%;
   position: fixed;
   justify-content: center;
   z-index: 1000;
@@ -327,7 +327,7 @@
     bottom: 0;
     top: 0;
     z-index: -1;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background: rgba(0, 0, 0, 0.7);
   }
@@ -619,7 +619,7 @@ main {
 **************************************************************************************************/
 
 footer {
-  width: 100vw;
+  width: 100%;
   background-color: #eceef0;
   padding: 64px 0 50px;
 

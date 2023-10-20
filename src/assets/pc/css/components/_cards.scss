@@ -211,6 +211,97 @@
     }
   }
 }
+
+.card-box {
+  .card-bullet {
+  }
+  .card-thum {
+    .product-img {
+      img {
+      }
+    }
+  }
+  .card-content {
+    .product-info-box {
+      .title {
+      }
+      .resource-box {
+        span {
+          .card-box {
+            .card-bullet {
+            }
+            .card-thum {
+              .product-img {
+                img {
+                }
+              }
+            }
+            .card-content {
+              .product-info-box {
+                .title {
+                }
+                .resource-box {
+                  span {
+                  }
+                  span + span {
+                  }
+                  span + span:before {
+                  }
+                }
+                .bdg-box {
+                  span {
+                  }
+                  .orange {
+                  }
+                  .line-block {
+                  }
+                  .line-green {
+                  }
+                  .green {
+                  }
+                }
+              }
+
+              .price-box {
+                .price {
+                  .unit {
+                  }
+                }
+                .sale {
+                }
+              }
+            }
+          }
+        }
+        span + span {
+        }
+        span + span:before {
+        }
+      }
+      .bdg-box {
+        span {
+        }
+        .orange {
+        }
+        .line-block {
+        }
+        .line-green {
+        }
+        .green {
+        }
+      }
+    }
+
+    .price-box {
+      .price {
+        .unit {
+        }
+      }
+      .sale {
+      }
+    }
+  }
+}
 /**************************************************************************************************
   *** review
   **************************************************************************************************/
