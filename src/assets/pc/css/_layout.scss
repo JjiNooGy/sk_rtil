@@ -22,6 +22,7 @@
 
   header {
     display: flex;
+    align-items: center;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -86,25 +87,25 @@
       position: relative;
       margin-left: auto;
       display: flex;
-      gap: 0 20px;
-      padding: 15px 0 17px;
+      gap: 0 14px;
+      // padding: 15px 0 17px;
       .header-util-button {
         position: relative;
-        width: 48px;
-        height: 48px;
+        width: 40px;
+        height: 40px;
 
         .bullet {
           position: absolute;
-          left: -2px;
-          top: -2px;
+          right: 0px;
+          top: 2px;
           border-radius: 30px;
-          width: 16px;
-          height: 16px;
+          width: 6px;
+          height: 6px;
           line-height: 16px;
           text-align: center;
-          background-color: #e51837;
+          background-color: var(--color-primary);
           color: #fff;
-          font-size: 12px;
+          font-size: 0px;
         }
 
         button {
@@ -304,6 +305,75 @@
         }
       }
     }
+  }
+}
+/*******************************
+** 헤더 - 알람모달
+*******************************/
+.alarm-wrap {
+  position: absolute;
+  top: 52px;
+  right: -68px;
+  width: 375px;
+  padding: 0 24px 21px;
+  border: 1px solid #d4d7dc;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: unset;
+  filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.16));
+  cursor: pointer;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: solid #d4d7dc;
+    border-width: 1px 1px 0 0;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: -8px;
+    right: 84px;
+  }
+
+  .alarm-list {
+    width: 100%;
+    padding: 24px 0;
+
+    dl {
+      dt {
+        color: var(--txt-defult);
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 140%;
+      }
+      dd {
+        margin-top: 6px;
+        color: var(--txt-defult);
+        font-size: 14px;
+        line-height: 140%;
+
+        span {
+          color: #d4d7dc;
+        }
+      }
+    }
+
+    .alarm-date {
+      margin-top: 4px;
+      color: var(--txt-info);
+      font-size: 12px;
+      line-height: 140%;
+
+      span {
+        margin-right: 10px;
+      }
+    }
+  }
+  .alarm-list + .alarm-list {
+    border-top: 1px solid #eceef0;
   }
 }
 /*******************************
