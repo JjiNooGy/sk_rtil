@@ -1,0 +1,420 @@
+/* #################### 로그인 페이지 CSS 시작 #################### */
+
+/* 로그인 페이지 전체 영역 */
+.osl-login {
+	height: 100vh;
+	position: relative;
+}
+
+/* 로그인 페이지 헤더, 푸터 영역 배경 색상 오류 수정 */
+.osl-login .app-header,
+.osl-login .app-footer {
+	background-color: white;
+}
+
+/* 로그인 페이지 헤더 영역 */
+.osl-login .app-header {
+	display: flex;
+    justify-content: center;
+    height: 75px;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* 로그인 페이지 메인 영역 */
+.osl-login .kt-login-v2 {
+	width: 100%;
+	height: calc(100vh - 135px);
+	background-color: white;
+}
+
+/* 로그인 페이지 좌측 : 메인 이미지 전체 영역 */
+.osl-login__image {
+	width: 635px;
+	position: absolute;
+    top: 47.5%;
+    transform: translateY(-50%);
+    left: 12%;
+}
+
+/* 로그인 페이지 좌측 : 메인 이미지 사이즈 */
+.osl-login__image > img {
+	width: 100%;
+	object-fit: cover;
+}
+
+/* 로그인 페이지 우측 영역 */
+.osl-login-v2__wrapper {
+	height: 100vh;
+	background-color: #323248;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 825px;
+	display: flex;
+    color: #DFE6E9;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 로그인 페이지 우측 : 로그인 폼 전체 영역 */
+.osl-login-v2__container {
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space;
+    gap: 3.7rem;
+    height: 71%;
+}
+
+/* 로그인 페이지 우측 : 로그인 폼 */
+.osl-login-form {
+	width: 595px;
+}
+
+/* 로그인 페이지 폼 영역 : 로고 이미지 */
+.kt-login-v2__logo > a {
+	display: block;
+	width: 280px;
+	height: 215px;
+	background: url('/media/logos/login_logo_osl.svg') no-repeat center;
+	background-size: cover;
+}
+
+/* 로그인 폼 인풋 박스 */
+.osl-login-form__input-box {
+	border-bottom: 1px solid #DFE6E9;
+	height: 70px;
+	position: relative;
+	overflow: hidden;
+}
+
+/* 로그인 폼 인풋 박스 : 아이콘 공통 */
+.osl-login-form__input-icon {
+	background-color: #fff;
+	mask-size: 21px !important;
+	-webkit-mask-size: 21px !important;
+	position: absolute;
+    right: 15px;
+    bottom: 21%;
+    width: 21px;
+    height: 24px;
+}
+
+/* 로그인 폼 인풋 박스 : 로그인 user 아이콘 */
+.osl-convert-img-login-user {
+	.mask-image: url(/media/osl/icon/login-input-icon.png);
+	-webkit-mask-image: url(/media/osl/icon/login-input-icon.png);	
+}
+
+/* 로그인 폼 인풋 박스 : 로그인 password 아이콘 */
+.osl-convert-img-login-pw {
+	.mask-image: url(/media/osl/icon/login-input-icon2.png);
+	-webkit-mask-image: url(/media/osl/icon/login-input-icon2.png);	
+}
+
+/* 로그인 폼 인풋 */ 
+.osl-login-form__input-box input {
+	outline: none !important;		
+	appearance: none !important;	
+	border: none; 
+	-webkit-appearance: none !important;
+	-webkit-border-radius: 0 !important;
+	background-color: transparent !important;	
+	color: #fff;
+    position: absolute;
+    bottom: 0;
+    font-size: 20px !important;
+}
+
+/* 로그인 폼 인풋 validate 안내 문구 */
+.osl-login-form__input-box .fv-plugins-message-container {
+    position: absolute;
+    bottom: -35px;
+    width: 100%;
+    height: 25px;
+    font-size: 15px !important;
+    padding: 0 7px;
+}
+
+/* 로그인 폼 인풋 ( 크롬 자동 생성 인풋 속성 초기화 + 디자인 폼 양식 색상으로 변경 ) */
+.osl-login-form__input-box input:-webkit-autofill,
+.osl-login-form__input-box input:-webkit-autofill:hover,
+.osl-login-form__input-box input:-webkit-autofill:focus,
+.osl-login-form__input-box input:-webkit-autofill:active {
+	transition: background-color;
+	-webkit-transition: background-color;
+	-webkit-box-shadow: -150000px -200001px 8px 0px #323248 inset !important;
+	-webkit-text-fill-color: #DFE6E9 !important;
+	font-size: 20px !important;
+	border: 1px solid transparent;
+}
+
+/* 로그인 폼 인풋 placeholder */ 
+.osl-login-form__input-box input::placeholder {
+	color: #909aa3 !important;
+	font-size: 20px !important;
+	transition: .2s;
+	opacity: 1;
+	visibility: visible;
+}
+
+/* 로그인 폼 인풋 focus 시 placeholder 이펙트 */
+.osl-login-form__input-box input:focus::placeholder {
+	opacity: 0;
+	visibility: hidden;
+}
+
+/* 로그인 폼 하단 영역 */
+.osl-login .kt-login-v2__actions {
+	margin-top: 86px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* 로그인 폼 하단 영역 : 계정 찾기 안내 문구 */
+.osl-form__find {
+	color: #95AFC0;
+	font-size: 15px;
+}
+
+/* 로그인 폼 하단 영역 : 계정 찾기 안내 문구 hover 이펙트 */
+.osl-form__find:hover {
+	color: #93a3ea;
+}
+
+/* 로그인 폼 하단 영역 : 로그인 버튼 */
+.osl-btn-login {
+	background-color: #686DE0;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    width: 100%;
+}
+
+/* 로그인 버튼 hover 이펙트 */
+.osl-btn-login:hover {
+	background-color: #463F98;	
+}
+
+/* 로그인 페이지 푸터 영역 */
+.osl-login .app-footer .app-container {
+	width: 100%;	
+	z-index: 10;
+	display: flex;
+    align-items: center;
+    font-weight: 600;
+    justify-content: space-between;
+}
+.osl-login .app-footer .app-container .menu-item a {
+	color: white;
+}
+
+/* #################### 로그인 페이지 CSS 끝 #################### */
+
+/* #################### 로그인 페이지 반응형 시작 #################### */
+@media (max-width: 1900px){
+	.osl-login__image {
+		width: 30%;
+		left: 13%;ssssss
+	}	
+}
+
+@media (max-width: 1842px){
+	.osl-login__image {
+		left: 11%;
+	}	
+}
+
+@media (max-width: 1686px){
+	.osl-login__image {
+		left: 10%;
+	}
+}
+
+@media (max-width: 1590px){
+	.osl-login__image {
+		left: 8%;
+	}
+}
+
+@media (max-width: 1448px){
+	.osl-login__image {
+		left: 6%;
+	}
+}
+
+@media (max-width: 1380px){
+	.osl-login__image {
+		left: 4%;
+	}
+}
+
+@media (max-width: 1286px){
+	.osl-login__image {
+		left: 2.5%;
+	}
+}
+
+@media (max-width: 1247px){
+	.osl-login .app-header,
+	.osl-login .kt-login-v2, 
+	.osl-login .app-footer {
+		background-color: #323248 !important;
+	}
+	.osl-login-v2__wrapper {
+   	 	left: 50%;
+	    transform: translate( -50%,-50%);
+	    top: 31%;
+	    width: 100%;
+	}
+	.osl-login-v2__container {
+		gap: 3.5rem;
+		height: 35%;
+		margin-top: 10px;
+	}
+	.osl-login__image { 
+    	display: none;
+	}
+	.osl-login .kt-login-v2__actions {
+		gap: 4rem;
+		margin-top: 60px;
+	}
+	.osl-login-form {
+		width: 595px;
+	}
+	.osl-login-form__input-box {
+		height: 55px;
+	}
+	.osl-login .app-footer .app-container div span,
+	.osl-login .app-footer .app-container .menu .menu-item a {
+		color: #b2b6bb !important;
+	}
+}
+
+@media (max-width: 724px){
+	.osl-login-form {
+		width: 533px;
+	}
+}
+
+@media (max-width: 626px){
+	.osl-login-form {
+		width: 451px;
+	}
+	.kt-login-v2__logo > a {
+		background: url('/media/logos/login_logo_osl-white.svg') no-repeat center;
+		background-size: 90%;
+    	height: 196px;
+	}
+	.osl-login__image {
+		top: 9%;
+		width: 176px;
+	}
+	.kt-login-v2__actions .osl-btn-login {
+		border-radius: 50px;
+	}	
+	.osl-login-v2__wrapper {
+		background-color: #fff;
+	}
+	.osl-login__text {
+		color: #1B1E59;
+	}
+	.osl-login .app-header, 
+	.osl-login .kt-login-v2, 
+	.osl-login .app-footer {
+		background-color: #fff !important;	
+	}
+	.osl-login-form__input-box {
+		border: 1px solid #b5bfcb;
+    	border-radius: 50px;
+	}
+	.osl-login-form__input-box input:-webkit-autofill, 
+	.osl-login-form__input-box input:-webkit-autofill:hover, 
+	.osl-login-form__input-box input:-webkit-autofill:focus, 
+	.osl-login-form__input-box input:-webkit-autofill:active {
+		-webkit-box-shadow: 0 0 0px 1000px #fff inset !important;
+		-webkit-text-fill-color: #000 !important;
+	}
+	.osl-login-form__input-box input {
+		bottom: 5%;
+    	left: 2%;
+    	color: #000;
+	}
+	.osl-login-form__input-box input::placeholder {
+		color: #a8a8a8 !important;
+	}
+	.osl-form__find {
+		color: #5d7bb4;
+	}
+	.osl-login .app-footer .app-container div span,
+	.osl-login .app-footer .app-container .menu .menu-item a {
+		color: #8d8d9c !important;
+	}
+	.osl-login-form__input-icon {
+		background-color: #a8a8a8;
+		right: 15px;
+   		top: 25%;
+	}
+	.osl-login .kt-login-v2__actions {
+		gap: 2rem;
+	}
+	.osl-form__find {
+		transform: translateX(-20px);
+	}
+	.osl-login-form__input-box .fv-plugins-message-container {
+		padding: 0 16px;
+	}
+}
+
+@media (max-width: 414px){
+	body, .app-default {
+		background-color: #fff;
+	}
+	.osl-login-form {
+    	width: 357px;
+	}
+	.osl-login-v2__container {
+		margin-top: 0;	
+		font-size: 14px;
+	}
+	.osl-login__image {
+		top: 9%;
+	}
+	.osl-login .app-footer .app-container {
+		flex-direction: column;
+    	justify-content: center;
+    	transform: translateY(-15px) !important;
+	}
+	.osl-login-form__input-box--pw {
+		margin-top: 3.5rem !important;
+	}
+	.osl-login .kt-login-v2__actions {
+		margin-top: 61px;
+	}
+}
+
+@media (max-width: 375px){
+	.osl-login__image {
+		display: none;
+	}
+	.osl-login-v2__container {
+		height: 95%;
+		margin-top: 0;
+	}
+	.osl-login-v2__wrapper {
+		left: 0;
+    	top: 0;
+    	transform: translate(0);
+	}
+	.kt-login-v2__logo > a > img {
+		width: 177px;
+	}
+	.osl-login .kt-login-v2__actions {
+		gap: 1rem;
+	}
+}
+
+/* #################### 로그인 페이지 반응형 끝 #################### */

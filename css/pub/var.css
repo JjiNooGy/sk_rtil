@@ -1,0 +1,383 @@
+/***************  var ***************/
+
+
+/* color */
+:root {
+    --kt-app-bg-color: #F5F5F7;
+    --bs-link-color: #121212; /* 퍼블변경 - lnb 3depth 관련 변경, 추후 링크 컬러과련 변경시 lnb a 색상 지정 필요 */
+
+
+    --kt-menu-link-color-active: #121212;
+
+    --kt-menu-link-bg-color-active: #E8ECFF;
+
+
+    /* --kt-primary: #121212; */
+    /* --kt-primary-hover: #414141;
+    --kt-primary-press: #717171;
+    --kt-primary-active: #af0030;
+    --kt-primary-disabled: #b8b8b8; */
+
+    --osl-primary: #121212;
+    --osl-primary-hover: #414141;
+    --osl-primary-press: #717171;
+    --osl-primary-active: #af0030;
+    --osl-primary-disabled: #b8b8b8;
+
+    --gap-margin: 0px;
+ 
+
+}
+html:not([data-theme=dark]) {
+    --kt-app-bg-color: #F5F5F7;
+}
+/* size */
+:root {
+    --kt-app-header-height: 50px;
+    --kt-app-header-height-actual: 50px;
+    --kt-app-header-gap-start: 32px;
+    --kt-app-header-gap-end: 16px;
+    --kt-app-sidebar-width: 248px;
+    --kt-app-sidebar-width-actual: 248px;
+    --kt-app-sidebar-gap-start: 12px;
+    --kt-app-sidebar-gap-end: 24px;
+
+
+
+    --kt-app-sidebar-width: 248px;
+    --kt-app-sidebar-minimize-width: 56px;
+
+
+
+    --bs-nav-link-font-size: 12px;
+}
+
+
+
+
+[data-kt-app-sidebar-minimize=on] {
+    --kt-app-sidebar-width: 56px;
+    --kt-app-sidebar-gap-start: 12px;
+    --kt-app-sidebar-gap-end: 24px;
+    /* --kt-app-sidebar-gap-top: 0px;
+    --kt-app-sidebar-gap-bottom: 0px; */
+}
+
+
+:root,
+[data-theme=light] {
+
+    
+
+
+    --osl-color-main-001: #A50034;
+    --osl-color-main-002: #969DC9;
+    --osl-color-main-003: #333573;
+    --osl-color-gray-001: #555555;
+    --osl-color-gray-002: #888888;
+    --osl-color-gray-003: #AAAAAA;
+    --osl-color-gray-004: #F1F1F1;
+    --osl-color-point-001: #27DB70;
+    --osl-color-point-002: #F13F22;
+    --osl-color-point-003: #0D99FF;
+
+    
+
+    --osl-text-muted: #888888;
+    --osl-text-default: #121212;
+    --osl-text-gray-005: #888888;
+    --osl-text-gray-006: #555555;
+    --osl-text-disabled-001: #b8b8b8;
+    --osl-text-disabled-001: #cccccc;
+    --osl-text-point-blue: #0D99FF;
+    --osl-text-blue: #333573;
+    --osl-text-green: #31A372;
+    --osl-text-purple: #969DC9;
+    --osl-text-red: #BD2427;
+    
+
+
+    /* border */
+    --osl-border-001: #DCDCDC;
+    --osl-border-002: #F1F1F1;
+    --osl-border-color: #FAFAFC;
+    --osl-border-color-001: #DCDCDC;
+    --osl-border-color-002: #F1F1F1;
+    --osl-border-color-003: #F5F5F7;
+    --osl-border-purple: #969DC9;
+    --osl-border-purple-light: #E8ECFF;
+    --osl-border-point-blue: #0D99FF;
+
+    --osl-border-black: #121212;
+    
+
+    /* bg */
+    --osl-bg-black: #121212;
+    --osl-bg-default: #fff;
+
+    --osl-bg-hover: #F1F1F1;
+    --osl-bg-hover2: #ebebeb;
+    --osl-bg-active: #E8ECFF;
+    --osl-bg-gray-001: #FAFAFC;
+    --osl-bg-gray-005: #FAFAFC;
+    --osl-bg-gray-006: #F5F5F7;
+    
+
+    --osl-bg-light-02: #F5F5F7;
+    --osl-gray-light-04: #555555;
+
+    --osl-bg-gray: #DCDCDC;
+    --osl-bg-light-gray: #F1F1F1;
+    --osl-bg-light-gray-002: #AAAAAA;
+    --osl-bg-light-gray-003: #888888;
+    --osl-bg-gray-dark: #393939;
+    --osl-bg-blue: #333573;
+    --osl-bg-blue-hover: #272959;
+    --osl-bg-green: #31A372;
+    --osl-bg-purple: #969DC9;
+    --osl-bg-purple-hover: #878DB5;
+    --osl-bg-purple-light: #E8ECFF;
+    --osl-bg-purple-light-hover: #d1d4e5;
+    --osl-bg-pink: #FFC0D2;
+
+
+
+    
+
+
+
+    /*** badge ***/
+
+    /* keenthemes */
+    --osl-badge-light: #F1F1F4;
+    --osl-badge-light-border: #F1F1F4;
+    --osl-badge-light-text: #121212;
+
+    --osl-badge-primary: #337ab7;
+    --osl-badge-primary-border: ;
+    --osl-badge-primary-text: #fff;
+
+    --osl-badge-secondary: #F5F5F7;
+    --osl-badge-secondary-border: #F5F5F7;
+    --osl-badge-secondary-text: #121212;
+    
+    /* --osl-badge-success: #449d44;
+    --osl-badge-success-border: #449d44;
+    --osl-badge-success-text: #fff;
+
+    --osl-badge-warning: #f0ad4e;
+    --osl-badge-warning-border: #f0ad4e;
+    --osl-badge-warning-text: #fff;
+
+    --osl-badge-danger: #c9302c;
+    --osl-badge-danger-border: #c9302c;
+    --osl-badge-danger-text: #fff;
+
+    --osl-badge-info: #5bc0de;
+    --osl-badge-info-border: #5bc0de;
+    --osl-badge-info-text: #fff; */
+
+    --osl-badge-success: #449d44;
+    --osl-badge-success-border: #449d44;
+    --osl-badge-success-text: #fff;
+
+    --osl-badge-warning: #FFCE22;
+    --osl-badge-warning-border: #FFCE22;
+    --osl-badge-warning-text: #555555;
+
+    --osl-badge-danger: #FF6240;
+    --osl-badge-danger-border: #FF6240;
+    --osl-badge-danger-text: #fff;
+
+    --osl-badge-info: #0D99FF;
+    --osl-badge-info-border: #0D99FF;
+    --osl-badge-info-text: #fff;
+
+    --osl-badge-dark: #AAAAAA;
+    --osl-badge-dark-border: #AAAAAA;
+    --osl-badge-dark-text: #fff;
+
+
+
+    /* Custom */
+    --osl-badge-default: #fff;
+    --osl-badge-default-border: #DCDCDC;
+    --osl-badge-default-text: #121212;
+
+    --osl-badge-green: #31A372;
+    --osl-badge-green-border: #31A372;
+    --osl-badge-green-text: #fff;
+
+    --osl-badge-blue: #333573;
+    --osl-badge-blue-border: #333573;
+    --osl-badge-blue-text: #fff;
+
+    --osl-badge-red: #BD2427;
+    --osl-badge-red-border: #BD2427;
+    --osl-badge-red-text: #fff;
+
+    --osl-badge-yellow: #FFCD66;
+    --osl-badge-yellow-border: #FFCD66;
+    --osl-badge-yellow-text: #121212;
+
+    --osl-badge-gray: #f1f1f1;
+    --osl-badge-gray-border: #f1f1f1;
+    --osl-badge-gray-text: #121212;
+
+    --osl-badge-gray2: #DCDCDC;
+    --osl-badge-gray2-border: #DCDCDC;
+    --osl-badge-gray2-text: #555555;
+
+    --osl-badge-navy: #f1f1f1;
+    --osl-badge-navy-border: #f1f1f1;
+    --osl-badge-navy-text: #121212;
+
+    --osl-badge-purple-light: #E8ECFF;
+    --osl-badge-purple-light-border: #E8ECFF ;
+    --osl-badge-purple-light-text: #121212;
+
+
+
+    
+
+
+
+    /* grid */
+
+    --osl-table-select: #fff;
+    
+
+    /* --kt-text-muted: #121212; /* 퍼블변경 - 헤더 아이콘 hover용 컬러로 변경 -> font-weight만 줌 */
+    --kt-success: #27DB70;    /* 퍼블변경 - 헤더 아이콘 불릿 작업시 색상 변경*/
+    /*--kt-text-primary: #121212; /* 퍼블변경 - 헤더 아이콘 hover 컬러용으로 변경*/
+    --kt-text-dark: #121212; /* 퍼블변경 */
+
+    --kt-border-color: #F1F1F1;
+
+    --kt-text-muted: #888888;
+    --kt-text-default: #121212;
+    --kt-text-gray-001: #888888;
+
+    --kt-headings-color: #121212;
+
+
+
+    /* form */
+    --osl-input-bg: #fff;
+    --osl-form-disabled-bg : #F1F1F1;
+    --osl-form-disabled-border: #DCDCDC;
+    --osl-form-disabled-text: #888888;
+    --osl-form-text: #121212;
+
+
+    --kt-input-btn-focus-color: rgba(0, 158, 247, 0.25);
+    --kt-input-btn-focus-box-shadow: 0 0 0 0.25rem rgba(0, 158, 247, 0.25);
+    --kt-input-btn-focus-color-opacity: 0.25;
+    --kt-input-color: #121212; /* 퍼블수정 */
+    --kt-input-placeholder-color: #555555; /* 퍼블수정 */
+    --kt-input-plaintext-color: #5E6278;
+   
+    --kt-form-label-color: #3F4254;
+    --kt-form-text-color: #A1A5B7;
+    --kt-input-bg: #ffffff;
+    --kt-input-disabled-bg: #F1F1F1; /* 퍼블수정 */
+    --kt-input-disabled-color: #888888; /* 퍼블수정 */
+    --kt-input-disabled-border-color: #DCDCDC; /* 퍼블수정 */
+    --kt-input-color: #5E6278;
+    --kt-input-border-color: #dcdcdc; /* 퍼블수정 */
+    --kt-input-focus-bg: #ffffff;
+    --kt-input-focus-border-color: #121212; /* 퍼블수정 */
+    --kt-input-focus-color: #121212; /* 퍼블수정 */
+    --kt-input-solid-bg: #f5f8fa;
+    --kt-input-solid-bg-focus: #eef3f7;
+    --kt-input-solid-placeholder-color: #A1A5B7;
+    --kt-input-solid-color: #5E6278;
+    --kt-input-readonly-bg: #F1F1F1; /* 퍼블수정 */
+
+
+    --kt-form-select-color: #5E6278;
+    --kt-form-select-bg: #ffffff;
+    --kt-form-select-disabled-color: ;
+    --kt-form-select-disabled-bg: #eff2f5;
+    --kt-form-select-disabled-border-color: #E4E6EF;
+    --kt-form-select-indicator-color: #7E8299;
+    --kt-form-select-indicator: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%237E8299' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    --kt-form-select-border-color: #E4E6EF;
+    --kt-form-select-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+    --kt-form-select-focus-border-color: #F4F6FF; /* 퍼블수정 */
+    --kt-form-select-focus-box-shadow: 0 0 0 0.25rem rgba(0, 158, 247, 0.25);
+
+    --osl-form-select-focus-bg: #F4F6FF; /* 퍼블추가 */
+    --kt-form-select-indicator: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M11.9936 14.2465L7.39359 9.64648L6.33984 10.7002L11.9936 16.354L17.6473 10.7002L16.5936 9.64648L11.9936 14.2465Z' fill='%23555555'/%3E%3C/svg%3E");;
+
+
+
+    --kt-form-select-color: #121212;
+    /* --kt-form-select-bg: #f5f5f7; */
+    --kt-form-select-border-color: #f5f5f7;
+    /* background-image: var(--kt-form-select-indicator); */
+    /* border: 1px solid var(--kt-form-select-border-color); */
+    /* box-shadow: var(--kt-form-select-box-shadow); */
+    --kt-dropdown-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+
+    --osl-form-select-focus-border-color: #F4F6FF;
+    --osl-form-select-focus-bg-color: #F4F6FF;
+    --osl-form-select-focus-color: #555555;
+
+    --osl-form-select-hover-border-color: #e1e1e3;
+    --osl-form-select-hover-bg-color: #e1e1e3;
+    --osl-form-select-hover-color: #555555;
+
+
+    --kt-scrollbar-color: #E2E5E8;
+    --kt-scrollbar-hover-color: #cbced0;
+
+
+
+}
+
+[data-theme=dark] {
+    --osl-color-main-001: #E52C8E;
+    --osl-color-main-002: #BB86FC;
+    --osl-color-main-003: #365498;
+    --osl-color-gray-001: #F1F1F1;
+    --osl-color-gray-002: #AAAAAA;
+    --osl-color-gray-003: #888888;
+    --osl-color-gray-004: #555555;
+    --osl-color-point-001: #27DB70;
+    --osl-color-point-002: #F13F22;
+    --osl-color-point-003: #0D99FF;
+
+    /* --kt-text-muted: #121212; /* 퍼블변경 - 헤더 아이콘 hover용 컬러로 변경 -> font-weight만 줌 */
+    --kt-success: #F13F22;    /* 퍼블변경 - 헤더 아이콘 불릿 작업시 색상 변경*/
+    --kt-text-primary: #121212; /* 퍼블변경 - 헤더 아이콘 hover 컬러용으로 변경*/
+    --kt-text-dark: #121212; /* 퍼블변경 */
+
+    --kt-border-color: #F1F1F1;
+    
+
+
+
+    --kt-text-muted: #888888;
+    --kt-text-default: #121212;
+    --kt-text-gray-001: #888888;
+
+    --kt-headings-color: #121212;
+
+    --kt-app-bg-color: #121212;
+    
+}
+
+
+
+/* table */
+:table {
+    --bs-table-color: #121212;
+}
+
+
+
+.row {
+    --bs-gutter-x: 12px;
+    --bs-gutter-y: 0;
+}

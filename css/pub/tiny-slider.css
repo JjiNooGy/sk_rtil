@@ -1,0 +1,77 @@
+
+/* 기본 셀렉트 숨김 */
+.select2-hidden-accessible {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+}
+
+.osl-my-work .tns.tns-default .tns-outer {
+    margin: 0 30px;
+}
+
+
+.osl-select-bar {
+    display: flex;
+    align-items: center;
+    width: auto;
+    min-width: 50px;
+    height: 32px;
+    padding: 0;
+    border: unset;
+    border-bottom: 1px solid var(--osl-primary);
+    border-radius: 0;
+    background-color: transparent;
+    background-position: right center;
+    background-size: 12px 12px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M6 7.80078L3 4.80078H9L6 7.80078Z' fill='%23121212'/%3E%3C/svg%3E");
+    font-size: 11px;
+
+}
+.osl-select-bar:hover,
+.osl-select-bar:focus,
+.osl-select-bar:active,
+.select2-container--bootstrap5.select2-container--focus .osl-select-bar.form-select:not(.form-select-solid):not(.form-select-transparent),
+.select2-container--bootstrap5.select2-container--open .osl-select-bar.form-select:not(.form-select-solid):not(.form-select-transparent) {
+    background-color: transparent;
+    border-bottom: 1px solid var(--osl-primary);
+}
+
+
+
+.osl-select-bar
+
+
+.select2-container .select2-dropdown.select2-dropdown--below.osl-select-bar-drop {
+    min-width: unset !important;
+    border-radius: 8px;
+    border: 0;
+    padding: 4px;
+    box-shadow: var(--kt-dropdown-box-shadow);
+}
+.osl-select-bar-drop .select2-results__options {
+    padding: 4px;
+    background-color: #fff;
+}
+.osl-select-bar-drop .select2-results__option--selectable {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-radius: 8px;
+    font-size: 11px;
+}
+
+.osl-select-bar-drop .select2-results__option--selectable:hover {
+    background-color: rgba(0,0,0,0.3);
+    color: #fff;
+}
+
+.osl-select-bar-drop .select2-search__field{display: none;}
