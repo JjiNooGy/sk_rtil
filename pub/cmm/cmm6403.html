@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조직 및 사용자 선택 팝업</title>
+
+    <link href="../../css/style.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="../../css/style.font.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/style.osl.css" rel="stylesheet" type="text/css" />
+	<link href="../../css/style.lg.pub.css" rel="stylesheet" type="text/css" />
+
+	<!--begin::Page Custom Styles(used by this page) -->
+	<link href="../../css/login/login-v2_lg.css" rel="stylesheet" type="text/css" />
+	<script src="../../plugins/global/plugins.bundle.js" type="text/javascript"></script>
+	<script src="../../js/osl/osl-lang.js" type="text/javascript"></script>
+	<script src="../../js/osl/osl-datatable.js" type="text/javascript"></script>
+	<script src="../../js/osl/osl-regex.js" type="text/javascript"></script>
+	<script src="../../js/osl/osl-core-pub.js" type="text/javascript"></script>
+    <!-- <script src="../../css/pub/pub.js" type="text/javascript"></script> -->
+    
+
+    <!-- <script src="../../js/osl/osl-core.js" type="text/javascript"></script> -->
+	<!--end::Global Theme Bundle -->
+	
+
+	<!-- Vanilla JS - DOM보다 먼저 선언 -->
+	<!-- <script src="../../plugins/draggable/draggabilly.pkgd.js" type="text/javascript"></script> -->
+</head>
+
+<body class="app-default mo" id="kt_app_body"
+data-kt-app-header-fixed="true" 
+data-kt-app-sidebar-enabled="true" 
+data-kt-app-sidebar-fixed="true" 
+data-kt-app-sidebar-push-header="true"	
+data-kt-app-sidebar-push-toolbar="true" 
+data-kt-app-sidebar-push-footer="true" 
+data-kt-app-toolbar-enabled="true">
+
+    <form name="hideAuthForm" method="post">
+        <input type="hidden" name="url">
+        <input type="hidden" name="prjId">
+        <input type="hidden" name="authGrpId">
+    </form>
+    <form name="hideMoveForm" method="post">
+        <input type="hidden" name="menuUrl">
+        <input type="hidden" name="menuId">
+        <input type="hidden" name="menuNm">
+        <input type="hidden" name="prjGrpId">
+        <input type="hidden" name="prjId">
+        <input type="hidden" name="authGrpId">
+        <input type="hidden" name="moveType">
+    </form>
+    <input type="hidden" name="selMenuId" id="selMenuId" value="${sessionScope.selMenuId}">
+    <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+            <div class="app-header" id="kt_app_header">
+                <div class="app-container container-fluid d-flex align-items-stretch justify-content-between" id="kt_app_header_container">
+                    <div class="d-flex align-items-center d-lg-none ms-n2 me-2" title="Show menu">
+                        <div class="btn btn-icon btn-active-color-primary w-35px h-35px ms-4 " id="kt_app_sidebar_mobile_toggle">
+                            <span class="svg-icon svg-icon-1">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 7H3C2.4 7 2 6.6 2 6V4C2 3.4 2.4 3 3 3H21C21.6 3 22 3.4 22 4V6C22 6.6 21.6 7 21 7Z" fill="currentColor" />
+                                    <path opacity="0.3" d="M21 14H3C2.4 14 2 13.6 2 13V11C2 10.4 2.4 10 3 10H21C21.6 10 22 10.4 22 11V13C22 13.6 21.6 14 21 14ZM22 20V18C22 17.4 21.6 17 21 17H3C2.4 17 2 17.4 2 18V20C2 20.6 2.4 21 3 21H21C21.6 21 22 20.6 22 20Z" fill="currentColor" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1" id="kt_app_header_wrapper">
+                        <div class="app-header-menu app-header-mobile-drawer align-items-stretch" 
+                        data-kt-drawer="true" data-kt-drawer-name="app-header-menu" data-kt-drawer-activate="{default: true, lg: false}" 
+                        data-kt-drawer-overlay="true" data-kt-drawer-width="225px" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_app_header_menu_toggle" 
+                        data-kt-swapper="true" data-kt-swapper-mode="{default: 'append', lg: 'prepend'}" data-kt-swapper-parent="{default: '#kt_app_body', lg: '#kt_app_header_wrapper'}">
+                            <div class="menu menu-rounded menu-column menu-lg-row my-5 my-lg-0 align-items-stretch fw-semibold px-2 px-lg-0" id="kt_app_header_menu" data-kt-menu="true">
+                                <div class="menu-item here show menu-lg-down-accordion menu-here-bg me-0 me-lg-2">
+                                    <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                                        <h1 class="page-heading d-flex text-dark fw-bold fs-1 flex-column justify-content-center my-0" title="현재 메뉴 이름" alt="현재 메뉴 이름">조직 및 사용자 선택 팝업</h1>
+                                        <div class="menu menu-column" data-kt-menu="true">
+                                            <div class="menu-item menu-accordion" data-kt-menu-trigger="hover" data-kt-menu-placement="top-start">
+                                                <ul class="menu-link breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 py-1 px-0">
+                                                    <li class="breadcrumb-item text-muted" title="1 Depth" alt="1 Depth">1 Depth</li>
+                                                    <li class="breadcrumb-item bullet"></li> <!-- 퍼블 24.12.04 - 마크업 변경 -->
+                                                    <li class="breadcrumb-item text-muted" title="2 Depth" alt="2 Depth">2 Depth</li>
+                                                    <li class="breadcrumb-item bullet"></li> <!-- 퍼블 24.12.04 - 마크업 변경 -->
+                                                    <li class="breadcrumb-item text-muted" title="3 Depth" alt="3 Depth">3 Depth</li>
+                                                </ul>
+                                                   <div class="menu-sub menu-sub-dropdown" id="oslRctMenuList">
+                                                   </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="app-navbar flex-shrink-0">
+                            <div class="app-navbar-item align-items-stretch ms-1 ms-lg-3">
+                                <div class="app-navbar-item ms-1 ms-lg-3">
+                                    <div class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-32px h-32px w-md-40px h-md-40px position-relative" id="oslTopNotificationsBtn">
+                                        <span class="svg-icon svg-icon-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M5 18.7693V17.7693H6.6155V9.84625C6.6155 8.53975 7.02892 7.39067 7.85575 6.399C8.68275 5.40733 9.73083 4.78975 11 4.54625V4C11 3.72217 11.097 3.48608 11.291 3.29175C11.485 3.09725 11.7206 3 11.9978 3C12.2749 3 12.5113 3.09725 12.7067 3.29175C12.9022 3.48608 13 3.72217 13 4V4.54625C14.2692 4.78975 15.3173 5.40733 16.1443 6.399C16.9711 7.39067 17.3845 8.53975 17.3845 9.84625V17.7693H19V18.7693H5ZM11.9965 21.3845C11.5513 21.3845 11.1714 21.2263 10.8568 20.91C10.5419 20.5937 10.3845 20.2134 10.3845 19.7693H13.6155C13.6155 20.2168 13.4569 20.5978 13.1398 20.9125C12.8228 21.2272 12.4417 21.3845 11.9965 21.3845ZM7.6155 17.7693H16.3845V9.84625C16.3845 8.63075 15.9576 7.59608 15.1038 6.74225C14.2499 5.88842 13.2153 5.4615 12 5.4615C10.7847 5.4615 9.75008 5.88842 8.89625 6.74225C8.04242 7.59608 7.6155 8.63075 7.6155 9.84625V17.7693Z" fill="#555555"/>
+                                              </svg>
+                                        </span>
+                                        <span class="bullet bullet-dot bg-success h-10px w-10px position-absolute top-0 end-0"></span>
+                                    </div>
+                                </div>
+                                <div class="app-navbar-item ms-1 ms-lg-3">
+                                    <div class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-32px h-32px w-md-40px h-md-40px position-relative show menu-dropdown" id="oslTopMyTicketBtn" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+                                        <span class="svg-icon svg-icon-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M8.5 18H19.3845C19.5385 18 19.6796 17.9359 19.8078 17.8077C19.9359 17.6796 20 17.5385 20 17.3845V14.825H8.5V18ZM4 9.175H7.5V6H4.6155C4.4615 6 4.32042 6.06408 4.19225 6.19225C4.06408 6.32042 4 6.4615 4 6.6155V9.175ZM4 13.85H7.5V10.175H4V13.85ZM4.6155 18H7.5V14.825H4V17.3845C4 17.5385 4.06408 17.6796 4.19225 17.8077C4.32042 17.9359 4.4615 18 4.6155 18ZM8.5 13.85H20V10.175H8.5V13.85ZM8.5 9.175H20V6.6155C20 6.4615 19.9359 6.32042 19.8078 6.19225C19.6796 6.06408 19.5385 6 19.3845 6H8.5V9.175ZM4.6155 19C4.15517 19 3.77083 18.8458 3.4625 18.5375C3.15417 18.2292 3 17.8448 3 17.3845V6.6155C3 6.15517 3.15417 5.77083 3.4625 5.4625C3.77083 5.15417 4.15517 5 4.6155 5H19.3845C19.8448 5 20.2292 5.15417 20.5375 5.4625C20.8458 5.77083 21 6.15517 21 6.6155V17.3845C21 17.8448 20.8458 18.2292 20.5375 18.5375C20.2292 18.8458 19.8448 19 19.3845 19H4.6155Z" fill="#555555"/>
+                                              </svg>
+                                        </span>
+                                        <span class="bullet bullet-dot bg-success h-10px w-10px position-absolute top-0 end-0 "></span>
+                                    </div>
+                                    <!--end::Menu wrapper-->
+                                </div>
+                                <div class="app-navbar-item ms-1 ms-lg-3 " id="oslHeaderUserMenuToggleBtn">
+                                    <div class="btn btn-icon btn-custom my-info btn-icon-muted btn-active-light btn-active-color-primary w-32px h-32px w-md-40px h-md-40px" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+                                        <span class="svg-icon svg-icon-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.287 9.14216C16.287 11.5091 14.3682 13.4279 12.0013 13.4279C9.63436 13.4279 7.71558 11.5091 7.71558 9.14216C7.71558 6.77522 9.63436 4.85645 12.0013 4.85645C14.3682 4.85645 16.287 6.77522 16.287 9.14216ZM14.8584 9.14216C14.8584 10.7201 13.5792 11.9993 12.0013 11.9993C10.4233 11.9993 9.14415 10.7201 9.14415 9.14216C9.14415 7.5642 10.4233 6.28502 12.0013 6.28502C13.5792 6.28502 14.8584 7.5642 14.8584 9.14216Z" fill="#ffffff"/>
+                                                <path d="M12.0013 15.5707C7.37673 15.5707 3.43649 18.3053 1.93555 22.1365C2.30119 22.4996 2.68636 22.843 3.08935 23.1651C4.20703 19.6477 7.71323 16.9993 12.0013 16.9993C16.2894 16.9993 19.7956 19.6477 20.9132 23.1651C21.3162 22.843 21.7014 22.4996 22.067 22.1365C20.5661 18.3053 16.6259 15.5707 12.0013 15.5707Z" fill="#ffffff"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+<div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="225px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
+        <div id="kt_app_sidebar_toggle" class="app-sidebar-toggle btn btn-icon btn-shadow btn-sm btn-color-muted btn-active-color-primary body-bg h-30px w-30px position-absolute top-50 start-100 translate-middle rotate" data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="app-sidebar-minimize">
+            <i class="fas rotate-180"></i>
+        </div>
+    <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
+        <a href="javascript:$.osl.goAuthGrp('${sessionScope.selPrjGrpId}', '${sessionScope.selPrjId}','${sessionScope.selAuthGrpId}');">
+            <div class="app-sidebar-logo-img app-sidebar-logo-default"><span class="osl-elem-hide">LG U plus</span></div>
+            <div class="app-sidebar-logo-img app-sidebar-logo-minimize"><span class="osl-elem-hide">LG U plus</span></div>
+        </a>
+        
+    </div>
+    <div class="app-sidebar-menu overflow-hidden flex-column-fluid">
+        <div id="kt_app_sidebar_menu_wrapper" class="app-sidebar-wrapper">
+            <div class="align-items-center px-5 pb-4 osl-app-sidebar-search-icon">
+                <div class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px w-md-40px h-md-40px">
+                    <span class="svg-icon svg-icon-1">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="currentColor"></rect>
+                            <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="currentColor"></path>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <div class="osl-sidebar-search-default" id="kt_aside_menu_search" data-kt-search-keypress="true" data-kt-search-min-length="2" data-kt-search-enter="enter" data-kt-search-layout="menu" data-kt-menu-trigger="auto" data-kt-menu-overflow="false" data-kt-menu-permanent="true" data-kt-menu-placement="bottom-end" data-kt-search="true">
+                <form data-kt-search-element="form" class="w-100 position-relative d-flex d-inline-flex align-items-center gap-2" autocomplete="off" id="menuSearchForm" name="menuSearchForm"> <!-- 퍼블 24.12.06 - gap-2 추가 -->
+                    <div class="d-flex search-input-box">
+                        <input type="text" class="search-input form-control form-control-flush" id="menuSearchInput" name="menuSearchInput" value="" placeholder="메뉴 검색" data-kt-search-element="input">
+                        <span class="d-flex d-inline-flex align-items-center d-none" data-kt-search-element="spinner">
+                            <span class="spinner-border h-15px w-15px align-middle text-gray-400"></span>
+                        </span>
+                        <span class="btn btn-flush btn-active-color-primary d-flex d-inline-flex align-items-center d-none" data-kt-search-element="clear">
+                            <span class="svg-icon svg-icon-2 svg-icon-lg-1 me-0">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor"></rect>
+                                    <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor"></rect>
+                                </svg>
+                            </span>
+                        </span>
+                    </div>
+
+                    <span class="d-inline-flex align-items-center cursor-pointer w-32px " id="showOnlyFvrMenu" data-fvr-cd="02">
+                        <i class="osl-evt__fvr-menu-toggle btn_bookmark-view"></i>
+                    </span>
+                </form>
+                <div data-kt-search-element="content" class="menu menu-sub menu-sub-dropdown border border-dark w-200px w-md-225px py-3 px-3 me-5 mt-n2 overflow-hidden">
+                    <div data-kt-search-element="wrapper">
+                        <div data-kt-search-element="results" class="d-none">
+                            <div class="mh-185px scroll-y" id="menuSearchResult">
+                            </div>
+                        </div>
+                        <div data-kt-search-element="empty" class="text-center">
+                            <div class="pt-10 pb-5">
+                                <span class="svg-icon svg-icon-4x opacity-50">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.3" d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z" fill="currentColor"></path>
+                                        <path d="M20 8L14 2V6C14 7.10457 14.8954 8 16 8H20Z" fill="currentColor"></path>
+                                        <rect x="13.6993" y="13.6656" width="4.42828" height="1.73089" rx="0.865447" transform="rotate(45 13.6993 13.6656)" fill="currentColor"></rect>
+                                        <path d="M15 12C15 14.2 13.2 16 11 16C8.8 16 7 14.2 7 12C7 9.8 8.8 8 11 8C13.2 8 15 9.8 15 12ZM11 9.6C9.68 9.6 8.6 10.68 8.6 12C8.6 13.32 9.68 14.4 11 14.4C12.32 14.4 13.4 13.32 13.4 12C13.4 10.68 12.32 9.6 11 9.6Z" fill="currentColor"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="pb-15 fw-semibold">
+                                <h3 class="text-gray-600 fs-5 mb-2"><span data-lang-cd="message.noData">데이터가 없습니다.</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+    <div class="d-flex flex-column flex-column-fluid">
+        <div class="app-content flex-column-fluid pt-5 pb-0 osl-main-scroll scroll" id="kt_app_content" data-kt-scroll="true" data-kt-scroll-height="auto" data-kt-scroll-wrappers="#kt_app_content_container" data-kt-scroll-dependencies="#kt_app_header, #oslAppFooter" data-kt-scroll-offset="100px">
+            <div class="app-container container-fluid" id="kt_app_content_container">
+                <div class="row justify-content-center">
+
+
+
+
+
+
+
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------
+begin::content
+---------------------------------------------------------------------------------------------------------------------------------------------->
+<div>
+    
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#osl-md-xl">
+        조직 및 사용자 선택 팝업 호출 버튼
+    </button>
+
+    <!-- begin::xl -->
+    <div class="modal fade show" tabindex="-1" id="osl-md-xl" style="display: block;">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable osl-md-fit">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">조직 및 사용자 선택 팝업</h3>
+
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm" data-bs-dismiss="modal" aria-label="Close">
+                        <span class="osl-blind">팝업닫기</span>
+                    </div>
+                    <!--end::Close-->
+                </div>
+
+                <div class="modal-body">
+                    <div class="row h-100 osl-gap-12px align-items-stretch" >
+                        <!-- begin::권한그룹목록 -->
+                       
+                        <!-- end::권한그룹목록 -->
+
+                        <!-- begin::조직목록 -->
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mb-xl-0 mb-lg-5 mb-md-5 mb-sm-5 mb-5">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <div class="fw-bold">
+                                            <i class="osl-icon osl-md osl-icon-label osl-me-4"></i>
+                                            <span class="">조직 목록</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-toolbar">
+                                        <button type="button" class="btn btn-icon">
+                                            <i class="osl-icon osl-sm osl-icon-refresh--gray1"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="">
+                                        <!-- begin::검색영역 -->
+                                        <div class="form-group mb-0">
+                                            <div class="input-group osl-search-type-002">
+                                                <button type="button" class="btn btn-search">
+                                                    <i class="osl-icon osl-icon-search-2"></i>
+                                                    <span data-lang-cd="button.search" class="osl-blind">
+                                                        검색버튼
+                                                    </span>
+                                                </button>
+                                                <input type="text" class="form-control" placeholder="입력 후 엔터 키를 입력해주세요.">
+                                            </div>
+                                        </div>
+                                        <!-- end::검색영역 -->
+                                        
+                                        <!-- begin::경고문구 -->
+                                        <div class="d-flex align-items-center osl-px-8 osl-py-4 osl-mt-8 osl-radius-4px osl-bg-gray-001 z-index-1">
+                                            <i class="osl-icon osl-icon-sm osl-icon-warning--yellow osl-me-6 "></i>
+                                            <!-- <span class="osl-fs-11 lh-base">현재 소명은 완료 상태이며, 최종 소명은 완료 상태입니다.</span> -->
+                                            <span class="osl-me-6 text-white osl-fs-11">조직 선택 시 하위조직은 선택되지 않습니다.</span>
+                                            <button class="ms-auto border-0 bg-transparent"><i class="osl-icon osl-icon-sm osl-icon-closed--white"></i></button>
+                                        </div>
+                                        <!-- end::경고문구 -->
+                                        
+                                        <!-- begin::펼치기닫기버튼 -->
+                                        <!-- end::펼치기닫기버튼 -->
+                                        <div class="d-flex justify-content-end gap-1 osl-py-6">
+                                            <button type="button" class="btn btn-secondary btn-sm btn-square ">
+                                                <i class="osl-icon osl-sm osl-icon-accor-off"></i>
+                                                <span>모두 펼치기</span>
+                                            </button>
+                                            <button type="button" class="btn btn-secondary btn-sm btn-square ">
+                                                <i class="osl-icon osl-sm osl-icon-accor-on"></i>
+                                                <span>모두 닫기</span>
+                                            </button>
+                                        </div>
+                                        <!-- begin::트리메뉴 -->
+                                        <link href="../../plugins/custom/jstree/jstree.bundle.css" rel="stylesheet" type="text/css" />
+                                        <script src="../../plugins/custom/jstree/jstree.bundle.js"></script>
+                                        <div id="kt_docs_jstree_basic" class="osl-h-calc-vh--395px scroll-y osl-mt-8 osl-bg-gray-005 osl-radius-10px rounded-top-0"><!-- 퍼블수정 - 제거:   / 추가: osl-bg-gray-005 osl-radius-10px rounded-top-0 -->
+                                            <ul>
+                                                <li>
+                                                    Root node 1
+                                                    <ul>
+                                                        <li data-jstree='{ "selected" : true }'><a href="javascript:;">Initially selected </a></li><li data-jstree='{ "icon" : "ki-outline ki-geolocation text-success fs-4" }'>custom icon URL</li><li data-jstree='{ "opened" : true }'>initially open<ul><li data-jstree='{ "disabled" : true }'>Disabled Node</li><li data-jstree='{ "type" : file" }'>Another node</li></ul></li>
+                                                        <li data-jstree='{ "selected" : false }'><a href="javascript:;">Initially selected </a></li><li data-jstree='{ "icon" : "ki-outline ki-geolocation text-success fs-4" }'>custom icon URL</li><li data-jstree='{ "opened" : true }'>initially open<ul><li data-jstree='{ "disabled" : true }'>Disabled Node</li><li data-jstree='{ "type" : file" }'>Another node</li></ul></li>
+                                                        <li data-jstree='{ "selected" : false }'><a href="javascript:;">Initially selected </a></li><li data-jstree='{ "icon" : "ki-outline ki-geolocation text-success fs-4" }'>custom icon URL</li><li data-jstree='{ "opened" : true }'>initially open<ul><li data-jstree='{ "disabled" : true }'>Disabled Node</li><li data-jstree='{ "type" : file" }'>Another node</li></ul></li>
+                                                        <li data-jstree='{ "selected" : false }'><a href="javascript:;">Initially selected </a></li><li data-jstree='{ "icon" : "ki-outline ki-geolocation text-success fs-4" }'>custom icon URL</li><li data-jstree='{ "opened" : true }'>initially open<ul><li data-jstree='{ "disabled" : true }'>Disabled Node</li><li data-jstree='{ "type" : file" }'>Another node</li></ul></li>
+                                                        <li data-jstree='{ "selected" : false }'><a href="javascript:;">Initially selected </a></li><li data-jstree='{ "icon" : "ki-outline ki-geolocation text-success fs-4" }'>custom icon URL</li><li data-jstree='{ "opened" : true }'>initially open<ul><li data-jstree='{ "disabled" : true }'>Disabled Node</li><li data-jstree='{ "type" : file" }'>Another node</li></ul></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <script>
+                                            $('#kt_docs_jstree_basic').jstree({
+                                                "core" : {"themes" : {"responsive": false}},
+                                                "types" : {"default" : {"icon" : "ki-outline ki-folder"},"file" : {"icon" : "ki-outline ki-file"}},
+                                                "plugins": ["types"]
+                                            });
+                                        </script>
+                                        <!-- end::트리메뉴 -->
+                                    </div>
+
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <!-- end::조직목록 -->
+
+                        <!-- begin::사용자목록 -->
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mb-xl-0 mb-lg-5 mb-md-5 mb-sm-5 mb-5">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <div class="fw-bold">
+                                            <i class="osl-icon osl-md osl-icon-label osl-me-4"></i>
+                                            <span class="">사용자 목록</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-toolbar">
+                                        <button type="button" class="btn btn-icon">
+                                            <i class="osl-icon osl-sm osl-icon-refresh--gray1"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="">
+                                        <!-- begin::데이타테이블검색 -->
+                                        <div class="osl-datatable-search osl-view__disabled" data-datatable-id="req1100ReqTable"><!-- 퍼블수정 - 제거:  osl-mb-8  / 추가:  -->
+                                            <div class="input-group">
+                                                <button type="button" class="btn btn-sm btn-light justify-content-between border rotate osl-evt__datatable-search__dropdown-btn" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" data-datatable-id="req1100ReqTable">
+                                                    <span class="osl-evt__datatable-search__droupdown-btn-text">전체</span>
+                                                    <!-- <span class="fa fa-chevron-down ms-3 rotate-180"></span> -->
+                                                    <i class="osl-icon  osl-icon-chevronDown--gray1 rotate-180"></i>  <!-- 데이터테이블에 사용하는 검색도 변경가능하면 해주세요 -->
+                                                </button>
+                                                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-auto m-0 osl-evt__datatable-search__dropdown" data-kt-menu="true" data-datatable-id="req1100ReqTable">
+                                                    <div class="menu-item px-3 active osl-evt__datatable-search--menu-item" data-field-id="-1" data-opt-type="all"><a class="menu-link px-3" href="javascript:void(0);">전체</a></div>
+                                                    <div class="menu-item px-3 osl-evt__datatable-search--menu-item"><a class="menu-link px-3" href="javascript:void(0);">선택항목1</a></div>
+                                                    <div class="menu-item px-3 osl-evt__datatable-search--menu-item"><a class="menu-link px-3" href="javascript:void(0);">선택항목2</a></div>
+                                                    <div class="menu-item px-3 osl-evt__datatable-search--menu-item"><a class="menu-link px-3" href="javascript:void(0);">선택항목3</a></div>
+                                                </div>
+                                                <div class="d-flex position-relative align-items-center osl-datatable-search__input osl-evt__datatable-search--input-div" data-datatable-id="req1100ReqTable">
+                                                    <input type="text" class="form-control osl-evt__datatable-search--input-text osl-evt__exclude-item rounded-0" aria-label="검색어를 입력해주세요" disabled="disabled" name="searchData_req1100ReqTable" id="searchData_req1100ReqTable" data-datatable-id="req1100ReqTable">
+                                                </div>
+                                                <button class="btn btn-sm btn-navy osl-datatable-search__button" type="button" data-datatable-id="req1100ReqTable">
+                                                    <!-- begin::마크업변경 -->
+                                                    <i class="osl-icon osl-icon-search-2"></i>
+                                                    <span class="osl-blind">검색</span>
+                                                    <!-- end::마크업변경 -->
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <!-- end::데이타테이블검색 -->
+
+                                        <!-- begin::데이타테이블 -->
+                                        <!-- begin::상단옵션 -->
+                                        <div class="d-flex osl-py-8 osl-mt-16"><!-- 퍼블수정 - 제거:  / 추가: osl-py-8 osl-mt-16  -->
+                                            <div class="form-check form-check-custom">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultAll" />
+                                                <label class="form-check-label" for="flexCheckDefaultAll">전체</label>
+                                            </div>
+                                            <div class="form-check form-switch form-check-custom form-check-solid gap-2 ms-auto">
+                                                <label class="form-check-label" for="selectGroup">
+                                                    선택한 조직만 보기
+                                                </label>
+                                                <input class="form-check-input osl-xs" type="checkbox" value="" id="selectGroup" />
+                                            </div>
+                                        </div>
+                                        <!-- end::상단옵션 -->
+                                        <div class="osl-radius-10px osl-bg-gray-005 osl-h-calc-vh--425px osl-mt-8 scroll-y-auto"><!-- 퍼블수정 - 개발코드 구조상 scroll-y랑 scroll-y-auto 각 페이지별로 따로 주기 어려우면 scroll-y로 써주세요. --><!-- 퍼블수정 - 제거:    / 추가: osl-mt-8 -->
+                                            <!-- begin::조직row -->
+                                            <div class="d-flex osl-px-4 osl-py-8 osl-bg-gray-005 osl-bg-hover-gray2 ">
+                                                <!-- begin::체크박스 -->
+                                                <div class="form-check form-check-custom">
+                                                    <input class="form-check-input" type="checkbox" id="flexCheckDefault" />
+                                                </div>
+                                                <!-- end::체크박스 -->
+                                                <!-- begin::사용자정보 -->
+                                                <div class="d-flex gap-2 align-items-center px-0 osl-ms-8 osl-evt__cmm--target-card"><!-- 퍼블수정 - 제거: osl-bg-hover-light-primary rounded  / 추가: px-0  -->
+                                                    <div class="d-flex align-items-center justify-content-center w-36px h-36px osl-border-circle osl-bg-gray-004">
+                                                        <i class="osl-icon osl-icon-user"></i>
+                                                    </div>
+                                                    <div class="d-flex flex-column osl-mw-calc--40px">
+                                                        <div class="d-flex flex-wrap align-items-end mw-100">
+                                                            <span class="text-truncate osl-me-4 osl-evt__target--name osl-evt__search-active" data-txt="Akbarov adburashid Rasujon ugli" title="Akbarov adburashid Rasujon ugli">Akbarov adburashid</span>
+                                                            <span class="d-flex flex-column-auto osl-fc-gray-006 osl-fs-11 w-100 osl-evt__search-active" data-txt="대리점관리자(대표위임)">
+                                                                <span class="mw-80 text-truncate" title="대리점관리자(대표위임)">대리점관리자(대표위임)</span>/<span class="mw-80 text-truncate" title="팀장대행">팀장대행asfadfsd</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="osl-fs-11 osl-w--fit-content text-muted text-break text-truncate osl-word-break--keep-all osl-evt__search-active" date-txt="오픈소프트랩">오픈소프트랩</div>
+                                                    </div>
+                                                </div>
+                                                <!-- end::사용자정보 -->
+                                            </div>
+                                            <!-- end::조직row -->
+                                            
+                             
+                                            
+
+                                            <!----------------------------------------------------------------------------------------------------------------------------------------------->
+                                            <div class="d-flex osl-p-4 osl-py-8 osl-bg-active active"><!-- 퍼블수정 - 제거: osl-bg-hover-gray2 osl-bg-gray-005  / 추가: osl-bg-active active -->
+                                                <div class="form-check form-check-custom">
+                                                    <input class="form-check-input" type="checkbox" id="flexCheckDefault" checked>
+                                                </div>
+                                                <div class="d-flex gap-2 align-items-center px-0 osl-ms-8 osl-evt__cmm--target-card">
+                                                    <div class="d-flex align-items-center justify-content-center w-36px h-36px osl-border-circle osl-bg-gray-004">
+                                                        <i class="osl-icon osl-icon-user"></i>
+                                                    </div>
+                                                    <div class="d-flex flex-column osl-mw-calc--40px">
+                                                        <div class="d-flex flex-wrap align-items-end mw-100">
+                                                            <span class="text-truncate osl-me-4 osl-evt__target--name osl-evt__search-active" data-txt="Akbarov adburashid Rasujon ugli" title="Akbarov adburashid Rasujon ugli">Akbarov adburashid</span>
+                                                            <span class="d-flex flex-column-auto osl-fc-gray-006 osl-fs-11 w-100 osl-evt__search-active" data-txt="대리점관리자(대표위임)">
+                                                                <span class="mw-80 text-truncate" title="대리점관리자(대표위임)">대리점관리자(대표위임)</span>/<span class="mw-80 text-truncate" title="팀장대행">팀장대행</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="osl-fs-11 osl-w--fit-content text-muted text-break text-truncate osl-word-break--keep-all osl-evt__search-active" date-txt="오픈소프트랩">오픈소프트랩</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex osl-px-4 osl-py-8 osl-bg-gray-005 osl-bg-hover-gray2">
+                                                <div class="form-check form-check-custom">
+                                                    <input class="form-check-input" type="checkbox" id="flexCheckDefault" />
+                                                </div>
+                                                <div class="d-flex gap-2 align-items-center px-0 osl-ms-8 osl-evt__cmm--target-card">
+                                                    <div class="d-flex align-items-center justify-content-center w-36px h-36px osl-border-circle osl-bg-gray-004">
+                                                        <i class="osl-icon osl-icon-user"></i>
+                                                    </div>
+                                                    <div class="d-flex flex-column osl-mw-calc--40px">
+                                                        <div class="d-flex flex-wrap align-items-end mw-100">
+                                                            <span class="text-truncate osl-me-4 osl-evt__target--name osl-evt__search-active" data-txt="Akbarov adburashid Rasujon ugli" title="Akbarov adburashid Rasujon ugli">Akbarov adburashid</span>
+                                                            <span class="d-flex flex-column-auto osl-fc-gray-006 osl-fs-11 w-100 osl-evt__search-active" data-txt="대리점관리자(대표위임)">
+                                                                <span class="mw-80 text-truncate" title="대리점관리자(대표위임)">대리점관리자(대표위임)</span>/<span class="mw-80 text-truncate" title="팀장대행">팀장대행</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="osl-fs-11 osl-w--fit-content text-muted text-break text-truncate osl-word-break--keep-all osl-evt__search-active" date-txt="오픈소프트랩">오픈소프트랩</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex osl-px-4 osl-py-8 osl-bg-gray-005 osl-bg-hover-gray2 ">
+                                                <div class="form-check form-check-custom">
+                                                    <input class="form-check-input" type="checkbox" id="flexCheckDefault" />
+                                                </div>
+                                                <div class="d-flex gap-2 align-items-center px-0 osl-ms-8 osl-evt__cmm--target-card">
+                                                    <div class="d-flex align-items-center justify-content-center w-36px h-36px osl-border-circle osl-bg-gray-004">
+                                                        <i class="osl-icon osl-icon-user"></i>
+                                                    </div>
+                                                    <div class="d-flex flex-column osl-mw-calc--40px">
+                                                        <div class="d-flex flex-wrap align-items-end mw-100">
+                                                            <span class="text-truncate osl-me-4 osl-evt__target--name osl-evt__search-active" data-txt="Akbarov adburashid Rasujon ugli" title="Akbarov adburashid Rasujon ugli">Akbarov adburashid</span>
+                                                            <span class="d-flex flex-column-auto osl-fc-gray-006 osl-fs-11 w-100 osl-evt__search-active" data-txt="대리점관리자(대표위임)">
+                                                                <span class="mw-80 text-truncate" title="대리점관리자(대표위임)">대리점관리자(대표위임)</span>/<span class="mw-80 text-truncate" title="팀장대행">팀장대행</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="osl-fs-11 osl-w--fit-content text-muted text-break text-truncate osl-word-break--keep-all osl-evt__search-active" date-txt="오픈소프트랩">오픈소프트랩</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex osl-px-4 osl-py-8 osl-bg-gray-005 osl-bg-hover-gray2">
+                                                <div class="form-check form-check-custom">
+                                                    <input class="form-check-input" type="checkbox" id="flexCheckDefault" />
+                                                </div>
+                                                <div class="d-flex gap-2 align-items-center px-0 osl-ms-8 osl-evt__cmm--target-card">
+                                                    <div class="d-flex align-items-center justify-content-center w-36px h-36px osl-border-circle osl-bg-gray-004">
+                                                        <i class="osl-icon osl-icon-user"></i>
+                                                    </div>
+                                                    <div class="d-flex flex-column osl-mw-calc--40px">
+                                                        <div class="d-flex flex-wrap align-items-end mw-100">
+                                                            <span class="text-truncate osl-me-4 osl-evt__target--name osl-evt__search-active" data-txt="Akbarov adburashid Rasujon ugli" title="Akbarov adburashid Rasujon ugli">Akbarov adburashid</span>
+                                                            <span class="d-flex flex-column-auto osl-fc-gray-006 osl-fs-11 w-100 osl-evt__search-active" data-txt="대리점관리자(대표위임)">
+                                                                <span class="mw-80 text-truncate" title="대리점관리자(대표위임)">대리점관리자(대표위임)</span>/<span class="mw-80 text-truncate" title="팀장대행">팀장대행</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="osl-fs-11 osl-w--fit-content text-muted text-break text-truncate osl-word-break--keep-all osl-evt__search-active" date-txt="오픈소프트랩">오픈소프트랩</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex osl-px-4 osl-py-8 osl-bg-gray-005 osl-bg-hover-gray2">
+                                                <div class="form-check form-check-custom">
+                                                    <input class="form-check-input" type="checkbox" id="flexCheckDefault" />
+                                                </div>
+                                                <div class="d-flex gap-2 align-items-center px-0 osl-ms-8 osl-evt__cmm--target-card">
+                                                    <div class="d-flex align-items-center justify-content-center w-36px h-36px osl-border-circle osl-bg-gray-004">
+                                                        <i class="osl-icon osl-icon-user"></i>
+                                                    </div>
+                                                    <div class="d-flex flex-column osl-mw-calc--40px">
+                                                        <div class="d-flex flex-wrap align-items-end mw-100">
+                                                            <span class="text-truncate osl-me-4 osl-evt__target--name osl-evt__search-active" data-txt="Akbarov adburashid Rasujon ugli" title="Akbarov adburashid Rasujon ugli">Akbarov adburashid</span>
+                                                            <span class="d-flex flex-column-auto osl-fc-gray-006 osl-fs-11 w-100 osl-evt__search-active" data-txt="대리점관리자(대표위임)">
+                                                                <span class="mw-80 text-truncate" title="대리점관리자(대표위임)">대리점관리자(대표위임)</span>/<span class="mw-80 text-truncate" title="팀장대행">팀장대행</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="osl-fs-11 osl-w--fit-content text-muted text-break text-truncate osl-word-break--keep-all osl-evt__search-active" date-txt="오픈소프트랩">오픈소프트랩</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex osl-px-4 osl-py-8 osl-bg-gray-005 osl-bg-hover-gray2 ">
+                                                <div class="form-check form-check-custom">
+                                                    <input class="form-check-input" type="checkbox" id="flexCheckDefault" />
+                                                </div>
+                                                <div class="d-flex gap-2 align-items-center px-0 osl-ms-8 osl-evt__cmm--target-card">
+                                                    <div class="d-flex align-items-center justify-content-center w-36px h-36px osl-border-circle osl-bg-gray-004">
+                                                        <i class="osl-icon osl-icon-user"></i>
+                                                    </div>
+                                                    <div class="d-flex flex-column osl-mw-calc--40px">
+                                                        <div class="d-flex flex-wrap align-items-end mw-100">
+                                                            <span class="text-truncate osl-me-4 osl-evt__target--name osl-evt__search-active" data-txt="Akbarov adburashid Rasujon ugli" title="Akbarov adburashid Rasujon ugli">Akbarov adburashid</span>
+                                                            <span class="d-flex flex-column-auto osl-fc-gray-006 osl-fs-11 w-100 osl-evt__search-active" data-txt="대리점관리자(대표위임)">
+                                                                <span class="mw-80 text-truncate" title="대리점관리자(대표위임)">대리점관리자(대표위임)</span>/<span class="mw-80 text-truncate" title="팀장대행">팀장대행</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="osl-fs-11 osl-w--fit-content text-muted text-break text-truncate osl-word-break--keep-all osl-evt__search-active" date-txt="오픈소프트랩">오픈소프트랩</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex osl-px-4 osl-py-8 osl-bg-gray-005 osl-bg-hover-gray2">
+                                                <div class="form-check form-check-custom">
+                                                    <input class="form-check-input" type="checkbox" id="flexCheckDefault" />
+                                                </div>
+                                                <div class="d-flex gap-2 align-items-center px-0 osl-ms-8 osl-evt__cmm--target-card">
+                                                    <div class="d-flex align-items-center justify-content-center w-36px h-36px osl-border-circle osl-bg-gray-004">
+                                                        <i class="osl-icon osl-icon-user"></i>
+                                                    </div>
+                                                    <div class="d-flex flex-column osl-mw-calc--40px">
+                                                        <div class="d-flex flex-wrap align-items-end mw-100">
+                                                            <span class="text-truncate osl-me-4 osl-evt__target--name osl-evt__search-active" data-txt="Akbarov adburashid Rasujon ugli" title="Akbarov adburashid Rasujon ugli">Akbarov adburashid</span>
+                                                            <span class="d-flex flex-column-auto osl-fc-gray-006 osl-fs-11 w-100 osl-evt__search-active" data-txt="대리점관리자(대표위임)">
+                                                                <span class="mw-80 text-truncate" title="대리점관리자(대표위임)">대리점관리자(대표위임)</span>/<span class="mw-80 text-truncate" title="팀장대행">팀장대행</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="osl-fs-11 osl-w--fit-content text-muted text-break text-truncate osl-word-break--keep-all osl-evt__search-active" date-txt="오픈소프트랩">오픈소프트랩</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!----------------------------------------------------------------------------------------------------------------------------------------------->
+                                        </div>
+
+                                        <!-- begin::개발에서가져온페이지네이션 --><!-- 퍼블수정 - 위아래 데이타 테이블 높이값을 주기위해 넣어둔 것입니다. 개발에 있는 걸로 사용해 주세요. -->
+                                        <div class="row osl-mt-12">
+                                            <div class="col-sm-12 col-md-2 d-flex align-items-center justify-content-center justify-content-md-start">
+                                                <div class="dataTables_length" id="req1100ReqTable_table_length">
+                                                    <label>
+                                                    <select name="req1100ReqTable_table_length" aria-controls="req1100ReqTable_table" class="form-select form-select-sm form-select-solid osl-evt__exclude-item">
+                                                        <option value="10">10</option>
+                                                        <option value="20">20</option>
+                                                        <option value="50">50</option>
+                                                        <option value="100">100</option>
+                                                    </select>
+                                                    </label>
+                                                </div>
+                                                <!-- <div class="dataTables_info" id="req1100ReqTable_table_info" role="status" aria-live="polite">
+                                                    현재 1 - 10 / 102 건<span class="select-info"><span class="select-item">1 row selected</span><span class="select-item"></span><span class="select-item"></span></span>
+                                                </div> -->
+                                            </div>
+                                            <div class="col-sm-12 col-md-10 d-flex align-items-center justify-content-center justify-content-md-end">
+                                                <div class="dataTables_paginate paging_full_numbers" id="req1100ReqTable_table_paginate">
+                                                    <ul class="pagination">
+                                                        <li class="paginate_button page-item first disabled" id="req1100ReqTable_table_first"><a href="#" aria-controls="req1100ReqTable_table" data-dt-idx="0" tabindex="0" class="page-link">&lt;&lt;</a></li>
+                                                        <li class="paginate_button page-item previous disabled" id="req1100ReqTable_table_previous"><a href="#" aria-controls="req1100ReqTable_table" data-dt-idx="1" tabindex="0" class="page-link">&lt;</a></li>
+                                                        <li class="paginate_button page-item active"><a href="#" aria-controls="req1100ReqTable_table" data-dt-idx="2" tabindex="0" class="page-link">3</a></li>
+                                                
+                                                      
+                                                        <li class="paginate_button page-item next" id="req1100ReqTable_table_next"><a href="#" aria-controls="req1100ReqTable_table" data-dt-idx="9" tabindex="0" class="page-link">&gt;</a></li>
+                                                        <li class="paginate_button page-item last" id="req1100ReqTable_table_last"><a href="#" aria-controls="req1100ReqTable_table" data-dt-idx="10" tabindex="0" class="page-link">&gt;&gt;</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end::개발에서가져온페이지네이션 -->
+                                        <!-- end::데이타테이블 -->
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <!-- end::사용자목록 -->
+
+                        <!-- begin::선택담당목록 -->
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mb-xl-0 mb-lg-5 mb-md-5 mb-sm-5 mb-5">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <div class="fw-bold">
+                                            <i class="osl-icon osl-md osl-icon-label osl-me-4"></i>
+                                            <span class="">선택 목록</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-toolbar gap-1">
+                                        <button type="button" class="btn btn-sm btn-secondary btn-square ">
+                                            <i class="osl-icon osl-sm osl-icon-refresh--gray1 osl-me-4"></i>
+                                            <span>초기화</span>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-secondary btn-square ">
+                                            <i class="osl-icon osl-sm osl-icon-clearAll--gray1 osl-me-4"></i>
+                                            <span>모두선택</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <div class="input-group osl-search-type-002">
+                                            <button type="button" class="btn btn-search">
+                                                <i class="osl-icon osl-icon-search-2"></i>
+                                                <span data-lang-cd="button.search" class="osl-blind">
+                                                    검색버튼
+                                                </span>
+                                            </button>
+                                            <input type="text" class="form-control" placeholder="입력 후 엔터 키를 입력해주세요.">
+                                        </div>
+                                    </div>
+
+                                    <!-- begin::셀렉트박스 -->
+                                    <div class="d-flex" id="guideS3P">
+                                        <select class="form-select  osl-select-bar " data-control="select2" id="guideS333" data-placeholder="결재" data-hide-serch="true">
+                                            <option value="1">결재</option>
+                                            <option value="2">합의</option>
+                                            <option value="3">전결</option>
+                                        </select>
+                                        <script>
+                                            $(document).ready(function() {
+                                                $('#guideS333').select2({
+                                                    dropdownParent: $("#guideS3P"),
+                                                    // minimumResultsForSearch: "Infinity",
+                                                    width: '80',
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+                                    <!-- end::셀렉트박스 -->
+
+                                    <!-- begin::선택된항목리스트 -->
+                                    <div class="osl-mt-10 osl-h-calc-vh--360px scroll-y osl-bg-gray-005 osl-radius-10px">
+
+                                        <!-- begin::모든항목다있는거 -->
+                                        <div class="position-relative d-flex align-items-center osl-px-4 osl-py-8 osl-bg-gray-005 osl-bg-hover-gray2">
+                                            <!-- begin::체크박스 -->
+                                            <div class="form-check form-check-custom">
+                                                <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                                            </div>
+                                            <!-- end::체크박스 -->
+                                            <!-- begin::삭제버튼 -->
+                                             <button type="button" class="btn p-0">
+                                                <i class="osl-icon osl-sm osl-icon-closed--black"></i>
+                                             </button>
+                                            <!-- end::삭제버튼 -->
+                                            <!-- begin::상태뱃지 -->
+                                            <span class="badge badge-circle badge-lg badge-red osl-ms-8 ">최종<br >결재</span>
+                                            <!-- end::상태뱃지 -->
+                                            <!-- begin::사용자정보 -->
+                                            <div class="d-flex gap-2 flex-row-fluid align-items-center px-0 osl-ms-8 osl-evt__cmm--target-card"><!-- 퍼블수정 - 제거: osl-bg-hover-light-primary rounded  / 추가: px-0 flex-row-fluid -->
+                                                <div class="badge badge-circle badge-md badge-gray">
+                                                    <i class="osl-icon osl-icon-user"></i>
+                                                </div>
+                                                <div class="d-flex flex-column osl-mw-calc--40px">
+                                                    <div class="d-flex flex-wrap align-items-end mw-100">
+                                                        <span class="text-truncate osl-me-4 osl-evt__target--name osl-evt__search-active" data-txt="Akbarov adburashid Rasujon ugli" title="Akbarov adburashid Rasujon ugli">모든항목다있는거</span>
+                                                        <span class="d-flex flex-column-auto osl-fc-gray-006 osl-fs-11 w-100 osl-evt__search-active" data-txt="대리점관리자(대표위임)">
+                                                            <span class="mw-80 text-truncate" title="대리점관리자(대표위임)">대리점관리자(대표위임)</span>/<span class="mw-80 text-truncate" title="팀장대행">팀장대행asfadfsd</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="osl-fs-11 osl-w--fit-content text-muted text-break text-truncate osl-word-break--keep-all osl-evt__search-active" date-txt="오픈소프트랩">오픈소프트랩</div>
+                                                </div>
+                                            </div>
+                                            <!-- end::사용자정보 -->
+                                            <!-- begin::뱃지 -->
+                                            <span class="badge badge-warning osl-ms-8"><i class="osl-icon osl-sm osl-icon-warning--white osl-me-4"></i>답변 대기</span>
+                                            <!-- end::뱃지 -->
+                                             <!-- begin::셀렉트박스 -->
+                                             <div class="position-absolute osl-end-12px osl-bottom-8px" id="guideS3P">
+                                                <select class="form-select  osl-select-bar " data-control="select2" id="guideS333" data-placeholder="결재" data-hide-serch="true">
+                                                    <option value="1">결재</option>
+                                                    <option value="2">합의</option>
+                                                    <option value="3">전결</option>
+                                                </select>
+                                                <script>
+                                                    $(document).ready(function() {
+                                                        $('#guideS333').select2({
+                                                            dropdownParent: $("#guideS3P"),
+                                                            minimumResultsForSearch: "Infinity",
+                                                            width: '80',
+                                                        });
+                                                    });
+                                                </script>
+                                            </div>
+                                            <!-- end::셀렉트박스 -->
+                                        </div>
+                                        <!-- end::모든항목다있는거 -->
+
+
+                                        <!-- begin::조직row -->
+                                        <div class="position-relative d-flex align-items-center osl-px-4 osl-py-8 osl-bg-gray-005 osl-bg-hover-gray2">
+                                            <!-- begin::삭제버튼 -->
+                                            <button type="button" class="btn p-0">
+                                                <i class="osl-icon osl-sm osl-icon-closed--black"></i>
+                                             </button>
+                                            <!-- end::삭제버튼 -->
+                                            <!-- begin::사용자정보 -->
+                                            <div class="d-flex gap-2 flex-row-fluid align-items-center px-0 osl-ms-8 osl-evt__cmm--target-card"><!-- 퍼블수정 - 제거: osl-bg-hover-light-primary rounded  / 추가: px-0 flex-row-fluid -->
+                                                <div class="badge badge-circle badge-md badge-gray">
+                                                    <i class="osl-icon osl-icon-user"></i>
+                                                </div>
+                                                <div class="d-flex flex-column osl-mw-calc--40px">
+                                                    <div class="d-flex flex-wrap align-items-end mw-100">
+                                                        <span class="text-truncate osl-me-4 osl-evt__target--name osl-evt__search-active" data-txt="Akbarov adburashid Rasujon ugli" title="Akbarov adburashid Rasujon ugli">조직이미지</span>
+                                                        <span class="d-flex flex-column-auto osl-fc-gray-006 osl-fs-11 w-100 osl-evt__search-active" data-txt="대리점관리자(대표위임)">
+                                                            <span class="mw-80 text-truncate" title="대리점관리자(대표위임)">대리점관리자(대표위임)</span>/<span class="mw-80 text-truncate" title="팀장대행">팀장대행asfadfsd</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="osl-fs-11 osl-w--fit-content text-muted text-break text-truncate osl-word-break--keep-all osl-evt__search-active" date-txt="오픈소프트랩">오픈소프트랩</div>
+                                                </div>
+                                            </div>
+                                            <!-- end::사용자정보 -->
+                                        </div>
+                                        <!-- end::조직row -->
+
+                                        <!-- begin::조직row -->
+                                        <div class="position-relative d-flex align-items-center osl-px-4 osl-py-8 osl-bg-gray-005 osl-bg-hover-gray2">
+                                            <!-- begin::삭제버튼 -->
+                                            <button type="button" class="btn p-0">
+                                                <i class="osl-icon osl-sm osl-icon-closed--black"></i>
+                                             </button>
+                                            <!-- end::삭제버튼 -->
+                                            <!-- begin::사용자정보 -->
+                                            <div class="d-flex gap-2 flex-row-fluid align-items-center px-0 osl-ms-8 osl-evt__cmm--target-card"><!-- 퍼블수정 - 제거: osl-bg-hover-light-primary rounded  / 추가: px-0 flex-row-fluid -->
+                                                <div class="badge badge-circle badge-md badge-gray">
+                                                    <i class="osl-icon osl-icon-user"></i>
+                                                </div>
+                                                <div class="d-flex flex-column osl-mw-calc--40px">
+                                                    <div class="d-flex flex-wrap align-items-end mw-100">
+                                                        <span class="text-truncate osl-me-4 osl-evt__target--name osl-evt__search-active" data-txt="Akbarov adburashid Rasujon ugli" title="Akbarov adburashid Rasujon ugli">조직이미지</span>
+                                                        <span class="d-flex flex-column-auto osl-fc-gray-006 osl-fs-11 w-100 osl-evt__search-active" data-txt="대리점관리자(대표위임)">
+                                                            <span class="mw-80 text-truncate" title="대리점관리자(대표위임)">대리점관리자(대표위임)</span>/<span class="mw-80 text-truncate" title="팀장대행">팀장대행asfadfsd</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="osl-fs-11 osl-w--fit-content text-muted text-break text-truncate osl-word-break--keep-all osl-evt__search-active" date-txt="오픈소프트랩">오픈소프트랩</div>
+                                                </div>
+                                            </div>
+                                            <!-- end::사용자정보 -->
+                                        </div>
+                                        <!-- end::조직row -->
+
+                                        <!-- begin::조직row -->
+                                        <div class="position-relative d-flex align-items-center osl-px-4 osl-py-8 osl-bg-gray-005 osl-bg-hover-gray2">
+                                            <!-- begin::삭제버튼 -->
+                                            <button type="button" class="btn p-0">
+                                                <i class="osl-icon osl-sm osl-icon-closed--black"></i>
+                                             </button>
+                                            <!-- end::삭제버튼 -->
+                                            <!-- begin::사용자정보 -->
+                                            <div class="d-flex gap-2 flex-row-fluid align-items-center px-0 osl-ms-8 osl-evt__cmm--target-card"><!-- 퍼블수정 - 제거: osl-bg-hover-light-primary rounded  / 추가: px-0 flex-row-fluid -->
+                                                <div class="badge badge-circle badge-md badge-gray">
+                                                    <i class="osl-icon osl-icon-user"></i>
+                                                </div>
+                                                <div class="d-flex flex-column osl-mw-calc--40px">
+                                                    <div class="d-flex flex-wrap align-items-end mw-100">
+                                                        <span class="text-truncate osl-me-4 osl-evt__target--name osl-evt__search-active" data-txt="Akbarov adburashid Rasujon ugli" title="Akbarov adburashid Rasujon ugli">사용자이미지</span>
+                                                        <span class="d-flex flex-column-auto osl-fc-gray-006 osl-fs-11 w-100 osl-evt__search-active" data-txt="대리점관리자(대표위임)">
+                                                            <span class="mw-80 text-truncate" title="대리점관리자(대표위임)">대리점관리자(대표위임)</span>/<span class="mw-80 text-truncate" title="팀장대행">팀장대행asfadfsd</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="osl-fs-11 osl-w--fit-content text-muted text-break text-truncate osl-word-break--keep-all osl-evt__search-active" date-txt="오픈소프트랩">오픈소프트랩</div>
+                                                </div>
+                                            </div>
+                                            <!-- end::사용자정보 -->
+                                        </div>
+                                        <!-- end::조직row -->
+
+
+                                    </div>
+                                    <!-- end::선택된항목리스트 -->
+                                                
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end::선택담당목록 -->
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-capsule">
+                        <i class="osl-icon osl-md osl-icon-save--white osl-me-4"></i>
+                        <span>저장</span></button>
+                    <button type="button" class="btn btn-secondary btn-capsule" data-bs-dismiss="modal">
+                        <i class="osl-icon osl-md osl-icon-closed--black osl-me-4"></i>
+                        <span>닫기</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end::xl -->
+
+    <div class="modal-backdrop fade show"></div>
+</div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------
+end::content
+---------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+<span class="svg-icon">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="currentColor" />
+<path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor" />
+</svg>
+</span>
+</div>
+<!--begin::Global Theme Bundle(used by all pages) -->
+<script src="../../js/scripts.bundle.js" type="text/javascript"></script>
+<script src="../../plugins/custom/summernote/summernote.js" type="text/javascript"></script>
+<script src="../../js/osl/osl-scripts.bundle.js" type="text/javascript"></script>
+<!-- <script src="../../js/common/modalPopup.js" type="text/javascript"></script> -->
+<!--end::Global Theme Bundle -->
+
+<!--begin::Page Vendors(used by this page) -->
+<script src="../../plugins/jquery-loading/js/app.js" type="text/javascript"></script>
+<script src="../../plugins/custom/uppy/uppy.min.js" type="text/javascript"></script>
+<script src="../../plugins/custom/uppy/locales/ko_KR.js" type="text/javascript"></script>
+<script src="../../js/lang/summernote/summernote-ko-KR.js" type="text/javascript"></script>
+<script src="../../plugins/html2canvas/html2canvas.js" type="text/javascript"></script>
+<script src="../../plugins/printThis/printThis.js" type="text/javascript"></script>
+<script src="../../plugins/sheetjs/xlsx.full.min.js" type="text/javascript"></script>
+<script src="../../plugins/custom/jstree/jstree.bundle.js" type="text/javascript"></script>
+<script src="../../plugins/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
+<script src="../../plugins/custom/datatables/datatables.inputPagination.js"></script>
+
+<script src="../../plugins/apexcharts/apexcharts.min.js" type="text/javascript"></script>
+<script src="../../plugins/dragula/dragula.min.js" type="text/javascript"></script>
+<script src="../../plugins/sortable/Sortable.js" type="text/javascript"></script>
+<script src="../../plugins/highlight/highlight.pack.js" type="text/javascript"></script>
+<script src="../../plugins/diff/diff_match_patch_uncompressed.js" type="text/javascript"></script>
+<script src="../../plugins/custom/jquery-ui/jquery-ui.bundle.js" type="text/javascript"></script>
+<script src="../../plugins/flowchart/jquery.flowchart.js" type="text/javascript"></script>
+<script src="../../plugins/panzoom/panzoom.js" type="text/javascript"></script>
+<script src="../../plugins/bootstrap-progressbar/bootstrap-progressbar.js" type="text/javascript"></script>
+<script src="../../plugins/long-press/long-press-event.min.js" type="text/javascript"></script>
+<script src="../../plugins/gridstack/gridstack-poly.js" type="text/javascript"></script>
+<script src="../../plugins/gridstack/gridstack-h5.js" type="text/javascript"></script>
+<script src="../../plugins/jquery_ui_contextmenu/jquery.ui-contextmenu.min.js" type="text/javascript"></script>
+<script src="../../plugins/jquery-arrow/jquery.curvedarrow.js" type="text/javascript"></script>
+<script src="../../js/common/swiper.min.js" type="text/javascript"></script>
+<!--end::Page Vendors -->
+
+<iframe id="fileDownFrame" name="fileDownFrame" src="/com/fms/FileDown.do" style="width:0;height:0;display:none;"></iframe>
+</body>
+<!-- end::Body -->
+

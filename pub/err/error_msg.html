@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오류안내</title>
+    
+</head>
+<body>
+    
+<div class="error-wrap">
+    <div class="error-img">
+
+
+
+    </div>
+    <div class="error-msg">
+        <div class="error-title">메시지 타이틀</div>
+        <p>죄송하지만 요청하신 페이지가 존재하지 않거나 오류가 발생한 것으로 보여요,<br />아래로 문의 주세요!</p>
+        <!-- <a href="" class="error-link"><i class="osl-icon osl-sm osl-icon-chevronLeft--black"></i>뒤로 가기</a> -->
+        <button type="button" class="error-link"><i class="osl-icon osl-sm osl-icon-chevronLeft--black"></i>뒤로 가기</button>
+    </div>
+</div>
+<style lang="sass">
+    * {
+        padding:0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
+    }
+    html, body, .error-wrap {
+        width: 100vw;
+        min-width: 360px;
+        height: 100vh;
+        min-height: 400px;
+    }
+    body {
+        background-color: #ffffff;
+    }
+    .error-wrap {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .error-img {
+        /* width: 500px;
+        height: 300px; */
+        width: 198px;
+        height: 202px;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-image: url(../../images/content/img_error_info.png);
+        
+    }
+    .error-msg {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 24px;
+        text-align: center;
+
+        .error-title {
+            margin-bottom: 20px;
+            color: #555;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 150%; /* 36px */
+        }
+
+        p {
+            color: #888888;
+            text-align: center;
+            font-size: 14px;
+            font-style: normal;
+            line-height: 22px; /* 157.143% */
+            
+        }
+        
+        button.error-link {
+            margin-top: 28px;
+            padding-left: 18px;
+            color: #393939;
+            text-align: center;
+            font-family: "Open Sans";
+            font-size: 11px;
+            font-weight: bold;
+            line-height: normal;
+            text-decoration: underline;
+            border: none;
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 16px 16px;
+            background-color: transparent;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M11.6665 14.7115L6.95508 10L11.6665 5.28857L12.5447 6.1667L8.71133 10L12.5447 13.8334L11.6665 14.7115Z' fill='%23121212'/%3E%3C/svg%3E");
+        }
+    }
+
+    @media (max-width:800px) {
+        .error-img {
+            width: calc(100vw - 50px);
+            /* height: 50%; */
+        }
+    }
+</style>
+</body>
+</html>

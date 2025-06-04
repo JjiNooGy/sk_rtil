@@ -1,0 +1,174 @@
+<div class="fv-row form-group">
+    <label class=""><span data-lang-cd="usr1000.label.name">내용</span></label>
+    <textarea class="d-none w-100" name="armContent" id="armContent" autocomplete="off" placeholder="내용" required data-opt-type="-1"></textarea>
+</div>
+<script>
+    $(document).ready(function(){
+        var formEditList = [];
+        //edit 세팅
+        formEditList.push($.osl.editorSetting("armContent", {formValidate: false, height: 300, disableResizeEditor: false, toolbar: false, disableResizeEditor: true}));
+    });
+</script>
+
+
+
+<!-- begin::첨부파일 - 높이값 관련요소들 300에서 150으로 변경 -->
+<div class="form-group">
+    <label class="">
+        <i class="osl-icon osl-sm osl-icon-label2 osl-me-4"></i>
+        <span data-lang-cd="cmm6203.label.startScheduledDtm" class="osl-fs-12 fw-bolder">파일 첨부</span>
+    </label>
+    <div class="kt-uppy mh-150px" id="req4004LeaderReplyFileUpload"><div class="uppy-Root uppy-Dashboard uppy-Dashboard--animateOpenClose uppy-size--md uppy-size--lg uppy-size--xl uppy-Dashboard--isInnerWrapVisible" data-uppy-theme="light" data-uppy-num-acquirers="0" data-uppy-drag-drop-supported="true" aria-hidden="false" aria-label="파일 업로더"><div class="uppy-Dashboard-overlay" tabindex="-1"></div><div class="uppy-Dashboard-inner" style="width: 100%; height: 150px;"><div class="uppy-Dashboard-innerWrap"><div class="uppy-Dashboard-dropFilesHereHint">파일을 여기에 놓으세요.</div><div class="uppy-Dashboard-AddFiles"><input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" type="file" name="files[]" multiple=""><input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" webkitdirectory="" type="file" name="files[]" multiple=""><div class="uppy-Dashboard-AddFiles-title">파일을 여기에 놓고 붙여넣기 또는 <button type="button" class="uppy-u-reset uppy-Dashboard-browse" data-uppy-super-focusable="true">찾아보기</button></div><div class="uppy-Dashboard-AddFiles-info"></div></div><div class="uppy-Dashboard-progressindicators"><div class="uppy uppy-Informer" aria-hidden="true"><p role="alert"> </p></div></div></div></div></div></div>
+</div>
+<!-- end::첨부파일 -->
+
+
+
+
+
+
+
+
+<div class="card-toolbar gap-2">
+    <select class="form-select  guide-selext" data-control="select2" data-kt-select2="true"   id="guideS" data-placeholder="지정 메인 페이지">
+        <option></option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+    </select>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#guideS").select2({
+                dropdownParent: $(".card-toolbar"),
+                //스크롤 충돌 방지
+                ftScrollUse: false,
+                //검색창 숨김
+                minimumResultsForSearch: "Infinity",
+            });
+        });
+    </script>
+</div>
+
+
+
+<!-- begin::mask -->
+<div class="osl-div-cover osl-evt__div-cover osl-top-35px ">
+    <span data-lang-cd="stm7000.message.selectMenu">작성된 소명 내용이 없습니다.작성된 소명 내용이 없습니다.작성된 소명 내용이 없습니다.작성된 소명 내용이 없습니다.작성된 소명 내용이 없습니다.</span>
+</div>
+<!-- end::mask -->
+
+
+
+<!-- begin::데이타테이블검색 -->
+<div class="osl-datatable-search osl-view__disabled osl-mb-8" data-datatable-id="req1100ReqTable">
+    <div class="input-group">
+        <button type="button" class="btn btn-sm btn-light justify-content-between border rotate osl-evt__datatable-search__dropdown-btn" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" data-datatable-id="req1100ReqTable">
+            <span class="osl-evt__datatable-search__droupdown-btn-text">전체</span>
+            <!-- <span class="fa fa-chevron-down ms-3 rotate-180"></span> -->
+            <i class="osl-icon  osl-icon-chevronDown--gray1 rotate-180"></i>  <!-- 데이터테이블에 사용하는 검색도 변경가능하면 해주세요 -->
+        </button>
+        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-auto m-0 osl-evt__datatable-search__dropdown" data-kt-menu="true" data-datatable-id="req1100ReqTable">
+            <div class="menu-item px-3 active osl-evt__datatable-search--menu-item" data-field-id="-1" data-opt-type="all"><a class="menu-link px-3" href="javascript:void(0);">전체</a></div>
+            <div class="menu-item px-3 osl-evt__datatable-search--menu-item"><a class="menu-link px-3" href="javascript:void(0);">선택항목1</a></div>
+            <div class="menu-item px-3 osl-evt__datatable-search--menu-item"><a class="menu-link px-3" href="javascript:void(0);">선택항목2</a></div>
+            <div class="menu-item px-3 osl-evt__datatable-search--menu-item"><a class="menu-link px-3" href="javascript:void(0);">선택항목3</a></div>
+        </div>
+        <div class="d-flex position-relative align-items-center osl-datatable-search__input osl-evt__datatable-search--input-div" data-datatable-id="req1100ReqTable">
+            <input type="text" class="form-control osl-evt__datatable-search--input-text osl-evt__exclude-item rounded-0" aria-label="검색어를 입력해주세요" disabled="disabled" name="searchData_req1100ReqTable" id="searchData_req1100ReqTable" data-datatable-id="req1100ReqTable">
+        </div>
+        <button class="btn btn-sm btn-navy osl-datatable-search__button" type="button" data-datatable-id="req1100ReqTable">
+            <!-- begin::마크업변경 -->
+            <i class="osl-icon osl-icon-search-2"></i>
+            <span class="osl-blind">검색</span>
+            <!-- end::마크업변경 -->
+        </button>
+    </div>
+</div>
+<!-- end::데이타테이블검색 -->
+
+
+<style>
+/*
+black - 23121212  / gray1 - 23888888  /  gray2 - 23dcdcdc  /  white - 23ffffff
+red - 23bd2427  /  orange -- 23FF6240  /  yellow - 23FFCD66  /  green - 2331a372  /  blue - 230d99ff  /  navy - 23333573  /  purple - 23969dc9
+*/
+.osl-icon-download--black {}
+.osl-icon-download--gray1 {}
+.osl-icon-download--gray2 {}
+.osl-icon-download--white {}
+.osl-icon-download--red {}
+.osl-icon-download--orange {}
+.osl-icon-download--yellow {}
+.osl-icon-download--green {}
+.osl-icon-download--blue {}
+.osl-icon-download--navy {}
+.osl-icon-download--purple {}
+
+
+.osl-icon-download--black {}
+.osl-icon-download--gray1 {}
+.osl-icon-download--gray2 {}
+.osl-icon-download--white {}
+.osl-icon-download--red {}
+.osl-icon-download--orange {}
+.osl-icon-download--yellow {}
+.osl-icon-download--green {}
+.osl-icon-download--blue {}
+.osl-icon-download--navy {}
+.osl-icon-download--purple {}
+
+</style>
+
+<div class="g-icon-box">
+    <div class="g-icon">
+        <i class="osl-icon osl-icon-chevronRight--black"></i>
+        <i class="osl-icon osl-icon-chevronRight--gray1 old"></i>
+        <i class="osl-icon osl-icon-chevronRight--gray2"></i>
+        <i class="osl-icon osl-icon-chevronRight--white osl-bg-gray-001"></i>
+        <i class="osl-icon osl-icon-chevronRight--red"></i>
+        <i class="osl-icon osl-icon-chevronRight--orange"></i>
+        <i class="osl-icon osl-icon-chevronRight--yellow"></i>
+        <i class="osl-icon osl-icon-chevronRight--green"></i>
+        <i class="osl-icon osl-icon-chevronRight--blue"></i>
+        <i class="osl-icon osl-icon-chevronRight--navy"></i>
+        <i class="osl-icon osl-icon-chevronRight--purple"></i>
+    </div>
+    <div class="g-icon-name">
+        <span class="old">osl-icon-chevron-right-001</span>
+        <span>osl-icon-chevronRight--<font class="color-name">컬러명</font></span>
+    </div>
+</div>
+
+
+<!-- begin::상단버튼영역 -->
+<div class="col-12 col-lg-7 d-flex">
+    <div class="">
+        <button type="button" class="btn btn-secondary ">
+            <i class="osl-icon osl-sm osl-icon-refresh--black osl-me-4"></i>
+            <span>조회</span>
+        </button>
+    </div>
+
+    <div class="ms-auto d-inline-flex">
+        <button type="button" class="btn btn-secondary osl-ms-8">
+            <i class="osl-icon osl-sm osl-icon-plus--black osl-me-4"></i>
+            <span>추가</span>
+        </button>
+        <button type="button" class="btn btn-secondary osl-ms-8">
+            <i class="osl-icon osl-sm osl-icon-detailed--black osl-me-4"></i>
+            <span>상세</span>
+        </button>
+        <button type="button" class="btn btn-secondary osl-ms-8">
+            <i class="osl-icon osl-sm osl-icon-edit--black osl-me-4"></i>
+            <span>수정</span>
+        </button>
+        <button type="button" class="btn btn-secondary osl-ms-8">
+            <i class="osl-icon osl-sm osl-icon-delete--black osl-me-4"></i>
+            <span>삭제</span>
+        </button>
+        <button type="button" class="btn btn-secondary osl-ms-8">
+            <i class="osl-icon osl-sm osl-icon-plus--black osl-me-4"></i>
+            <span>글쓰기</span>
+        </button>
+    </div>
+</div>
+<!-- end::상단버튼영역 -->

@@ -1,0 +1,156 @@
+if($(".mn_visul_sld .swiper-container li").length <= 1) {
+    $(".mn_visul_sld .sld-nav").hide();
+    $(".mn_visul_sld .swiper-container").each(function(i,n){
+        shop.disp.sld.visul.slide.push(new Swiper($(n), {
+            observer: true,
+            observeParents: true,
+            watchOverflow:true,
+            simulateTouch:false,
+            autoHeight:true,
+            spaceBetween:0,
+            loop: false,										//2021.05.27추가
+            slidesPerView:'auto',							//루프 모드에서 중복 슬라이드 허용 - APETQA-7026 210906 lju02 루프 사용시 index=0 에서 뒤로 버튼 클릭시 화면 반짝임 방지 위해 사용
+            pagination: {
+                el: '.mn_visul_sld .pagination',
+                type: 'fraction',
+            }
+        }));
+    })
+    
+}
+
+
+$('.listClass li').each(function(index, item){
+    console.log(item.className);
+}) 
+// select2 선언 
+$("#guideS").each(function(i,n){
+
+    $(this)
+    shop.disp.sld.visul.slide.push(new Swiper($(n), {
+        observer: true,
+        observeParents: true,
+        watchOverflow:true,
+        simulateTouch:false,
+        autoHeight:true,
+        
+        pagination: {
+            el: '.mn_visul_sld .pagination',
+            type: 'fraction',
+        }
+    }));
+})
+
+// javascript code
+
+// $('.guide-selext').each(function(index, element) {
+//     console.log(index + ": " + $(element).text());
+// });
+
+// $(".guide-selext").each(function(index, item){
+//     // $('.form-select'+item).select2();
+//     console.log("ready");
+// })	
+// $('#guideS').each(function(index, item){
+    //     console.log(index + ": " + $(element).text());
+    //     $('#guideS'+item).select2();
+    // });
+
+
+
+    
+function showDropdown() {
+    console.log("드롭불러왕");
+    $(this).next().toggleClass("show");
+}
+
+$("#selectSrchType").click( function(){
+    console.log("드롭불러왕2");
+
+})
+
+
+
+/* 가이드 문서 최하단 */
+<script>
+    $(document).ready(function() {
+    
+        // select2
+        $.each($(".form-select"), function(idx, elem){
+            console.log("select2222");
+            $(elem).select2({
+                // dropdownParent: $(".form-group"),
+                minimumResultsForSearch: "Infinity",
+            });
+        });
+    });
+    </script>
+    
+    </html>
+
+<!-- <body> -->
+     <div data-include-path="footer.html"></div>
+ 
+    <script>
+ 
+        window.addEventListener('load', function() {
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function(el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        });
+ 
+    </script>
+<!-- </body> -->
+
+
+
+<body>
+        <div include-html="header.html"></div>
+     
+        <script>
+            function includeHTML() {
+                var z, i, elmnt, file, xhttp;
+                z = document.getElementsByTagName("*");
+                for (i = 0; i < z.length; i++) {
+                    elmnt = z[1];
+                file = elmnt.getAttribute("include-html");
+                if(file) {
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if(this.readyState == 4 && this.status == 200) {
+                            elmnt.innerHTML = this.responseText;
+                            elmnt.removeAttribute("include-html");
+                            includeHTML();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                return;
+                }
+            }
+        }
+        
+        includeHTML();
+        
+        </script>
+    </body>
+    출처: https://kyung-a.tistory.com/18 [Hi, Kyung-a log:티스토리]
+    
+    
+
+
+
+    미리보기(preview, 피그마 오른쪽 상단 플레이버튼 or 쉬프트+스페이스마) 로 보시면 애니메이션 볼 수 있습니다. hover시 사용하면 좋을것 같습니다.
+아이콘의 포인트 색상은 이 디자인이 fix되면 애프터이펙트나 개발단계에서 코드로 수정할 수 있을 것 같습니다.
+참고 링크 : https://support.flaticon.com/s/article/How-to-edit-animated-icons?language=en_US&_ga=2.209638482.1754330518.1733384895-1131712939.1732872613&_gl=1*1n9kqsw*test_ga*MTEzMTcxMjkzOS4xNzMyODcyNjEz*test_ga_523JXC6VL7*MTczMzQ1NzgxNi43LjEuMTczMzQ2NTIzMi41OS4wLjA.*fp_ga*MTEzMTcxMjkzOS4xNzMyODcyNjEz*fp_ga_1ZY8468CQB*MTczMzQ1NzgxNi43LjEuMTczMzQ2NTIzMi41OS4wLjA.

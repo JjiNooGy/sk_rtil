@@ -1,0 +1,145 @@
+
+
+
+/* color */
+:root {
+    --bs-link-color: #121212; /* 퍼블변경 - lnb 3depth 관련 변경, 추후 링크 컬러과련 변경시 lnb a 색상 지정 필요 */
+
+
+    --kt-menu-link-color-active: #121212;
+
+
+    --kt-primary: #121212;
+    --kt-primary-hover: #414141;
+    --kt-primary-press: #717171;
+    --kt-primary-active: #af0030;
+    --kt-primary-disabled: #b8b8b8;
+ 
+
+}
+/* size */
+:root {
+    --kt-app-header-height: 50px;
+    --kt-app-header-height-actual: 50px;
+    --kt-app-header-gap-start: 32px;
+    --kt-app-header-gap-end: 16px;
+    --kt-app-sidebar-width: 248px;
+    --kt-app-sidebar-width-actual: 248px;
+    --kt-app-sidebar-gap-start: 12px;
+    --kt-app-sidebar-gap-end: 24px;
+
+
+
+    --kt-app-sidebar-width: 248px;
+    --kt-app-sidebar-minimize-width: 56px;
+
+
+
+    --bs-nav-link-font-size: 12px;
+}
+
+
+
+
+[data-kt-app-sidebar-minimize=on] {
+    --kt-app-sidebar-width: 56px;
+    --kt-app-sidebar-gap-start: 12px;
+    --kt-app-sidebar-gap-end: 24px;
+    /* --kt-app-sidebar-gap-top: 0px;
+    --kt-app-sidebar-gap-bottom: 0px; */
+}
+
+
+:root,
+[data-theme=light] {
+    --osl-color-main-001: #A50034;
+    --osl-color-main-002: #969DC9;
+    --osl-color-main-003: #333573;
+    --osl-color-gray-001: #555555;
+    --osl-color-gray-002: #888888;
+    --osl-color-gray-003: #AAAAAA;
+    --osl-color-gray-004: #F1F1F1;
+    --osl-color-point-001: #27DB70;
+    --osl-color-point-002: #F13F22;
+    --osl-color-point-003: #0D99FF;
+
+    /* --kt-text-muted: #121212; /* 퍼블변경 - 헤더 아이콘 hover용 컬러로 변경 -> font-weight만 줌 */
+    --kt-success: #F13F22;    /* 퍼블변경 - 헤더 아이콘 불릿 작업시 색상 변경*/
+    --kt-text-primary: #121212; /* 퍼블변경 - 헤더 아이콘 hover 컬러용으로 변경*/
+    --kt-text-dark: #121212; /* 퍼블변경 */
+
+    --kt-border-color: #F1F1F1;
+
+
+    
+
+
+
+    --kt-text-muted: #888888;
+    --kt-text-default: #121212;
+    --kt-text-gray-001: #888888;
+
+    --kt-headings-color: #121212;
+    
+
+    
+}
+
+[data-theme=dark] {
+    --osl-color-main-001: #E52C8E;
+    --osl-color-main-002: #BB86FC;
+    --osl-color-main-003: #365498;
+    --osl-color-gray-001: #F1F1F1;
+    --osl-color-gray-002: #AAAAAA;
+    --osl-color-gray-003: #888888;
+    --osl-color-gray-004: #555555;
+    --osl-color-point-001: #27DB70;
+    --osl-color-point-002: #F13F22;
+    --osl-color-point-003: #0D99FF;
+
+    /* --kt-text-muted: #121212; /* 퍼블변경 - 헤더 아이콘 hover용 컬러로 변경 -> font-weight만 줌 */
+    --kt-success: #F13F22;    /* 퍼블변경 - 헤더 아이콘 불릿 작업시 색상 변경*/
+    --kt-text-primary: #121212; /* 퍼블변경 - 헤더 아이콘 hover 컬러용으로 변경*/
+    --kt-text-dark: #121212; /* 퍼블변경 */
+
+    --kt-border-color: #F1F1F1;
+
+
+    
+
+
+
+    --kt-text-muted: #888888;
+    --kt-text-default: #121212;
+    --kt-text-gray-001: #888888;
+
+    --kt-headings-color: #121212;
+
+    --kt-app-bg-color: #121212;
+    
+}
+
+.osl-bg-main-001 {background-color: var(--osl-color-main-001);}
+.osl-bg-main-002 {background-color: var(--osl-color-main-002);}
+.osl-bg-main-003 {background-color: var(--osl-color-main-003);}
+
+.osl-bg-gray-001 {background-color: var(--osl-color-gray-001);}
+.osl-bg-gray-002 {background-color: var(--osl-color-gray-002);}
+.osl-bg-gray-003 {background-color: var(--osl-color-gray-003);}
+.osl-bg-gray-004 {background-color: var(--osl-color-gray-004);}
+
+.osl-bg-point-001 {background-color: var(--osl-color-point-001);}
+.osl-bg-point-002 {background-color: var(--osl-color-point-002);}
+.osl-bg-point-003 {background-color: var(--osl-color-point-003);}
+
+/* table */
+:table {
+    --bs-table-color: #121212;
+}
+
+
+
+.row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+}

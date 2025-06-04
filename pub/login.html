@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>로그인</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="../css/style.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="../css/style.font.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/style.osl.css" rel="stylesheet" type="text/css" />
+	<link href="../css/style.lg.css" rel="stylesheet" type="text/css" />
+
+	<!--begin::Page Custom Styles(used by this page) -->
+	<link href="../css/login/login-v2_lg.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	
+	<!-- begin::Body -->
+	<body class="app-default">
+		<!-- begin:: App -->
+		<div class="" id="kt_app_root">
+			<!--begin::Page-->
+			<div class="osl-login" id="kt_login_v2">
+				<div class="app-header">
+					<div class="app-container container-fluid" id="kt_app_header_container">
+						<div class="" id="kt_app_header_wrapper">
+							<!--begin::Wrapper-->
+							<div class="app-header-menu">
+								<div class="menu" data-kt-menu="true">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<script>
+					/* 화면 모드 기본값 light로 고정	*/
+					var defaultThemeMode = "light";
+					if ( document.documentElement ) { 
+						if ( document.documentElement.hasAttribute("data-theme-mode")) { 
+							themeMode = document.documentElement.getAttribute("data-theme-mode"); 
+						} else { 
+							if ( localStorage.getItem("data-theme") !== null ) { 
+								themeMode = localStorage.getItem("data-theme"); 
+							} else { 
+								themeMode = defaultThemeMode; 
+							} 
+						} 
+						
+						document.documentElement.setAttribute("data-theme", themeMode); 
+					}
+				</script>
+				<!--begin::Wrapper-->
+				<div class="app-wrapper kt-login-v2" id="kt_app_wrapper">
+					<!--begin::Body-->
+					<div class="kt-login-v2__body osl-login-v2__body">
+						<!-- 퍼블 24.12.04 - 이미지 제거 -->
+						<!--begin::Image-->
+						<!--begin::Image-->
+	<!-- 퍼블 24.12.04 - 이 영역 갈아 끼워 주세요ㅕ-->
+						
+						<!--begin::Wrapper--> 
+						<div class="kt-login-v2__wrapper osl-login-v2__wrapper"> 
+							<div class="kt-login-v2__container osl-login-v2__container">
+								<div class="kt-login-v2__logo">
+									<a href="javascript:void(0);"></a>
+								</div>
+								<form class="kt-login-v2__form form osl-login-form fv-plugins-bootstrap5 fv-plugins-framework" action="http://oslab.kr:16072/cmm/cmm4000/cmm4000/selectCmm4000Logout.do" autocomplete="false" name="kt_login_form" id="kt_login_form" method="post">
+									<div class="form-group osl-login-form__input-box fv-plugins-icon-container">
+										<!-- osl-login-form__input-box : left -->
+										<div>
+											<label>마당 아이디</label>
+											<input class="form-control osl-evt__exclude-item" type="text" name="usrId" id="usrId" autocomplete="false" label="마당 아이디" placeholder="마당 아이디" regexstr="^[a-z0-9_-]{5,20}$" regexerrorstr="소문자,숫자, 특수 문자(&#39;_&#39;,&#39;-&#39;), 5~20 글자까지 허용" required="">
+											<div class="fv-plugins-message-container"></div>
+										</div>
+										<!-- // osl-login-form__input-box : left -->
+										<!-- osl-login-form__input-box : right -->
+										<svg class="osl-login-form__input-icon osl-convert-img osl-convert-img-login-user"></svg>
+										<!-- // osl-login-form__input-box : right -->
+									</div>
+									<div class="form-group osl-login-form__input-box osl-login-form__input-box--pw fv-plugins-icon-container">
+										<!-- osl-login-form__input-box : left -->
+										<div>
+											<label>마당 비밀번호</label>
+											<input class="form-control osl-evt__exclude-item" type="password" name="usrPw" id="usrPw" autocomplete="new-password" label="마당 비밀번호" placeholder="마당 비밀번호">
+										<div class="fv-plugins-message-container"></div></div>
+										<!-- // osl-login-form__input-box : left -->
+										<!-- osl-login-form__input-box : right -->
+										<svg class="osl-login-form__input-icon osl-convert-img osl-convert-img-login-pw"></svg>
+										<!-- // osl-login-form__input-box : right -->
+									</div>
+									<!--begin::Action-->
+									<div class="kt-login-v2__actions">
+										
+										<button type="submit" class="btn osl-btn-login" id="kt_login_submit">로그인</button>
+										<!-- <a href="javascript:void(0);" class="osl-form__find" id="pwFindLink">
+											Forgot Id / Password ?
+										</a> -->
+									</div>
+									<!--end::Action-->
+								</form>
+							</div> 
+						</div>
+						<!--end::Wrapper-->
+					</div>
+					<!--begin::Body-->
+				</div>
+				<!--end::Wrapper-->
+
+				<!--begin::Footer-->
+				<!-- 퍼블 24.12.04 - 푸터 삭제 -->
+				<div class="app-footer" id="oslAppFooter" style="display: none;"> 
+					<!--begin::Footer container-->
+					<div class="app-container">
+						<!--begin::Copyright-->
+						<div class="">
+							<span class="text-muted">Copyright copy; 
+							<a href="http://opensoftlab.kr" target="_blank" class="">Open SoftLab Corp. </a> All Rights Reserved</span>
+						</div>
+						<!--end::Copyright-->
+						<!--begin::Menu-->
+						<ul class="menu">
+							<li class="menu-item">
+								<a href="javascript:void(0);" target="_self" class="">LUNA™ SEC-OPS</a>
+							</li>
+						</ul>
+						<!--end::Menu-->
+					</div>
+					<!--end::Footer container-->
+				</div>
+				<!--end::Footer-->
+			</div>
+			<!-- end:: Page -->
+		</div>
+		<!-- end::App -->
+		<!--end::Page Scripts -->
+		
+		<!-- 퍼블 24.12.04 - 로그인 패널 여백 이슈로 폼 요소 위치 변경 -->
+		<form id="kt_hidden_param_form" class="osl-elem-hide">
+			<input type="hidden" name="joinCheck" id="joinCheck" value="N">
+			<input type="hidden" name="loginType" id="loginType" value="usrId">
+			<input type="hidden" name="loginYn" id="loginYn" value="">
+			<input type="hidden" name="isPrjYn" id="isPrjYn" value="">
+			<input type="hidden" name="logoutYn" id="logoutYn" value="Y">
+			<input type="hidden" name="message" id="message" value="정상적으로 로그아웃 되었습니다.">
+			<input type="hidden" name="sessionYn" id="sessionYn" value="">
+			<input type="hidden" name="iniYn" id="iniYn" value="">
+			<input type="hidden" name="exprYn" id="exprYn" value="">
+			<input type="hidden" name="loginSessionYn" id="loginSessionYn" value="">
+			<input type="hidden" name="paramUsrId" id="paramUsrId" value="">
+			<input type="hidden" name="paramEmail" id="paramEmail" value="">
+			<input type="hidden" name="paramUsrPw" id="paramUsrPw" value="">
+			<input type="hidden" name="licGrpId" id="licGrpId" value="">
+		</form>
+	</body>
+	<!-- end::Body -->
+</html>
+</body>
+</html>
