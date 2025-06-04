@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/*
+* 유의사항
+* 1. 기존 css를 덮어쓰기 할 경우 
+*		- a. 기존 css 파일 명 작성
+*		- b. 왜 덮어쓰는지 사유 작성
+*		- c. 해당 클래스가 어떤 것을 위한 것인지 작성
+* 2. 신규 css 생성인 경우
+*		- a. 클래스 명은 osl 로 시작
+*		- b. 해당 클래스가 어떤 것을 위한 것인지 작성
+*		- c. 비슷한 유형의 클래스끼리 위치 맞춰 작성
+*/
+@import url(pub/font.css);
+@import url(pub/var.css);
+@import url(pub/reset.css);
+@import url(pub/common.css);
+@import url(pub/component.css);
+@import url(pub/icon.css);
+
+
+@import url(pub/layout.css);
+@import url(pub/content.css);
+@import url(pub/tiny-slider.css);
+@import url(pub/summernote.css);
+
+.osl-body-001,
+.osl-body-002,
+.osl-body-003,
+.osl-body-004 {
+    color: #121212;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.osl-body-001 {font-size: 18px;}
+.osl-body-002 {font-size: 16px;}
+.osl-body-003 {font-size: 14px;}
+.osl-body-004 {font-size: 12px;}
+
+
+/* .app-default {height: calc(100vh - 100px);min-width: 1024px;} */

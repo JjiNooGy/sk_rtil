@@ -1,0 +1,301 @@
+/***** check.radio *****/
+.form-check-label span{vertical-align: text-bottom;line-height: 1.6;}
+
+/*** checkbox 디자인 ***/
+.form-check.form-check-custom {position: relative;}
+.form-check.form-check-custom input[type="checkbox"] {  /* 실제 체크박스는 화면에서 숨김 */
+  position: absolute;
+   width: 1px;
+   height: 1px;
+   padding: 0;
+   margin: -1px;
+   overflow: hidden;
+   clip:rect(0,0,0,0);
+   border: 0
+}
+.form-check.form-check-custom input[type="checkbox"] + label {
+    display: inline-block;
+    position: relative;
+    padding-left: 24px;  /* 글자와 체크박스 사이의 간격을 변경 */
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.form-check.form-check-custom input[type="checkbox"] + label:before {  /* 가짜 체크박스 */
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0px;  /* 이 값을 변경해서 글자와의 정렬 */
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    border-radius: 0;;
+    background-color: transparent;
+    border-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Crect width='15' height='15' x='.5' y='.5' stroke='%23888888' rx='1.5'/%3E%3C/svg%3E");
+}
+.form-check.form-check-custom input[type="checkbox"] + label:active:before,
+.form-check.form-check-custom input[type="checkbox"]:checked + label:active:before {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+.form-check.form-check-custom input[type="checkbox"]:checked + label:before {  /* 체크박스를 체크했을때 */ 
+  color: #99a1a7;
+  text-shadow: 1px 1px #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Crect width='16' height='16' fill='%23969DC9' rx='2'/%3E%3Cpath fill='%23fff' d='m5.863 10.583-2.78-2.78-.946.94 3.726 3.727 8-8-.94-.94-7.06 7.053Z'/%3E%3C/svg%3E");
+}
+
+/*** checkbox capsule 디자인 ***/
+.osl-checkbox-capsule {margin-top: -4px;margin-left: -4px;}
+.osl-checkbox-capsule .form-check-label {
+    height: 32px;
+    padding: 7px 12px 7px 28px;
+    margin: 4px;
+    background-color: #fff;
+    border: 1px solid var(--osl-border-color-001);
+    border-radius: 40px;
+    color: var(--osl-text-default);
+    font-size: 12px;
+    line-height: normal;
+}
+.osl-checkbox-capsule .form-check.form-check-custom input[type="checkbox"] + label {padding-left: 36px;}
+.osl-checkbox-capsule .form-check-input:checked[type=checkbox] + .form-check-label {
+    border: 1px solid var(--osl-border-purple);
+    background-color: var(--osl-bg-purple-light);
+}
+.osl-checkbox-capsule .form-check.form-check-custom input[type="checkbox"] + label:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 11px;
+    transform: translateY(-45%);
+    margin-top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 0;;
+    background-color: transparent;
+    border-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M6.36688 11.7692L2.81055 8.2129L3.52321 7.50007L6.36688 10.3437L12.4772 4.2334L13.1899 4.94623L6.36688 11.7692Z' fill='%23888888'/%3E%3C/svg%3E");
+}
+.osl-checkbox-capsule .form-check.form-check-custom input[type="checkbox"]:checked + label:before {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M6.36688 11.7692L2.81055 8.2129L3.52321 7.50007L6.36688 10.3437L12.4772 4.2334L13.1899 4.94623L6.36688 11.7692Z' fill='%23969dc9'/%3E%3C/svg%3E");}
+
+.osl-checkbox-capsule .form-check-input[disabled] ~ .form-check-label,
+.osl-checkbox-capsule .form-check-input:disabled ~ .form-check-label {
+        border: 1px solid var(--osl-border-002);
+        color: var(--osl-form-text);
+}
+.osl-checkbox-capsule .form-check-input[disabled]:checked[type=checkbox] + .form-check-label,
+.osl-checkbox-capsule .form-check-input.disabled:checked[type=checkbox] + .form-check-label {
+    border: 1px solid var(--osl-border-purple-light);
+    background-color: #f4f6ff;
+}
+.osl-checkbox-capsule .form-check.form-check-custom input[type="checkbox"] + label:active:before,
+.osl-checkbox-capsule .form-check.form-check-custom input[type="checkbox"]:checked + label:active:before {
+  box-shadow: unset;
+}
+
+
+
+/*** swicth 디자인 ***/
+.osl-switch-view {display: none;}
+.form-check-input:checked ~ .osl-switch-view {display: block;}
+
+.form-check.form-check-custom.form-switch {height: 24px;}
+.form-check.form-check-custom.form-switch label span {line-height: 2;}
+.form-check.form-check-custom.form-switch input[type="checkbox"] {  /* 실제 체크박스는 화면에서 숨김 */
+  position: absolute;
+   width: 1px;
+   height: 1px;
+   padding: 0;
+   margin: -1px;
+   overflow: hidden;
+   clip:rect(0,0,0,0);
+   border: 0
+}
+.form-check.form-check-custom.form-switch input[type="checkbox"] + label {
+    display: inline-block;
+    position: relative;
+    padding-left: 42px;  /* 글자와 체크박스 사이의 간격을 변경 */
+    margin: 0;
+    line-height: 0;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.form-check.form-check-custom.form-switch input[type="checkbox"] + label:before {  /* 가짜 체크박스 */
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1px;  /* 이 값을 변경해서 글자와의 정렬 */
+    width: 36px;
+    height: 24px;
+    margin-top: 0;
+    border-radius:24px;
+    border-color: transparent;
+    /* background: #dcdcdc; */
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='36' height='24' viewBox='0 0 36 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='36' height='24' rx='12' fill='%23DCDCDC'/%3E%3Ccircle cx='12' cy='12' r='10' fill='white'/%3E%3C/svg%3E%0A");
+}
+
+.form-check.form-check-custom.form-switch input[type="checkbox"] + label:active:before,
+.form-check.form-check-custom.form-switch input[type="checkbox"]:checked + label:active:before {box-shadow:unset;}
+.form-check.form-check-custom.form-switch input[type="checkbox"]:checked + label:before {background-image: url("data:image/svg+xml,%3Csvg width='36' height='24' viewBox='0 0 36 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='36' height='24' rx='12' fill='%23333573'/%3E%3Ccircle cx='24' cy='12' r='10' fill='white'/%3E%3C/svg%3E%0A");}
+/* 좌측라벨 */
+.form-check.form-check-custom.form-switch.osl-switch-left input[type="checkbox"] + label {padding-right: 42px;padding-left: 0;}
+.form-check.form-check-custom.form-switch.osl-switch-left input[type="checkbox"] + label:before {
+    left: unset;
+    right: 0;
+}
+
+.form-check.form-check-custom.form-switch.osl-xs {height: 20px;}
+.form-check.form-check-custom.form-switch.osl-xs input[type="checkbox"] + label {padding-left: 36px;}
+.form-check.form-check-custom.form-switch.osl-xs input[type="checkbox"] + label:before {
+    top: 3px;
+    height: 20px;
+    background-size: auto 20px;
+}
+
+
+/*** radio 디자인 ***/
+.form-check-label span{vertical-align: text-bottom;line-height: 1.6;}
+.form-check.form-check-custom {position: relative;}
+.form-check.form-check-custom input[type="radio"] {  /* 실제 체크박스는 화면에서 숨김 */
+  position: absolute;
+   width: 1px;
+   height: 1px;
+   padding: 0;
+   margin: -1px;
+   overflow: hidden;
+   clip:rect(0,0,0,0);
+   border: 0
+}
+.form-check.form-check-custom input[type="radio"] + label {
+    display: inline-block;
+    position: relative;
+    padding-left: 24px;  /* 글자와 체크박스 사이의 간격을 변경 */
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.form-check.form-check-custom input[type="radio"] + label:before {  
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0px;  /* 이 값을 변경해서 글자와의 정렬 */
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    border-radius: 50px;
+    background-color: transparent;
+    border-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M10.0027 17.5C8.96563 17.5 7.99056 17.3032 7.0775 16.9096C6.16458 16.516 5.37042 15.9818 4.695 15.3071C4.01958 14.6324 3.48493 13.8389 3.09104 12.9267C2.69701 12.0146 2.5 11.0399 2.5 10.0027C2.5 8.96563 2.69681 7.99056 3.09042 7.0775C3.48403 6.16458 4.01819 5.37042 4.69292 4.695C5.36764 4.01958 6.16111 3.48493 7.07333 3.09104C7.98542 2.69701 8.96007 2.5 9.99729 2.5C11.0344 2.5 12.0094 2.69681 12.9225 3.09042C13.8354 3.48403 14.6296 4.01819 15.305 4.69292C15.9804 5.36764 16.5151 6.16111 16.909 7.07333C17.303 7.98542 17.5 8.96007 17.5 9.99729C17.5 11.0344 17.3032 12.0094 16.9096 12.9225C16.516 13.8354 15.9818 14.6296 15.3071 15.305C14.6324 15.9804 13.8389 16.5151 12.9267 16.909C12.0146 17.303 11.0399 17.5 10.0027 17.5ZM10 16.6667C11.8611 16.6667 13.4375 16.0208 14.7292 14.7292C16.0208 13.4375 16.6667 11.8611 16.6667 10C16.6667 8.13889 16.0208 6.5625 14.7292 5.27083C13.4375 3.97917 11.8611 3.33333 10 3.33333C8.13889 3.33333 6.5625 3.97917 5.27083 5.27083C3.97917 6.5625 3.33333 8.13889 3.33333 10C3.33333 11.8611 3.97917 13.4375 5.27083 14.7292C6.5625 16.0208 8.13889 16.6667 10 16.6667Z' fill='%23393939'/%3E%3C/svg%3E");
+}
+.form-check.form-check-custom input[type="radio"] + label:active:before,
+.form-check.form-check-custom input[type="radio"]:checked + label:active:before {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.form-check.form-check-custom input[type="radio"]:checked + label:before {  /* 체크박스를 체크했을때 */ 
+  color: #99a1a7;
+  text-shadow: 1px 1px #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M10 13.3333C10.9285 13.3333 11.7161 13.0099 12.3629 12.3629C13.0099 11.7161 13.3333 10.9285 13.3333 10C13.3333 9.07153 13.0099 8.28389 12.3629 7.63708C11.7161 6.99014 10.9285 6.66667 10 6.66667C9.07153 6.66667 8.28389 6.99014 7.63708 7.63708C6.99014 8.28389 6.66667 9.07153 6.66667 10C6.66667 10.9285 6.99014 11.7161 7.63708 12.3629C8.28389 13.0099 9.07153 13.3333 10 13.3333ZM10.0027 17.5C8.96563 17.5 7.99056 17.3032 7.0775 16.9096C6.16458 16.516 5.37042 15.9818 4.695 15.3071C4.01958 14.6324 3.48493 13.8389 3.09104 12.9267C2.69701 12.0146 2.5 11.0399 2.5 10.0027C2.5 8.96563 2.69681 7.99056 3.09042 7.0775C3.48403 6.16458 4.01819 5.37042 4.69292 4.695C5.36764 4.01958 6.16111 3.48493 7.07333 3.09104C7.98542 2.69701 8.96007 2.5 9.99729 2.5C11.0344 2.5 12.0094 2.69681 12.9225 3.09042C13.8354 3.48403 14.6296 4.01819 15.305 4.69292C15.9804 5.36764 16.5151 6.16111 16.909 7.07333C17.303 7.98542 17.5 8.96007 17.5 9.99729C17.5 11.0344 17.3032 12.0094 16.9096 12.9225C16.516 13.8354 15.9818 14.6296 15.3071 15.305C14.6324 15.9804 13.8389 16.5151 12.9267 16.909C12.0146 17.303 11.0399 17.5 10.0027 17.5ZM10 16.6667C11.8611 16.6667 13.4375 16.0208 14.7292 14.7292C16.0208 13.4375 16.6667 11.8611 16.6667 10C16.6667 8.13889 16.0208 6.5625 14.7292 5.27083C13.4375 3.97917 11.8611 3.33333 10 3.33333C8.13889 3.33333 6.5625 3.97917 5.27083 5.27083C3.97917 6.5625 3.33333 8.13889 3.33333 10C3.33333 11.8611 3.97917 13.4375 5.27083 14.7292C6.5625 16.0208 8.13889 16.6667 10 16.6667Z' fill='%23969DC9'/%3E%3C/svg%3E");
+}
+
+/* radio-filter 디자인 */
+
+
+
+.osl-radio-filter {
+    display: flex;
+    gap: 8px;
+}
+.osl-radio-filter .form-check {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding-left: 0px;
+    margin: 0;
+}
+.osl-radio-filter .form-check + .form-check {
+    padding-left: 9px;
+}
+.osl-radio-filter .form-check + .form-check::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 12px;
+    background-color: var(--osl-border-color-001);
+}
+
+/* 
+.osl-radio-filter .form-check [type=radio].form-check-input {
+    width: 1px;
+    height: 16px;
+    margin: 0;
+    border-radius: unset !important;
+    border: none;
+    background: unset;
+    transition: width 0.3s ease;
+}
+.osl-radio-filter .form-check [type=radio].form-check-input:checked {
+    width:16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M6.36688 11.7692L2.81055 8.2129L3.52321 7.50007L6.36688 10.3437L12.4772 4.2334L13.1899 4.94623L6.36688 11.7692Z' fill='%23121212'/%3E%3C/svg%3E");
+}
+.osl-radio-filter .form-check label {margin: 0;font-size: 11px;line-height: 16px;}
+.osl-radio-filter .form-check [type=radio].form-check-input:checked + label {
+    transform: translateY(-1px);
+    font-weight: 700;
+} */
+
+/* radio-button */
+.osl-radio-button {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% + 12px);
+    margin-left: -6px;
+}
+.osl-radio-button .form-check {
+    width: 100%;
+    padding: 6px;
+    margin: 0;
+}
+.osl-radio-button .form-check  .form-check-input[type=radio] {opacity: 0;}
+.osl-radio-button .form-check  .form-check-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 16px 12px;
+    margin: 0;
+    border: 1px solid var(--osl-border-001);
+    border-radius: 8px;
+    cursor: pointer;
+}
+.osl-radio-button .form-check  .form-check-label span {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-height: 1.25rem;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word !important;
+    word-break: keep-all !important;
+    white-space: normal !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.osl-radio-button .form-check [type=radio].form-check-input:checked + label {
+    border-radius: 8px;
+    border: 1px solid var(--osl-bg-purple);
+    background: var(--osl-bg-active);
+}
+
+.osl-radio-button {}
+
+
+/***** bedge *****/
